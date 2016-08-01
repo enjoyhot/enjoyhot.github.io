@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://enjoyhot.github.io/"/>
-  <updated>2016-07-16T12:17:39.534Z</updated>
+  <updated>2016-08-01T14:35:08.071Z</updated>
   <id>http://enjoyhot.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>或明</title>
+    <link href="http://enjoyhot.github.io/2016/08/01/or-know/"/>
+    <id>http://enjoyhot.github.io/2016/08/01/or-know/</id>
+    <published>2016-08-01T13:23:50.000Z</published>
+    <updated>2016-08-01T14:35:08.071Z</updated>
+    
+    <content type="html">&lt;p&gt;时值8月，离毕业更近了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在入学时就开始算计留在学校还有多少时间，毕竟，在学校的日子将会一去不复返，总得做些有意义的事情，弥补一些遗憾或空缺。&lt;/p&gt;
+&lt;p&gt;依托客观存在的24小时，寻找忙碌的理由，为未来打算，是多年来的行事法则。希望每天过得充实而又收获，但往往做到一半（呵呵），这又是另外一种境遇。有个计划，遵守计划，能完成78成，就很成功。&lt;/p&gt;
+&lt;p&gt;懂得舍弃，生活不乏单调，或许，光明只有一步之遥。附上最近脑海里浮现的歌。&lt;/p&gt;
+&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=33248189&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;时值8月，离毕业更近了。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="life" scheme="http://enjoyhot.github.io/categories/life/"/>
+    
+    
+      <category term="life" scheme="http://enjoyhot.github.io/tags/life/"/>
+    
+  </entry>
   
   <entry>
     <title>ensemble-stacking</title>
@@ -382,17 +409,17 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
   
   <entry>
     <title>photos</title>
-    <link href="http://enjoyhot.github.io/2015/03/26/myphoto/"/>
-    <id>http://enjoyhot.github.io/2015/03/26/myphoto/</id>
+    <link href="http://enjoyhot.github.io/2015/03/26/photoshow01/"/>
+    <id>http://enjoyhot.github.io/2015/03/26/photoshow01/</id>
     <published>2015-03-26T15:45:21.000Z</published>
-    <updated>2016-07-16T12:17:39.534Z</updated>
+    <updated>2016-08-01T14:26:38.747Z</updated>
     
-    <content type="html">&lt;p&gt;say something show&lt;/p&gt;
+    <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;say something show&lt;/p&gt;
+      &lt;p&gt;You just say something I don’t know.&lt;/p&gt;
 
     
     </summary>
@@ -1218,36 +1245,9 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
       <category term="life" scheme="http://enjoyhot.github.io/categories/life/"/>
     
     
-      <category term="spider" scheme="http://enjoyhot.github.io/tags/spider/"/>
-    
       <category term="实验室" scheme="http://enjoyhot.github.io/tags/%E5%AE%9E%E9%AA%8C%E5%AE%A4/"/>
     
-  </entry>
-  
-  <entry>
-    <title>考研日</title>
-    <link href="http://enjoyhot.github.io/2014/12/27/postgraduate-exam/"/>
-    <id>http://enjoyhot.github.io/2014/12/27/postgraduate-exam/</id>
-    <published>2014-12-27T12:45:09.000Z</published>
-    <updated>2016-07-16T12:17:39.534Z</updated>
-    
-    <content type="html">&lt;p&gt;  微信发一条真诚祝福，也是对自己的祝福勉励，不忘自己是怎么走到这一步，运气背，但也阴差阳错。&lt;/p&gt;
-&lt;p&gt;  今天是考研的第一天，曾经很担心这一天的到来，直到9月中旬。&lt;br&gt;依稀记得，8月刚过20，内心甚是纠结，最后还是面对现实，做两手准备，虽是不甘，也无可奈何。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  今天起得不算太晚，9点出头，不想去实验室，只想到图书馆坐坐，看看书，一到那里，人出奇得多，不过转念一想，考试月，理所当然，自从大四后关于自习室的念想都是研究生层面啊。&lt;/p&gt;
-&lt;p&gt;  研究生阶段的方向，如无意外，无其它偏好，应该就是数据挖掘，喜好程度，中偏上而已。做做工程也好，搞搞理论也罢，出路两条，创业或工作，不止说说而已，咳咳。&lt;/p&gt;
-&lt;p&gt;  慢慢接近自己想得到的，不忘初衷，成长当如此。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;  微信发一条真诚祝福，也是对自己的祝福勉励，不忘自己是怎么走到这一步，运气背，但也阴差阳错。&lt;/p&gt;
-&lt;p&gt;  今天是考研的第一天，曾经很担心这一天的到来，直到9月中旬。&lt;br&gt;依稀记得，8月刚过20，内心甚是纠结，最后还是面对现实，做两手准备，虽是不甘，也无可奈何。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="http://enjoyhot.github.io/categories/life/"/>
-    
-    
-      <category term="life" scheme="http://enjoyhot.github.io/tags/life/"/>
+      <category term="spider" scheme="http://enjoyhot.github.io/tags/spider/"/>
     
   </entry>
   
