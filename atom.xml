@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://enjoyhot.github.io/"/>
-  <updated>2016-08-01T15:00:48.679Z</updated>
+  <updated>2017-03-31T13:05:50.693Z</updated>
   <id>http://enjoyhot.github.io/</id>
   
   <author>
@@ -14,6 +14,433 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java基础篇</title>
+    <link href="http://enjoyhot.github.io/2017/03/01/Java%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://enjoyhot.github.io/2017/03/01/Java基础篇/</id>
+    <published>2017-03-01T13:23:50.000Z</published>
+    <updated>2017-03-31T13:05:50.693Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;本系列文章将分为三部分：&quot;&gt;&lt;a href=&quot;#本系列文章将分为三部分：&quot; class=&quot;headerlink&quot; title=&quot;本系列文章将分为三部分：&quot;&gt;&lt;/a&gt;本系列文章将分为三部分：&lt;/h2&gt;&lt;h3 id=&quot;Java基础篇&quot;&gt;&lt;a href=&quot;#Java基础篇&quot; class=&quot;headerlink&quot; title=&quot;Java基础篇&quot;&gt;&lt;/a&gt;Java基础篇&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法篇&lt;/li&gt;
+&lt;li&gt;数据结构篇&lt;/li&gt;
+&lt;li&gt;集合框架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;Java高级篇&quot;&gt;&lt;a href=&quot;#Java高级篇&quot; class=&quot;headerlink&quot; title=&quot;Java高级篇&quot;&gt;&lt;/a&gt;Java高级篇&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;JVM知识&lt;/li&gt;
+&lt;li&gt;多线程&lt;/li&gt;
+&lt;li&gt;Java安全&lt;/li&gt;
+&lt;li&gt;设计模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Java实践篇&quot;&gt;&lt;a href=&quot;#Java实践篇&quot; class=&quot;headerlink&quot; title=&quot;Java实践篇&quot;&gt;&lt;/a&gt;Java实践篇&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;并发编程相关&lt;/li&gt;
+&lt;li&gt;分布式相关&lt;/li&gt;
+&lt;li&gt;框架介绍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;有些【疑问】可能会留在笔记中，在学习中补充…&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;相关链接&quot;&gt;&lt;a href=&quot;#相关链接&quot; class=&quot;headerlink&quot; title=&quot;相关链接&quot;&gt;&lt;/a&gt;相关链接&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/8/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javase 1.8 online doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javase 1.7 online doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/specs/jvms/se8/html/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javase 1.8 JVM Specification online doc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/specs/jvms/se7/html/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;javase 1.7 JVM Specification online doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;语法章&quot;&gt;&lt;a href=&quot;#语法章&quot; class=&quot;headerlink&quot; title=&quot;语法章&quot;&gt;&lt;/a&gt;语法章&lt;/h1&gt;&lt;h2 id=&quot;手动编译Java工程&quot;&gt;&lt;a href=&quot;#手动编译Java工程&quot; class=&quot;headerlink&quot; title=&quot;手动编译Java工程&quot;&gt;&lt;/a&gt;手动编译Java工程&lt;/h2&gt;&lt;p&gt;目前的代码打包工具很多，前有ant，后有Maven, Gradle, SBT, Ivy, Grape…，手动编译运行，是怎样的。这里简单举个例子，假如文件组织如下:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;src/&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;classes/&lt;ul&gt;
+&lt;li&gt;a.java&lt;/li&gt;
+&lt;li&gt;b.java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;test/&lt;ul&gt;
+&lt;li&gt;main.java(import classes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;编译java文件&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;javac a.java b.java main.java&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;无顺序之分&lt;/li&gt;
+&lt;li&gt;生成的class文件在原目录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行&lt;br&gt;进入src目录&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;// -cp: 等价于-classpath，多个则用分号；分开，也可带上jar包&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;java -cp . test.main&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;于是，当需要对工程进行编译，则需要先编译好，在打包时，为了能带上环境变量，往往把包路径移至import的那一层，然后打成war包或jar包等。&lt;/p&gt;
+&lt;h2 id=&quot;数组常用操作&quot;&gt;&lt;a href=&quot;#数组常用操作&quot; class=&quot;headerlink&quot; title=&quot;数组常用操作&quot;&gt;&lt;/a&gt;数组常用操作&lt;/h2&gt;&lt;h3 id=&quot;填充&quot;&gt;&lt;a href=&quot;#填充&quot; class=&quot;headerlink&quot; title=&quot;填充&quot;&gt;&lt;/a&gt;填充&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; test[] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; testDeep[][] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 仅限一维&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Arrays.fill(test, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;打印&quot;&gt;&lt;a href=&quot;#打印&quot; class=&quot;headerlink&quot; title=&quot;打印&quot;&gt;&lt;/a&gt;打印&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [8, 8, 8, 8]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(Arrays.toString(test));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(Arrays.deepToString(testDeep));&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;拷贝&quot;&gt;&lt;a href=&quot;#拷贝&quot; class=&quot;headerlink&quot; title=&quot;拷贝&quot;&gt;&lt;/a&gt;拷贝&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; test_copy[] = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[test.length];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.arraycopy(test, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, test_copy, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, test.length);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;test[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [8, 8, 8, 8]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(Arrays.toString(test_copy));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;[] test_copy_v2 = Arrays.copyOf(test, test.length);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;test[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// [9, 8, 8, 8]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(Arrays.toString(test_copy_v2));&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;效率&lt;br&gt;System.arraycopy &amp;gt; Arrays.copyOf(本质上新建了数组，并调用了前者) &amp;gt; for循环赋值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;构造函数&quot;&gt;&lt;a href=&quot;#构造函数&quot; class=&quot;headerlink&quot; title=&quot;构造函数&quot;&gt;&lt;/a&gt;构造函数&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;类中的普通方法可以和类名同名，和构造方法唯一的区分是，构造方法没有返回值；&lt;/li&gt;
+&lt;li&gt;抽象类可以有构造方法，接口中不能有构造方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;类的继承&quot;&gt;&lt;a href=&quot;#类的继承&quot; class=&quot;headerlink&quot; title=&quot;类的继承&quot;&gt;&lt;/a&gt;类的继承&lt;/h2&gt;&lt;h3 id=&quot;方法的重写-override-，两同两小一大原则：&quot;&gt;&lt;a href=&quot;#方法的重写-override-，两同两小一大原则：&quot; class=&quot;headerlink&quot; title=&quot;方法的重写(override)，两同两小一大原则：&quot;&gt;&lt;/a&gt;方法的重写(override)，两同两小一大原则：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;方法名相同，参数类型相同&lt;/li&gt;
+&lt;li&gt;子类返回类型小于等于父类方法返回类型，&lt;/li&gt;
+&lt;li&gt;子类抛出异常小于等于父类方法抛出异常，&lt;/li&gt;
+&lt;li&gt;子类访问权限大于等于父类方法访问权限。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;程序中代码的加载顺序&quot;&gt;&lt;a href=&quot;#程序中代码的加载顺序&quot; class=&quot;headerlink&quot; title=&quot;程序中代码的加载顺序&quot;&gt;&lt;/a&gt;程序中代码的加载顺序&lt;/h3&gt;&lt;p&gt;假设在主函数中new一个子类构造函数，执行顺序为：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;父类Ｂ静态代码块-&amp;gt;子类Ａ静态代码块-&amp;gt;父类Ｂ非静态代码块-&amp;gt;父类Ｂ构造函数-&amp;gt;子类Ａ非静态代码块-&amp;gt;子类Ａ构造函数。&lt;/li&gt;
+&lt;li&gt;静态代码块和静态变量的加载看书写顺序；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;涉及类加载过程中初始化顺序，详看【高级篇】&lt;/p&gt;
+&lt;h3 id=&quot;静态类&quot;&gt;&lt;a href=&quot;#静态类&quot; class=&quot;headerlink&quot; title=&quot;静态类&quot;&gt;&lt;/a&gt;静态类&lt;/h3&gt;&lt;p&gt;静态类只能是内部类，可以被继承&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;InterfaceTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sun&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Ak&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;InterfaceTest&lt;/span&gt;.&lt;span class=&quot;title&quot;&gt;Sun&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;继承需要注意的&quot;&gt;&lt;a href=&quot;#继承需要注意的&quot; class=&quot;headerlink&quot; title=&quot;继承需要注意的&quot;&gt;&lt;/a&gt;继承需要注意的&lt;/h3&gt;&lt;p&gt;子类定义了父类没有的方法，而用父类指向子类对象，不能直接调用子类方法，需要强制转换：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;(SON)base.methodB();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;父类构造函数调用自己的方法，若子类继承其方法，则运行时调用的是子类的方法，如下输出为null，纵使Sub是静态内部类：&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Base&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String baseName = &lt;span class=&quot;string&quot;&gt;&quot;base&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        callName();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;callName&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(baseName);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Sub&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Base&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String baseName = &lt;span class=&quot;string&quot;&gt;&quot;sub&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;callName&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            System.out.println (baseName) ;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Base b = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Sub();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;包访问权限&quot;&gt;&lt;a href=&quot;#包访问权限&quot; class=&quot;headerlink&quot; title=&quot;包访问权限&quot;&gt;&lt;/a&gt;包访问权限&lt;/h2&gt;&lt;p&gt;类似C++中的friendly，不过还是有人吐槽，包访问权限就是个鸡肋的存在。主要有几个要点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于其它包类，该成员为private；&lt;/li&gt;
+&lt;li&gt;继承者与被继承者都处于同一个包才能访问包访问权限成员；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;接口与抽象类&quot;&gt;&lt;a href=&quot;#接口与抽象类&quot; class=&quot;headerlink&quot; title=&quot;接口与抽象类&quot;&gt;&lt;/a&gt;接口与抽象类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;抽象类的修饰符可以为public或abstract&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 以下合法，public和abstract都可以&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;InterfaceTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;内部接口修饰符还可以protected,private&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;TT&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;KL&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;teset&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接口可以继承接口，不可以继承类&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 接口可以继承接口，不可以继承类&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CallableStatement&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PreparedStatement&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;接口的成员特点：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Inteface1&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    String name = &lt;span class=&quot;string&quot;&gt;&quot;enjoyhot&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Enjoyhot&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Inteface1&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Override&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// enjoyhot&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(Inteface1.name);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;成员变量: 只能是常量。默认自动添加(也只能是)修饰符&lt;br&gt;&lt;strong&gt;public static final&lt;/strong&gt;&lt;br&gt;成员方法: 只能是抽象方法。默认自动添加(也只能是)修饰符&lt;br&gt;&lt;strong&gt;public abstract&lt;/strong&gt;&lt;br&gt;内部类：自动地(也只能是)修饰符&lt;br&gt;&lt;strong&gt;public static&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;内部类&quot;&gt;&lt;a href=&quot;#内部类&quot; class=&quot;headerlink&quot; title=&quot;内部类&quot;&gt;&lt;/a&gt;内部类&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;可声明为public，然后在外部调用：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;父.子 test = 父.new 子();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;内部类操作可直接引用外部类域(包括private),内部类可以直接访问外部类属性，包括private修饰的属性，可通过类似MyOuterClass.this的操作来获得外部类的引用；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;内部类是一种编译器现象，JVM毫不知情；值得注意的是，当内部类调用外部类的私有域时候，编译器将产生一个static方法，该方法具有包访问权限，因此就提供给黑客一个修改私有域方法的切入点:-D；&lt;/li&gt;
+&lt;li&gt;在内部类不需要访问外部类对象时，应使用静态内部类，这样该内部类就不能随意访问外部非static域，达到安全的目的，否则如上点，自动转为static方法；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;局部类&quot;&gt;&lt;a href=&quot;#局部类&quot; class=&quot;headerlink&quot; title=&quot;局部类&quot;&gt;&lt;/a&gt;局部类&lt;/h2&gt;&lt;h3 id=&quot;例子-1&quot;&gt;&lt;a href=&quot;#例子-1&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LocalClass&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AA&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//块内局部类&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LocalClass&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AA&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//构造器内局部类&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;localClass&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AA&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;span class=&quot;comment&quot;&gt;//方法内局部类&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//编译后，形成诸如：外部类名称+$+同名顺序+局部类名称&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//LocalClass$1AA.class  LocalClass$2AA.class  LocalClass$3AA.class  LocalClass.class&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;特点&quot;&gt;&lt;a href=&quot;#特点&quot; class=&quot;headerlink&quot; title=&quot;特点&quot;&gt;&lt;/a&gt;特点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;局部类的修饰符一定是包权限；&lt;/li&gt;
+&lt;li&gt;此时不能访问外部类域，访问外部调用的参数需要声明为final，编译后该final局部变量为该内部类的final实值域；&lt;ul&gt;
+&lt;li&gt;原因：假如只是外部传递过来的普通变量，调用外部方法后，这个变量将因返回而释放内存消失，这时就会出现内部类引用非法。而用final修饰后，编译器会在内部类中生成一个外部变量的拷贝。&lt;/li&gt;
+&lt;li&gt;总结而言，封闭的作用域引用了外部变量必须定义为final，在做spark的MapReduce操作时经常会遇到。网上一个应用例子如图所示：&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;自动拆箱装箱&quot;&gt;&lt;a href=&quot;#自动拆箱装箱&quot; class=&quot;headerlink&quot; title=&quot;自动拆箱装箱&quot;&gt;&lt;/a&gt;自动拆箱装箱&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;自动装箱和拆箱从Java1.5开始引入，将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;byte&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;short&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;char&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;int&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;long&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;float&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;double&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;boolean&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Byte&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Short&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Character&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Integer&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Long&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Float&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Double&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;Boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;举例说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Integer i01=&lt;span class=&quot;number&quot;&gt;59&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i02=&lt;span class=&quot;number&quot;&gt;59&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Integer i03=Integer.valueOf(&lt;span class=&quot;number&quot;&gt;59&lt;/span&gt;);&lt;span class=&quot;comment&quot;&gt;// 地址比较，1字节内才使用常量池，所以范围(-128~127)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Integer i04=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Integer(&lt;span class=&quot;number&quot;&gt;59&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// 自动拆装箱，对i03不拆装箱&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;i01和i02相比将自动拆装箱，数值相比; // 那究竟是拆还是装【疑问】&lt;/li&gt;
+&lt;li&gt;i01和i03比的是地址（在编译前定义的数值一般会从常量获取，除了valueOf操作需要值的范围-128~127（1字节）才是从常量中获取，为什么【疑问】），i01和i03都是编译之前定义的，所以是常量池中的同一个对象;&lt;/li&gt;
+&lt;li&gt;i03和i04比较的是地址，因为i04是编译之后又new出来的对象，所以它的地址必然不在常量池中，所以i03==i04的结果为false。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Iterator-vs-Iterable&quot;&gt;&lt;a href=&quot;#Iterator-vs-Iterable&quot; class=&quot;headerlink&quot; title=&quot;Iterator vs Iterable&quot;&gt;&lt;/a&gt;Iterator vs Iterable&lt;/h2&gt;&lt;p&gt;Iterable：&lt;a href=&quot;https://github.com/enjoyhot/jdk-online/blob/master/1.8/java/lang/Iterable.java&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdk1.8源码&lt;/a&gt;&lt;br&gt;Iterator：&lt;a href=&quot;https://github.com/enjoyhot/jdk-online/blob/master/1.8/java/util/Iterator.java&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;jdk1.8源码&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;二者都是接口，foreach操作可用于任何实现Iterable接口的类对象，集合Collection、List、Set都是Iterable的实现类，所以他们及其他们的子类都可以使用for循环增强进行迭代；&lt;/li&gt;
+&lt;li&gt;通过源码可看到，Iterable调用Iterator()方法将返回一个Iterator对象。而实现了Iterator接口的对象在不同方法间进行传递的时候，由于当前迭代位置不可知，所以next()的结果也不可知。除非再为Iterator接口添加一个reset()方法，用来重置当前迭代位置。&lt;/li&gt;
+&lt;li&gt;实现Iterable接口的对象则不然：&lt;br&gt;func(A){&lt;br&gt;A.Iterator()&lt;br&gt;}&lt;br&gt;每次调用都返回一个从头开始的迭代器，各个迭代器之间互不影响。&lt;/li&gt;
+&lt;li&gt;在jdk1.8中可看到，Iterable多了两个default具体方法&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * 为了Lambda操作&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; * items.forEach(k -&amp;gt; System.out.println(&quot;Item:&quot;+k));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; */&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(Consumer&amp;lt;? &lt;span class=&quot;keyword&quot;&gt;super&lt;/span&gt; T&amp;gt; action)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    Objects.requireNonNull(action);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (T t : &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        action.accept(t);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Spliterator(splitable iterator可分割迭代器)接口是Java为了并行遍历数据源中的元素而设计的迭代器&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt; Spliterator&amp;lt;T&amp;gt; &lt;span class=&quot;title&quot;&gt;spliterator&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; Spliterators.spliteratorUnknownSize(iterator(), &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Object&quot;&gt;&lt;a href=&quot;#Object&quot; class=&quot;headerlink&quot; title=&quot;Object&quot;&gt;&lt;/a&gt;Object&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;JDK7中所有方法&lt;br&gt;clone,equals,finalize,getClass,notify,notifyAll,hashCode,toString,wait&lt;/li&gt;
+&lt;li&gt;基本类型不是扩展于Object类，而数组类型[]是;&lt;/li&gt;
+&lt;li&gt;Objects.equals(a,b)可以防止一方为null的情况，使用a.equals(b)前提是&lt;strong&gt;a!=null&lt;/strong&gt;;&lt;/li&gt;
+&lt;li&gt;一般而言，继承Object重写equals需重写hashCode()方法，这是一种常规协定；（参考Java核心技术卷I第9版, 5.2.3）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;IntHolder&quot;&gt;&lt;a href=&quot;#IntHolder&quot; class=&quot;headerlink&quot; title=&quot;IntHolder&quot;&gt;&lt;/a&gt;IntHolder&lt;/h2&gt;&lt;p&gt;Integer与int一样，在方法参数中属于按值传递，而Integer对象不可变，因此包装器内容不会变。假如想编写一个修改数据值参数的方法就需要使用持有者类型。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Test&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        IntHolder a = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IntHolder(&lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        change(a);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(a.value);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;change&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(IntHolder a)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a.value = a.value * &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;字符串常量&quot;&gt;&lt;a href=&quot;#字符串常量&quot; class=&quot;headerlink&quot; title=&quot;字符串常量&quot;&gt;&lt;/a&gt;字符串常量&lt;/h2&gt;&lt;h3 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h3&gt;&lt;p&gt;对Java中的一个变量引用一个字符串时，可能创建对象：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果”ABC”这个字符串在java String池里不存在，会在java String池创建这个一个String对象；&lt;/li&gt;
+&lt;li&gt;如果存在，变量直接引用这个String池里的对象，因为String是final的，可以共用。&lt;/li&gt;
+&lt;li&gt;举个说明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;String a = &lt;span class=&quot;string&quot;&gt;&quot;ABC&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String b = &lt;span class=&quot;string&quot;&gt;&quot;AB&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String c = b+&lt;span class=&quot;string&quot;&gt;&quot;C&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String d = &lt;span class=&quot;string&quot;&gt;&quot;A&quot;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&quot;BC&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String e = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;ABC&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(a==c); &lt;span class=&quot;comment&quot;&gt;// false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(a==d); &lt;span class=&quot;comment&quot;&gt;// true&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(e==d); &lt;span class=&quot;comment&quot;&gt;// false&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;a和b都是字符串常量，所以在编译期就被确定了，c中有个b是引用不是字符串常量所以不会在编译期确定，因此前者false后者true;&lt;/li&gt;
+&lt;li&gt;e会在java heap先创建一个String对象，如果”ABC”这个字符串在java String池里不存在，则在String池中再新建一个【疑问】&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;String-intern&quot;&gt;&lt;a href=&quot;#String-intern&quot; class=&quot;headerlink&quot; title=&quot;String.intern()&quot;&gt;&lt;/a&gt;String.intern()&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;String.intern()方法是native方法，用来检测在String pool是否已经有这个String存在,java1.7介绍道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;　　When the intern method is invoked, if the pool already contains a string equal to this String object as determined by the equals(Object) method, then the string from the pool is returned. Otherwise, this String object is added to the pool and a reference to this String object is returned.&lt;br&gt;　　It follows that for any two strings s and t, s.intern() == t.intern() is true if and only if s.equals(t) is true.&lt;br&gt;　　All literal strings and string-valued constant expressions are interned. String literals are defined in section 3.10.5 of the The Java™ Language Specification.&lt;br&gt;&lt;strong&gt;Returns:&lt;/strong&gt;&lt;br&gt;　　a string that has the same contents as this string, but is guaranteed to be from a pool of unique strings.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考美团技术团队一篇文章&lt;br&gt;&lt;a href=&quot;http://tech.meituan.com/in_depth_understanding_string_intern.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://tech.meituan.com/in_depth_understanding_string_intern.html&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;JAVA 使用 jni 调用c++实现的StringTable的intern方法,StringTable的intern方法跟Java中的HashMap的实现是差不多的, 只是不能自动扩容。默认大小是1009，如果放进String Pool的String非常多，就会造成Hash冲突严重，从而导致链表会很长，而链表长了后直接会造成的影响就是当调用String.intern时性能会大幅下降，&lt;strong&gt;可参考本文HashMap介绍&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;intern()的实现&lt;br&gt;&lt;strong&gt;&lt;em&gt;JDK1.6和JDK1.7实现不同，为了避免干扰，我们主要关心1.7以后的&lt;/em&gt;&lt;/strong&gt;。jdk7的版本中，字符串常量池从Perm区移到正常的Java Heap区域了，jdk8直接取消了Perm区，详情参考&lt;strong&gt;Java高级篇&lt;/strong&gt;；下面通过例子说明一下。&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;String s = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;//生成了2个对象，常量池中的“1” 和JAVA Heap中的字符串对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s.intern(); &lt;span class=&quot;comment&quot;&gt;//s对象去常量池中寻找后发现 “1” 已经在常量池里了&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String s2 = &lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//生成一个s2的引用指向常量池中的“1”对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(s == s2); &lt;span class=&quot;comment&quot;&gt;// false,Object和引用相比，不相等&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//生成字符串常量池中的“1”和JAVA Heap中的s3引用指向的对象StringObj(其实还有两个匿名对象，不过已经失去引用)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//此时s3引用对象内容是&quot;11&quot;，但此时常量池中是没有 “11”对象的。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String s3 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;) + &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(&lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s3.intern(); &lt;span class=&quot;comment&quot;&gt;//将s3中的“11”字符串放入String常量池中,现在s3间接指向了“11”&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 下图应该有误，经过intern之后，jdk7能使s3直接指向常量池，不经过StringObj&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String s4 = &lt;span class=&quot;string&quot;&gt;&quot;11&quot;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//创建的时候发现已经有这个对象了&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(s3 == s4); &lt;span class=&quot;comment&quot;&gt;//true&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160823155446893&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;final的常见使用场景&quot;&gt;&lt;a href=&quot;#final的常见使用场景&quot; class=&quot;headerlink&quot; title=&quot;final的常见使用场景&quot;&gt;&lt;/a&gt;final的常见使用场景&lt;/h2&gt;&lt;h3 id=&quot;final-class&quot;&gt;&lt;a href=&quot;#final-class&quot; class=&quot;headerlink&quot; title=&quot;final class&quot;&gt;&lt;/a&gt;final class&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;阻止被继承，其中方法将自动转为final，域不会自动转；&lt;/li&gt;
+&lt;li&gt;不能修饰接口，抽象类，原因显而易见，二者都是需要“继承”来发挥作用；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;final-method&quot;&gt;&lt;a href=&quot;#final-method&quot; class=&quot;headerlink&quot; title=&quot;final method&quot;&gt;&lt;/a&gt;final method&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;阻止继承之后的重写，不允许子类插手一些重要的处理，因此该方法就“失去虚拟特征”，意义：&lt;blockquote&gt;
+&lt;p&gt;没有动态绑定 ——&amp;gt; 编译器优化为内联函数 ——&amp;gt; 例如(e.getName转为e.name)&lt;br&gt;拓展：虚拟机中的即时编译器处理能力不断增强，如果方法很简短，被频繁调用且没有真正地被覆盖(如经常调用父类的方法)，则即时编译器就会将这个方法进行内联处理。而如果子类这里被JVM加载进来，覆盖了内联方法，优化器将取消内联，这个过程很慢，但很少发生，所以即时编译器还是很高效的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;final-variable&quot;&gt;&lt;a href=&quot;#final-variable&quot; class=&quot;headerlink&quot; title=&quot;final variable&quot;&gt;&lt;/a&gt;final variable&lt;/h3&gt;&lt;p&gt;final变量的值只能在构造函数中赋值或初始化时定好。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String test1 = &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// error&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;test1 = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; String test2;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// accepted&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;test2 = &lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Java中的编码&quot;&gt;&lt;a href=&quot;#Java中的编码&quot; class=&quot;headerlink&quot; title=&quot;Java中的编码&quot;&gt;&lt;/a&gt;Java中的编码&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Java一律采用Unicode编码方式，每个字符无论中文还是英文字符都占用2个字节；&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; han = &lt;span class=&quot;string&quot;&gt;&#39;永&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.format(&lt;span class=&quot;string&quot;&gt;&quot;%x&quot;&lt;/span&gt;,(&lt;span class=&quot;keyword&quot;&gt;short&lt;/span&gt;)han);&lt;span class=&quot;comment&quot;&gt;//对第二个参数（短整型）格式化为十六进制输出，0x开头&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//输出6c38&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;char&lt;/span&gt; han1 = &lt;span class=&quot;number&quot;&gt;0x6c38&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;System.out.println(han1);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//输出永&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;GBK–&amp;gt;UTF-8&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;dst = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; string (src,&lt;span class=&quot;string&quot;&gt;&quot;GBK&quot;&lt;/span&gt;).getbytes(&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// or&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;dst = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; String(src.getBytes(&lt;span class=&quot;string&quot;&gt;&quot;GBK&quot;&lt;/span&gt;),&lt;span class=&quot;string&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;面向对象的五大基本原则&quot;&gt;&lt;a href=&quot;#面向对象的五大基本原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象的五大基本原则&quot;&gt;&lt;/a&gt;面向对象的五大基本原则&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;单一职责原则（SRP）&lt;/li&gt;
+&lt;li&gt;开放封闭原则（OCP）&lt;/li&gt;
+&lt;li&gt;里氏替换原则（LSP）&lt;/li&gt;
+&lt;li&gt;依赖倒置原则（DIP）&lt;/li&gt;
+&lt;li&gt;接口隔离原则（ISP）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;基本数据类型的转换问题&quot;&gt;&lt;a href=&quot;#基本数据类型的转换问题&quot; class=&quot;headerlink&quot; title=&quot;基本数据类型的转换问题&quot;&gt;&lt;/a&gt;基本数据类型的转换问题&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;例1&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;short&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;128&lt;/span&gt;；&lt;span class=&quot;comment&quot;&gt;// 00000000 10000000&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt; b = (&lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt;) a; &lt;span class=&quot;comment&quot;&gt;// b = -128(后8位)&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;例2&lt;br&gt;10原码： 0000000000000000,0000000000001010；&lt;br&gt;-10补码：1111111111111111,1111111111110110（取反再+1）&lt;br&gt;因此 ~10 =&lt;br&gt;1111111111111111,1111111111110101，减1再取反后31位得-11&lt;br&gt;所以 ~10 = -11&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;例3&lt;br&gt;==号，低精度自动转为高精度比较，如long与float，会自动转为float，+-*/亦然。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;低———————————————&amp;gt;高&lt;br&gt;byte,short,char-&amp;gt; int -&amp;gt; long -&amp;gt; float -&amp;gt; double&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;switch&lt;br&gt;参数是只能放int类型，但是放byte，short，char类型的也可以，是因为byte，short，shar可以自动提升（自动类型转换）为int,也不能boolean类型,任何类型不能转换为boolean类型型，强转也不行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;反射&quot;&gt;&lt;a href=&quot;#反射&quot; class=&quot;headerlink&quot; title=&quot;反射&quot;&gt;&lt;/a&gt;反射&lt;/h2&gt;&lt;h3 id=&quot;类型类&quot;&gt;&lt;a href=&quot;#类型类&quot; class=&quot;headerlink&quot; title=&quot;类型类&quot;&gt;&lt;/a&gt;类型类&lt;/h3&gt;&lt;p&gt;Object类中包含一个方法名叫getClass，利用这个方法就可以获得一个实例的类型类。类型类指的是代表一个类型的类，因为一切皆是对象，类型也不例外，在Java使用类型类来表示一个类型。所有的类型类都是Class类的实例。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;A a = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; A();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// print equal&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(a.getClass()==A.class)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;equal&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;unequal&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;获取对象方法&quot;&gt;&lt;a href=&quot;#获取对象方法&quot; class=&quot;headerlink&quot; title=&quot;获取对象方法&quot;&gt;&lt;/a&gt;获取对象方法&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;public Method[] getDeclaredMethods()&lt;br&gt;返回类或接口声明的所有方法，包括public, protected, default (package) 访问和private方法的Method对象，但不包括继承的方法。当然也包括它所实现接口的方法。&lt;/li&gt;
+&lt;li&gt;public Method[] getMethods()&lt;br&gt;返回某个类的所有public方法，包括其继承类的公用方法，当然也包括它所实现接口的方法。&lt;/li&gt;
+&lt;li&gt;对于private方法的反射调用，会抛出IllegalAccessException，因此访问的话，需绕过安全管理器的控制：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; java.lang.reflect.Method;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ReflectPrivate&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;throws&lt;/span&gt; Exception &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        PrivateClass p = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; PrivateClass();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Class&amp;lt;?&amp;gt; classType = p.getClass();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 获取Method对象&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        Method method = classType.getDeclaredMethod(&lt;span class=&quot;string&quot;&gt;&quot;sayHello&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Class[] &amp;#123; String.class &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        method.setAccessible(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        String str = (String) method.invoke(p, &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Object[] &amp;#123; &lt;span class=&quot;string&quot;&gt;&quot;enjoyhot&quot;&lt;/span&gt; &amp;#125;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(str);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;PrivateClass&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;sayHello&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String name)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Hello: &quot;&lt;/span&gt; + name;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;native方法&quot;&gt;&lt;a href=&quot;#native方法&quot; class=&quot;headerlink&quot; title=&quot;native方法&quot;&gt;&lt;/a&gt;native方法&lt;/h2&gt;&lt;p&gt;native方法是由另外一种语言（如c/c++，FORTRAN，汇编）实现的本地方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;public final static native int w();  // 合法&lt;/li&gt;
+&lt;li&gt;abstract方法不能用native来修饰，因为native暗示这些方法是有实现体的，只不过这些实现体是非java的，但是abstract却显然的指明这些方法无实现体。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;泛型擦除&quot;&gt;&lt;a href=&quot;#泛型擦除&quot; class=&quot;headerlink&quot; title=&quot;泛型擦除&quot;&gt;&lt;/a&gt;泛型擦除&lt;/h2&gt;&lt;p&gt;泛型可以说是Java中最常用的语法糖之一，因此虚拟机不支持这些语法，在编译时转化为Object，继承的时候利用桥方法动态调用，据此应考虑泛型在开发过程中的约束和局限性。一个较典型的局限性和约束是，java不支持泛型数组：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// compile error&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;String&amp;gt;[] ls = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList&amp;lt;String&amp;gt;[&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// without compile error&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;String&amp;gt;[] ls = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList[&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;?&amp;gt;[] ls = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList[&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;第一种编译器检测出来直接报错，第二种逃过编译器的检测，设计者必须心理有数。&lt;br&gt;不支持泛型数组的原因是，ls对象将编译为Object[]，再对该变量进行各种赋值操作都将逃过编译器的捕捉，假如编译器不小心指定错了类型，例如：&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;List&amp;lt;Integer&amp;gt; ——&amp;gt; List&amp;lt;String&amp;gt;[]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;在运行时才会报ClassCastException。&lt;/p&gt;
+&lt;h2 id=&quot;异常&quot;&gt;&lt;a href=&quot;#异常&quot; class=&quot;headerlink&quot; title=&quot;异常&quot;&gt;&lt;/a&gt;异常&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;throwable(接口)&lt;ul&gt;
+&lt;li&gt;Error (unchecked)&lt;/li&gt;
+&lt;li&gt;Exception&lt;ul&gt;
+&lt;li&gt;RuntimeException (unchecked)&lt;/li&gt;
+&lt;li&gt;IOException (checked)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一般而言，对于知道怎么处理的异常需要catch(A|B e),不知道的继续向上传递，通过在函数头尾部显式throws A,B；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;断言&quot;&gt;&lt;a href=&quot;#断言&quot; class=&quot;headerlink&quot; title=&quot;断言&quot;&gt;&lt;/a&gt;断言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;assert一般用于开发/测试中，当代码发布时，这些插入的检测语句将自动地移走，即类加载器将跳过断言代码；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;补充&quot;&gt;&lt;a href=&quot;#补充&quot; class=&quot;headerlink&quot; title=&quot;补充&quot;&gt;&lt;/a&gt;补充&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;自加运算&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 0 + 2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; s=(i++)+(++i);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;关于finally&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; k = f_test();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(k);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;f_test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;It is in final chunk.&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 输出：&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// It is in final chunk.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 如果将 return a; 注释掉，将输出&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// It is in final chunk.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;数据结构章&quot;&gt;&lt;a href=&quot;#数据结构章&quot; class=&quot;headerlink&quot; title=&quot;数据结构章&quot;&gt;&lt;/a&gt;数据结构章&lt;/h1&gt;&lt;h2 id=&quot;ArrayList&quot;&gt;&lt;a href=&quot;#ArrayList&quot; class=&quot;headerlink&quot; title=&quot;ArrayList&quot;&gt;&lt;/a&gt;ArrayList&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;For jdk1.7 &amp;amp; 1.8&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;继承关系&quot;&gt;&lt;a href=&quot;#继承关系&quot; class=&quot;headerlink&quot; title=&quot;继承关系&quot;&gt;&lt;/a&gt;继承关系&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ArrayList&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;AbstractList&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;List&lt;/span&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;E&lt;/span&gt;&amp;gt;, &lt;span class=&quot;title&quot;&gt;RandomAccess&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;Cloneable&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;Serializable&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;几种构造函数&quot;&gt;&lt;a href=&quot;#几种构造函数&quot; class=&quot;headerlink&quot; title=&quot;几种构造函数&quot;&gt;&lt;/a&gt;几种构造函数&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;ArrayList()&lt;/strong&gt;&lt;br&gt;Constructs an empty list with an initial capacity of ten.&lt;br&gt;&lt;strong&gt;ArrayList(Collection&amp;lt;? extends E&amp;gt; c)&lt;/strong&gt;&lt;br&gt;Constructs a list containing the elements of the specified collection, in the order they are returned by the collection’s iterator.&lt;br&gt;&lt;strong&gt;ArrayList(int initialCapacity)&lt;/strong&gt;&lt;br&gt;Constructs an empty list with the specified initial capacity.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;用法要点&quot;&gt;&lt;a href=&quot;#用法要点&quot; class=&quot;headerlink&quot; title=&quot;用法要点&quot;&gt;&lt;/a&gt;用法要点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ArrayList的底层是由一个Object[]数组构成的，Object[]数组，默认的长度是10 。当调用size时，计算的是逻辑长度，即“空元素不被计算”。&lt;/li&gt;
+&lt;li&gt;java自动增加ArrayList大小的思路是:&lt;ul&gt;
+&lt;li&gt;向ArrayList添加对象时，原对象数目加1;&lt;/li&gt;
+&lt;li&gt;如果大于原底层数组长度，则以适当长度(50%+1)新建一个原数组的拷贝，并修改原数组，指向这个新建数组;&lt;/li&gt;
+&lt;li&gt;原数组自动抛弃（java垃圾回收机制会自动回收）;&lt;/li&gt;
+&lt;li&gt;size则在向数组添加对象后，自增1；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ArrayList扩容通过ensureCapacity判断后可扩容50%+1，Vector是默认扩展1倍。&lt;/li&gt;
+&lt;li&gt;ArrayList()构造一个空列表，在添加第一个元素时，会自动扩展。而对于new ArrayList(20)则没有进行扩容行为;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.importnew.com/9928.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;importnew：关于ArrayList的5道面试题&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;同步方法&quot;&gt;&lt;a href=&quot;#同步方法&quot; class=&quot;headerlink&quot; title=&quot;同步方法&quot;&gt;&lt;/a&gt;同步方法&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;List list = Collections.synchronizedList(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ArrayList(...));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;CopyOnWriteArrayList&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;CopyOnWriteArrayList&quot;&gt;&lt;a href=&quot;#CopyOnWriteArrayList&quot; class=&quot;headerlink&quot; title=&quot;CopyOnWriteArrayList&quot;&gt;&lt;/a&gt;CopyOnWriteArrayList&lt;/h2&gt;&lt;p&gt;顾名思义，写时复制，写数组时，先复制一份出来，然后向新的容器里添加元素，可以做到安全地进行并发读，因为写的时候有加锁（源码）并且不改变旧内存，通过读写分离实现安全的优点，适合使用在读操作远远大于写操作的场景（与volatile类似），如缓存。&lt;/p&gt;
+&lt;h3 id=&quot;缺点：&quot;&gt;&lt;a href=&quot;#缺点：&quot; class=&quot;headerlink&quot; title=&quot;缺点：&quot;&gt;&lt;/a&gt;缺点：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;内存占用问题&lt;br&gt;进行写操作时（如add），内存中驻留两个对象内存，可能造成频繁的GC；&lt;/li&gt;
+&lt;li&gt;数据一致性问题&lt;br&gt;只能保证数据的最终一致性，不能保证实时一致性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;HashMap&quot;&gt;&lt;a href=&quot;#HashMap&quot; class=&quot;headerlink&quot; title=&quot;HashMap&quot;&gt;&lt;/a&gt;HashMap&lt;/h2&gt;&lt;h3 id=&quot;结构&quot;&gt;&lt;a href=&quot;#结构&quot; class=&quot;headerlink&quot; title=&quot;结构&quot;&gt;&lt;/a&gt;结构&lt;/h3&gt;&lt;p&gt;　　在jdk1.7中，是数组（单位称为桶）与链表（jdk1.8中改为基于红黑树的实现）的结合体。&lt;br&gt;　　链表的基本元素Entry，内部类有key,value,hash和next四个字段，其中next也是一个Entry类型。&lt;/p&gt;
+&lt;h3 id=&quot;操作&quot;&gt;&lt;a href=&quot;#操作&quot; class=&quot;headerlink&quot; title=&quot;操作&quot;&gt;&lt;/a&gt;操作&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;默认的负载因子大小为0.75，当一个map填满了75%的bucket时候，将会创建原来HashMap大小的2倍的bucket数组，来重新调整map的大小，并将原来的对象放入新的bucket数组中。这个过程叫作rehashing，因为它调用hash方法找到新的bucket位置。拓展，为什么HashMap初始化的大小需要2的指数次幂：&lt;a href=&quot;http://stackoverflow.com/questions/8352378/why-does-hashmap-require-that-the-initial-capacity-be-a-power-of-two&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考&lt;/a&gt;&lt;blockquote&gt;
+&lt;p&gt;再查找哈希表的内在位置时[0,length-1]有个如下的操作，从而确定h所在的位置（笔者认为觉得这是寻找桶时候的类似开放定址法的实现），这样相比不是2^n-1的全111……求余而言，需要自己去实现求余，会比较高效。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;indexFor&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; h, &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; length)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; h &amp;amp; (length-&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;HashMap基于hashing原理，我们通过put()和get()方法储存和获取对象。&lt;ul&gt;
+&lt;li&gt;当我们将键值对传递给put()方法时，它调用键对象的hashCode()方法来计算hashcode，然后找到bucket位置来储存值对象。&lt;/li&gt;
+&lt;li&gt;当获取对象时，通过键对象的equals()方法找到正确的键值对，然后返回值对象。HashMap使用链表来解决碰撞问题，当发生碰撞了，对象将会储存在链表的下一个节点中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HashMap-vs-HashTable&quot;&gt;&lt;a href=&quot;#HashMap-vs-HashTable&quot; class=&quot;headerlink&quot; title=&quot;HashMap vs HashTable&quot;&gt;&lt;/a&gt;HashMap vs HashTable&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Hashtable是线程安全的，通过synchronized保证线程安全，并且是安全失败的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Java快速失败与安全失败迭代器 :&lt;br&gt;java迭代器提供了遍历集合对象的功能，集合返回的迭代器有快速失败型的也有安全失败型的，快速失败迭代器在迭代时如果集合类被修改，立即抛出ConcurrentModificationException异常，而安全失败迭代器不会抛出异常，因为它是在集合类的克隆对象上操作的。ArrayList，Vector，HashMap等集合返回的迭代器都是快速失败类型的。而对于Hashtable而言：&lt;blockquote&gt;
+&lt;p&gt;the iterator in Hashtable is fail-fast but the enumerator is not fail-safe. 参考：&lt;a href=&quot;http://stackoverflow.com/questions/16205443/concurrency-in-hashtables-and-fail-safe-behavior&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;Hashtable、HashMap都使用了 Iterator。而由于历史原因，Hashtable还使用了Enumeration的方式 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;哈希值的使用不同，HashTable直接使用对象的hashCode。而HashMap重新计算hash值，而且用与代替求模，如上&lt;strong&gt;操作&lt;/strong&gt;中代码所示。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap数组table的长度length大小必须为2的n次方，而size默认大小是16，size和扩容后一定是原来2的指数，默认是2倍。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HashMap可以接受null键值和值，而Hashtable则不能；&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;HashMap-vs-ConcurrentHashMap&quot;&gt;&lt;a href=&quot;#HashMap-vs-ConcurrentHashMap&quot; class=&quot;headerlink&quot; title=&quot;HashMap vs ConcurrentHashMap&quot;&gt;&lt;/a&gt;HashMap vs ConcurrentHashMap&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;ConcurrentHashMap允许多个修改操作并发进行，是线程安全的；&lt;/li&gt;
+&lt;li&gt;HashMap在每个链表节点中储存键值对对象（Entry对象）。链表中next不是final，所以支持往后插入。然而，HashMap在多线程情况下rehash可能出现环形链表。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://my.oschina.net/xianggao/blog/393990&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HashMap多线程并发问题分析&lt;/a&gt;&lt;br&gt;参考：&lt;a href=&quot;http://www.importnew.com/7099.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;关于HashMap的经典面试题&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;ConcurrentHashMap&quot;&gt;&lt;a href=&quot;#ConcurrentHashMap&quot; class=&quot;headerlink&quot; title=&quot;ConcurrentHashMap&quot;&gt;&lt;/a&gt;ConcurrentHashMap&lt;/h2&gt;&lt;h3 id=&quot;段数量&quot;&gt;&lt;a href=&quot;#段数量&quot; class=&quot;headerlink&quot; title=&quot;段数量&quot;&gt;&lt;/a&gt;段数量&lt;/h3&gt;&lt;p&gt;默认有16个，最大个数为1 &amp;lt;&amp;lt; 16= 65536&lt;/p&gt;
+&lt;h3 id=&quot;实现线程安全&quot;&gt;&lt;a href=&quot;#实现线程安全&quot; class=&quot;headerlink&quot; title=&quot;实现线程安全&quot;&gt;&lt;/a&gt;实现线程安全&lt;/h3&gt;&lt;p&gt;HashTable是一个线程安全的类，它使用synchronized来锁住整张Hash表来实现线程安全，即每次锁住整张表让线程独占，线程竞争激烈的情况下HashTable的效率非常低下。而对于ConcurrentHashMap：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ConcurrentHashMap允许多个修改操作并发进行，其关键在于使用了&lt;strong&gt;锁分离技术&lt;/strong&gt;。它使用了多个锁来控制对hash表的不同部分进行的修改。&lt;/li&gt;
+&lt;li&gt;ConcurrentHashMap内部使用段(Segment)来表示这些不同的部分，每个段其实就是一个小的Hashtable，它们有自己的锁。只要多个修改操作发生在不同的段上，它们就可以并发进行。只有对全局需要改变时锁定的是所有的segment，如size()。&lt;/li&gt;
+&lt;li&gt;对于一个key，需要经过三次hash操作（哪个段，哪个桶，链表哪一位），才能最终定位这个元素的位置。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;基本实现图如下【jdk1.7】&lt;/strong&gt;&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;https://www.ibm.com/developerworks/cn/java/java-lo-concurrenthashmap/image005.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在散列时如果产生“碰撞”，将采用“分离链接法”来处理“碰撞”：把“碰撞”的 HashEntry 对象链接成一个链表。由于 HashEntry 的 next 域为 final 型，所以新节点只能在链表的表头处插入。&lt;br&gt;参考：&lt;a href=&quot;http://www.ibm.com/developerworks/cn/java/java-lo-concurrenthashmap/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ConcurrentHashMap高并发性的实现机制&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ConcurrentHashMap1.6使用的是Segement（继承自ReentrantLock）分段锁的技术来保证同步的，使用synchronized关键字保证线程安全的是HashTable。1.8之后ConcurrentHashMap改变了实现方式，将原来的Segment用单向链表来替代，put的时候对目标链表的头节点加锁，而这时用的就是synchronized。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ConcurrentHashMap1.6使用的是Segement（继承自ReentrantLock）分段锁的技术来保证同步的，使用synchronized关键字保证线程安全的是HashTable。1.8之后ConcurrentHashMap改变了实现方式，将原来的Segment(table)用单向链表来替代，put的时候对目标链表的头节点加锁，而这时用的也是synchronized。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;效率：System.arraycopy &amp;gt; System.copyOf(本质上新建了数组，并调用了前者) &amp;gt; for循环&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;集合框架篇&quot;&gt;&lt;a href=&quot;#集合框架篇&quot; class=&quot;headerlink&quot; title=&quot;集合框架篇&quot;&gt;&lt;/a&gt;集合框架篇&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;安全的集合：&lt;/strong&gt; ArrayList，Vector，HashMap等集合返回的迭代器都是快速失败类型的。通过抛出ConCurrenceModificationException的异常保证安全。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://images2015.cnblogs.com/blog/916361/201603/916361-20160322135512683-168468369.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;常用对象分类&quot;&gt;&lt;a href=&quot;#常用对象分类&quot; class=&quot;headerlink&quot; title=&quot;常用对象分类&quot;&gt;&lt;/a&gt;常用对象分类&lt;/h2&gt;&lt;h3 id=&quot;Collection&quot;&gt;&lt;a href=&quot;#Collection&quot; class=&quot;headerlink&quot; title=&quot;Collection&quot;&gt;&lt;/a&gt;Collection&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;List&lt;ul&gt;
+&lt;li&gt;LinkedList&lt;br&gt;  内在为链表实现，插入，删除效率高于ArrayList&lt;/li&gt;
+&lt;li&gt;ArrayList&lt;br&gt;  底层为数组实现，每次扩容都需要把整个数据复制&lt;/li&gt;
+&lt;li&gt;Vector (安全，但已经很少使用了)&lt;ul&gt;
+&lt;li&gt;Stack (安全)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Set&lt;ul&gt;
+&lt;li&gt;TreeSet&lt;br&gt;  插入时按照红黑树排序，速率相比普通Set会慢一些，时间复杂度为log2N&lt;/li&gt;
+&lt;li&gt;HashSet&lt;br&gt;  set的常用对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Queue&lt;ul&gt;
+&lt;li&gt;PriorityQueue（大数据量求TopK操作）&lt;ul&gt;
+&lt;li&gt;迭代器非按照元素的排列顺序排列，但remove时是按照优先级数最小的元素进行取出，即优先级最高的元素。&lt;/li&gt;
+&lt;li&gt;优先级队列中的元素可以按照任意的顺序插入，却总是按照升序的顺序进行检索。无论何时调用remove方法，总会获得当前优先级队列中的最小元素，但并不是对所有元素都排序。它是采用了堆（一个可以自我调整的二叉树），执行增加删除操作后，可以让最小元素移动到根。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;使用普通同步容器(Vector, Hashtable)的迭代器,也需要外部锁来保证其原子性。因为普通同步容器产生的迭代器是非线程安全的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Map&quot;&gt;&lt;a href=&quot;#Map&quot; class=&quot;headerlink&quot; title=&quot;Map&quot;&gt;&lt;/a&gt;Map&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;HashMap&lt;br&gt;  分离链接法，next不是final,因此往后插入。&lt;/li&gt;
+&lt;li&gt;TreeMap&lt;br&gt;  实现了SortedMap接口，默认保证按照键的升序排列的映射表&lt;/li&gt;
+&lt;li&gt;WeakHashMap&lt;br&gt;  参考&lt;a href=&quot;http://www.cnblogs.com/Skyar/p/5962253.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/Skyar/p/5962253.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Hashtable (安全)&lt;br&gt;  HashTable中hash数组默认大小是11，增加的方式是 old*2+1，保证奇数。分离链接法、开放定址法。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;本系列文章将分为三部分：&quot;&gt;&lt;a href=&quot;#本系列文章将分为三部分：&quot; class=&quot;headerlink&quot; title=&quot;本系列文章将分为三部分：&quot;&gt;&lt;/a&gt;本系列文章将分为三部分：&lt;/h2&gt;&lt;h3 id=&quot;Java基础篇&quot;&gt;&lt;a href=&quot;#Java基础篇&quot; class=&quot;headerlink&quot; title=&quot;Java基础篇&quot;&gt;&lt;/a&gt;Java基础篇&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;语法篇&lt;/li&gt;
+&lt;li&gt;数据结构篇&lt;/li&gt;
+&lt;li&gt;集合框架&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="http://enjoyhot.github.io/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://enjoyhot.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>或明</title>
@@ -1217,35 +1644,6 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     
       <category term="python" scheme="http://enjoyhot.github.io/categories/python/"/>
     
-    
-      <category term="spider" scheme="http://enjoyhot.github.io/tags/spider/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>今天真是窘迫的一天</title>
-    <link href="http://enjoyhot.github.io/2014/12/28/poor-day/"/>
-    <id>http://enjoyhot.github.io/2014/12/28/poor-day/</id>
-    <published>2014-12-28T12:23:50.000Z</published>
-    <updated>2016-07-16T12:17:39.534Z</updated>
-    
-    <content type="html">&lt;p&gt;  今天是一个窘迫的一天，昨天上午去实验室，发现前天跑的爬虫还是没爬完，郁闷，有的爬的数据比它多用几个小时就跑完了，然后又开了一个cmd窗口继续跑另一个爬虫，后来司机，鼠标也动不了，强制关机后不进行硬盘检查（在笔记本经常这样做，省时），不过在台式机还是第一次这么干。今天终于尝到苦头。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  今天依旧跑的是昨天强制关机后的那个程序（注意特指），不过下午才到的实验室，居然比昨天还慢，一半都没有。索性不理它，继续搞，再开窗口，到了四点多的时候，厄运来了，自动关机。自动重启，硬盘检查，不过启动失败直接进入系统修复，失败。想到的是四种方法，系统修复，安全模式，pe系统的修复，重装系统，后来真的只能重装系统了，pe系统修复那步也许做得不太好，不过以防万一，就将c盘中的虚拟机拷到f盘。&lt;/p&gt;
-&lt;p&gt;  也许是我频繁得对硬盘io进行操作，导致D盘受损，开始以为是系统问题，想继续做个系统，边做边上网搜方法，用了一下diskGenius，但最终还是得将d盘格式化，毕竟里面的东西我只放了个Dreamweaver而已，大不了再下一个。&lt;/p&gt;
-&lt;p&gt;  看上去好像都搞定了的样子，其实最重要的事情能不能成功都是还是挺担心的，虽说备份了虚拟机在c盘的东西，不过还是第一次要想这么做。尼玛看来我没有好好调研清楚怎么迁移virtualbox的系统就开始弄，确实有点草率，映射的硬盘我都不记得在哪里，拷过来的东西只有几兆，显然错了。近乎崩溃……工程还没有完全拷过来（这已经够崩溃了）&lt;/p&gt;
-&lt;p&gt;  后来逐渐深入才知道，要重新搭一个环境也是挺久的，django,mongodb以及webvirtmgr附带的东西，数据库记得当时调试的时候是手打出来的假数据，现在不知新建一个空的会不会报错。&lt;/p&gt;
-&lt;p&gt;  明天又是一个挑战的一天，挺浪费时间的，又得搭环境，又得写服务器信息栏目后台，还好前端一直在win7下写的，之前后天边调编写用了接近3天，希望在之前的经验下，能在明天内既搭好环境又一气呵成写好后台，老天保佑，我不想做太多无谓时间牺牲，虽说反驳者觉得可以练练手，写重复的东西你说呢！？&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;  今天是一个窘迫的一天，昨天上午去实验室，发现前天跑的爬虫还是没爬完，郁闷，有的爬的数据比它多用几个小时就跑完了，然后又开了一个cmd窗口继续跑另一个爬虫，后来司机，鼠标也动不了，强制关机后不进行硬盘检查（在笔记本经常这样做，省时），不过在台式机还是第一次这么干。今天终于尝到苦头。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="life" scheme="http://enjoyhot.github.io/categories/life/"/>
-    
-    
-      <category term="实验室" scheme="http://enjoyhot.github.io/tags/%E5%AE%9E%E9%AA%8C%E5%AE%A4/"/>
     
       <category term="spider" scheme="http://enjoyhot.github.io/tags/spider/"/>
     
