@@ -5,19 +5,21 @@
     
     <title>android混淆与反射 | ENJOYHOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="android混淆与反射Android包4.0（好像是4.0）以后混淆更加简单
+    <meta name="description" content="android混淆与反射：Android包4.0以后混淆更加简单
 一、配置1、在project.properties.txt将以下内容注释去掉proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="android混淆与反射">
 <meta property="og:url" content="http://enjoyhot.github.io/2014/11/21/android-reflect/index.html">
 <meta property="og:site_name" content="ENJOYHOT">
-<meta property="og:description" content="android混淆与反射Android包4.0（好像是4.0）以后混淆更加简单
+<meta property="og:description" content="android混淆与反射：Android包4.0以后混淆更加简单
 一、配置1、在project.properties.txt将以下内容注释去掉proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt">
-<meta property="og:updated_time" content="2016-07-16T12:17:39.534Z">
+<meta property="og:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
+<meta property="og:updated_time" content="2017-04-02T09:32:28.676Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android混淆与反射">
-<meta name="twitter:description" content="android混淆与反射Android包4.0（好像是4.0）以后混淆更加简单
+<meta name="twitter:description" content="android混淆与反射：Android包4.0以后混淆更加简单
 一、配置1、在project.properties.txt将以下内容注释去掉proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt">
+<meta name="twitter:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
 <link rel="publisher" href="111736291216286617217">
     
 
@@ -174,11 +176,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                37
+                39
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                28
+                33
                 <span>tags</span>
             </div>
         </div>
@@ -252,13 +254,13 @@ var _hmt = _hmt || [];
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/android/">android</a>
+        <a class="article-category-link" href="/categories/Android/">Android</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/reflect/">reflect</a>
+        <a class="tag-link" href="/tags/Android/">Android</a>, <a class="tag-link" href="/tags/Reflect/">Reflect</a>
     </div>
 
                     </div>
@@ -269,10 +271,10 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>android混淆与反射<br>Android包4.0（好像是4.0）以后混淆更加简单</p>
+            <p>android混淆与反射：Android包4.0以后混淆更加简单</p>
 <h1 id="一、配置"><a href="#一、配置" class="headerlink" title="一、配置"></a>一、配置</h1><h3 id="1、在project-properties-txt将以下内容注释去掉"><a href="#1、在project-properties-txt将以下内容注释去掉" class="headerlink" title="1、在project.properties.txt将以下内容注释去掉"></a>1、在project.properties.txt将以下内容注释去掉</h3><p>proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt</p>
 <a id="more"></a>
-<h3 id="2、在proguard-project中加入取消混淆的声明："><a href="#2、在proguard-project中加入取消混淆的声明：" class="headerlink" title="2、在proguard-project中加入取消混淆的声明："></a>2、在proguard-project中加入取消混淆的声明：</h3><h1 id="需要混淆的jar包所依赖的jar包"><a href="#需要混淆的jar包所依赖的jar包" class="headerlink" title="需要混淆的jar包所依赖的jar包"></a>需要混淆的jar包所依赖的jar包</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-libraryjars 'F:\eclipse\adt-bundle-windows-x86-20130917\sdk\platforms\android-19\android.jar'</div><div class="line"></div><div class="line">-optimizationpasses 5  </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 混淆时不会产生形形色色的类名</div><div class="line"></div><div class="line">-dontusemixedcaseclassnames  </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 指定不去忽略非公共的库类</div><div class="line"></div><div class="line">-dontskipnonpubliclibraryclasses  </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 不预校验</div><div class="line"></div><div class="line">-dontpreverify </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line">-verbose  </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 优化</div><div class="line"></div><div class="line">-optimizations !code/simplification/arithmetic,!field/*,!class/merging/* </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留了继承自Activity、Application、Service、BroadcastReceiver、ContentProvider、BackupAgentHelper、Preference和ILicensingService  的子类。因为这些子类，都是可能被外部调用的。</div><div class="line"></div><div class="line">-keep public class * extends android.app.Activity</div><div class="line"></div><div class="line">-keep public class * extends android.app.Application</div><div class="line"></div><div class="line">-keep public class * extends android.app.Service</div><div class="line"></div><div class="line">-keep public class * extends android.content.BroadcastReceiver</div><div class="line"></div><div class="line">-keep public class * extends android.content.ContentProvider</div><div class="line"></div><div class="line">-keep public class * extends android.app.backup.BackupAgentHelper</div><div class="line"></div><div class="line">-keep public class * extends android.preference.Preference</div><div class="line"></div><div class="line">-keep public class com.android.vending.licensing.ILicensingService  </div><div class="line"></div><div class="line">-keep public class * extends android.support.v4.app.FragmentActivity  </div><div class="line"></div><div class="line">-keep public class * extends android.support.v4.app.Fragmen</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留了含有native方法的类</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;  </div><div class="line"></div><div class="line">    native &lt;methods&gt;;  </div><div class="line"></div><div class="line">&#125;  </div><div class="line"></div><div class="line"># actionbarSherlock 这里要注意了</div><div class="line"></div><div class="line">-keep class android.support.v4.app.** &#123; *; &#125;  </div><div class="line"></div><div class="line">-keep interface android.support.v4.app.** &#123; *; &#125;  </div><div class="line"></div><div class="line">-keep class com.actionbarsherlock.** &#123; *; &#125;  </div><div class="line"></div><div class="line">-keep interface com.actionbarsherlock.** &#123; *; &#125;  </div><div class="line"></div><div class="line">-keepattributes *Annotation*</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留构造函数从xml构造的类（一般为View的子类）</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;  </div><div class="line"></div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);  </div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留构造函数从xml构造的类（一般为View的子类）</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;  </div><div class="line"></div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);  </div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保护指定类的成员，如果此类受到保护他们会保护的更好</div><div class="line"></div><div class="line">-keepclassmembers class * extends android.app.Activity &#123;</div><div class="line"></div><div class="line">    public void *(android.view.View);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留枚举类型中的values和valueOf静态方法</div><div class="line"></div><div class="line">-keepclassmembers enum * &#123;  </div><div class="line"></div><div class="line">    public static **[] values();  </div><div class="line"></div><div class="line">    public static ** valueOf(java.lang.String);  </div><div class="line"></div><div class="line">&#125;  </div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留继承Parcelable的跨进程数据类</div><div class="line"></div><div class="line">-keep class * implements android.os.Parcelable &#123;  </div><div class="line"></div><div class="line">  public static final android.os.Parcelable$Creator *;  </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"> </div><div class="line"></div><div class="line"># 保留反射中用到的类和方法，到时根据具体情况再改</div><div class="line"></div><div class="line"># 反编译测试的时候有效，运行时也与未混淆情况一样</div><div class="line"></div><div class="line">-keepclassmembers class 包名.** &#123;</div><div class="line"></div><div class="line">   public *;</div><div class="line"></div><div class="line">   protected *;</div><div class="line"></div><div class="line">   private *;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2、在proguard-project中加入取消混淆的声明："><a href="#2、在proguard-project中加入取消混淆的声明：" class="headerlink" title="2、在proguard-project中加入取消混淆的声明："></a>2、在proguard-project中加入取消混淆的声明：</h3><h1 id="需要混淆的jar包所依赖的jar包"><a href="#需要混淆的jar包所依赖的jar包" class="headerlink" title="需要混淆的jar包所依赖的jar包"></a>需要混淆的jar包所依赖的jar包</h1><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-libraryjars 'F:\eclipse\adt-bundle-windows-x86-20130917\sdk\platforms\android-19\android.jar'</div><div class="line"></div><div class="line">-optimizationpasses 5</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 混淆时不会产生形形色色的类名</div><div class="line"></div><div class="line">-dontusemixedcaseclassnames</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 指定不去忽略非公共的库类</div><div class="line"></div><div class="line">-dontskipnonpubliclibraryclasses</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 不预校验</div><div class="line"></div><div class="line">-dontpreverify</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">-verbose</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 优化</div><div class="line"></div><div class="line">-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留了继承自Activity、Application、Service、BroadcastReceiver、ContentProvider、BackupAgentHelper、Preference和ILicensingService  的子类。因为这些子类，都是可能被外部调用的。</div><div class="line"></div><div class="line">-keep public class * extends android.app.Activity</div><div class="line"></div><div class="line">-keep public class * extends android.app.Application</div><div class="line"></div><div class="line">-keep public class * extends android.app.Service</div><div class="line"></div><div class="line">-keep public class * extends android.content.BroadcastReceiver</div><div class="line"></div><div class="line">-keep public class * extends android.content.ContentProvider</div><div class="line"></div><div class="line">-keep public class * extends android.app.backup.BackupAgentHelper</div><div class="line"></div><div class="line">-keep public class * extends android.preference.Preference</div><div class="line"></div><div class="line">-keep public class com.android.vending.licensing.ILicensingService</div><div class="line"></div><div class="line">-keep public class * extends android.support.v4.app.FragmentActivity</div><div class="line"></div><div class="line">-keep public class * extends android.support.v4.app.Fragmen</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留了含有native方法的类</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line"></div><div class="line">    native &lt;methods&gt;;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"># actionbarSherlock 这里要注意了</div><div class="line"></div><div class="line">-keep class android.support.v4.app.** &#123; *; &#125;</div><div class="line"></div><div class="line">-keep interface android.support.v4.app.** &#123; *; &#125;</div><div class="line"></div><div class="line">-keep class com.actionbarsherlock.** &#123; *; &#125;</div><div class="line"></div><div class="line">-keep interface com.actionbarsherlock.** &#123; *; &#125;</div><div class="line"></div><div class="line">-keepattributes *Annotation*</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留构造函数从xml构造的类（一般为View的子类）</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line"></div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留构造函数从xml构造的类（一般为View的子类）</div><div class="line"></div><div class="line">-keepclasseswithmembernames class * &#123;</div><div class="line"></div><div class="line">    public &lt;init&gt;(android.content.Context, android.util.AttributeSet, int);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保护指定类的成员，如果此类受到保护他们会保护的更好</div><div class="line"></div><div class="line">-keepclassmembers class * extends android.app.Activity &#123;</div><div class="line"></div><div class="line">    public void *(android.view.View);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留枚举类型中的values和valueOf静态方法</div><div class="line"></div><div class="line">-keepclassmembers enum * &#123;</div><div class="line"></div><div class="line">    public static **[] values();</div><div class="line"></div><div class="line">    public static ** valueOf(java.lang.String);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留继承Parcelable的跨进程数据类</div><div class="line"></div><div class="line">-keep class * implements android.os.Parcelable &#123;</div><div class="line"></div><div class="line">  public static final android.os.Parcelable$Creator *;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"># 保留反射中用到的类和方法，到时根据具体情况再改</div><div class="line"></div><div class="line"># 反编译测试的时候有效，运行时也与未混淆情况一样</div><div class="line"></div><div class="line">-keepclassmembers class 包名.** &#123;</div><div class="line"></div><div class="line">   public *;</div><div class="line"></div><div class="line">   protected *;</div><div class="line"></div><div class="line">   private *;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="3、工程中含有第三方jar包，或者-so文件-混淆处理。"><a href="#3、工程中含有第三方jar包，或者-so文件-混淆处理。" class="headerlink" title="3、工程中含有第三方jar包，或者.so文件 混淆处理。"></a>3、工程中含有第三方jar包，或者.so文件 混淆处理。</h3><p> -libraryjars libs/apns_1.0.6.jar<br> -libraryjars libs/armeabi/libBaiduMapSDK_v2_3_1.so<br> -libraryjars libs/armeabi/liblocSDK4.so<br> -libraryjars libs/baidumapapi_v2_3_1.jar<br> -libraryjars libs/core.jar<br> -libraryjars libs/gesture-imageview.jar<br> -libraryjars libs/gson-2.0.jar</p>
 <h3 id="4、-其它反射调用的java类与方法"><a href="#4、-其它反射调用的java类与方法" class="headerlink" title="4、 其它反射调用的java类与方法"></a>4、 其它反射调用的java类与方法</h3><p>使用反射时一定要注意proguard可能会认为那些方法未被调用过, 会在代码优化过程中将它们改名或除去. 在使用反射的地方一定要在proguard-project.txt中配置, 不优化反射调用过的类和方法</p>
 <p>下面开始打包（不打包你就算设置了其实也没有混淆，不信可以解混淆试试，能成功解混淆）</p>
@@ -346,7 +348,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
         <a href="/2014/11/21/ndk-study/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">androidNDK开发之JNI学习        </div>
+            <div class="article-nav-title">AndroidNDK开发之JNI学习        </div>
         </a>
     
 </nav>
@@ -403,6 +405,169 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </section>
 
 </section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/02/Java基础篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2017/04/02/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-02T08:03:51.000Z" itemprop="datePublished">2017-04-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/01/or-know/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="或明" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/08/01/or-know/" class="title">或明</a></p>
+                            <p class="item-date"><time datetime="2016-08-01T13:23:50.000Z" itemprop="datePublished">2016-08-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/ensemble-stacking/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.blog.csdn.net/20160708170152466)" alt="ensemble-stacking" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a></p>
+                            <p class="item-title"><a href="/2016/05/08/ensemble-stacking/" class="title">ensemble-stacking</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T09:04:30.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/12/MS-document-online-preview/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="MS-document-online-preview" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/03/12/MS-document-online-preview/" class="title">MS-document-online-preview</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T10:41:00.000Z" itemprop="datePublished">2016-03-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/09/linux-management-command/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="linux系统管理常用命令（不定时更新）" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/02/09/linux-management-command/" class="title">linux系统管理常用命令（不定时更新）</a></p>
+                            <p class="item-date"><time datetime="2016-02-09T13:51:00.000Z" itemprop="datePublished">2016-02-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/photo/">photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 12px;">benchmark</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/photo/" style="font-size: 10px;">photo</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/gugugujiawei">enjoyhot&#39;s CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
             
         </div>
         <footer id="footer">

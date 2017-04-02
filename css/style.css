@@ -132,14 +132,14 @@ code {
   margin: 0 2px;
   color: #e96900;
   padding: 3px 5px;
-  font-size: 0.8em;
+  font-size: 0.9em;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
   background-color: #f8f8f8;
 }
 .outer {
-  max-width: 1320px;
+  max-width: 1420px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -186,16 +186,23 @@ code {
   #main {
     display: inline;
     float: left;
-    width: 52.307692307692314%;
-    margin: 0 0.769230769230769%;
+    width: 77.14285714285715%;
+    margin: 0 0.714285714285714%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #main {
-    display: inline;
-    float: left;
-    width: 67.6923076923077%;
-    margin: 0 0.769230769230769%;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 560px) and (max-width: 799px) {
+  #main {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 559px) {
+  #main {
+    width: 100%;
   }
 }
 .archive-article-header a,
@@ -635,8 +642,8 @@ code {
 #profile {
   display: inline;
   float: left;
-  width: 21.53846153846154%;
-  margin: 0 0.769230769230769%;
+  width: 20%;
+  margin: 0 0.714285714285714%;
   display: none;
 }
 @media screen and (min-width: 1200px) {
@@ -878,6 +885,9 @@ a.article-title:hover {
 .article-entry:after {
   clear: both;
 }
+.article-entry p {
+  text-align: justify;
+}
 .article-entry p,
 .article-entry table {
   line-height: 1.6em;
@@ -938,7 +948,7 @@ a.article-title:hover {
   padding: 10px 0;
 }
 .article-entry blockquote {
-  position: relative;
+  position: static;
   font-family: Georgia, "Times New Roman", "Microsoft Yahei", serif;
   font-size: 1.1em;
   margin: 0 -20px;
@@ -954,7 +964,7 @@ a.article-title:hover {
   font-size: 32px;
   font-family: FontAwesome;
   text-align: center;
-  position: absolute;
+  position: static;
 }
 .article-entry blockquote footer {
   font-size: 14px;
@@ -1229,25 +1239,44 @@ a.article-title:hover {
   text-shadow: 0 1px #be3221;
 }
 .article-gallery {
+  overflow: hidden;
   background: #000;
   position: relative;
+  text-align: center;
+  margin: 1.6em 0;
 }
-.article-gallery-photos {
-  position: relative;
-  overflow: hidden;
-}
-.article-gallery-img {
+.article-gallery .gallery-item {
   display: none;
   max-width: 100%;
 }
-.article-gallery-img:first-child {
-  display: block;
-}
-.article-gallery-img.loaded {
+.article-gallery .gallery-item:before,
+.article-gallery .gallery-item:after {
+  top: 50%;
+  width: 40px;
+  height: 36px;
+  font-size: 36px;
+  line-height: 36px;
+  margin-top: -18px;
   position: absolute;
+  font-family: FontAwesome;
+  color: rgba(255,255,255,0.5);
+}
+.article-gallery .gallery-item:hover:before,
+.article-gallery .gallery-item:hover:after {
+  color: rgba(255,255,255,0.8);
+}
+.article-gallery .gallery-item:before {
+  left: 0;
+  content: "\f104";
+}
+.article-gallery .gallery-item:after {
+  right: 0;
+  content: "\f105";
+}
+.article-gallery .gallery-item:first-child {
   display: block;
 }
-.article-gallery-img img {
+.article-gallery .gallery-item img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -1322,6 +1351,19 @@ ol.toc {
   -moz-transition: color 0.3s ease-out;
   -ms-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
+}
+.article.rtl .article-title,
+.article.rtl .article-entry p {
+  direction: rtl;
+}
+.article.rtl .article-meta > div {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+.lg-outer .lg-thumb-item {
+  -webkit-border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 #comments {
   padding: 20px;
@@ -1555,9 +1597,6 @@ ol.toc {
   color: #565a5f;
   font-weight: bold;
 }
-#page-nav .space {
-  color: #eceff2;
-}
 .timeline-wrap {
   margin: 40px 20px 40px 40px;
   border-left: 3px solid #eceff2;
@@ -1669,16 +1708,16 @@ ol.toc {
   #sidebar {
     display: inline;
     float: left;
-    width: 21.53846153846154%;
-    margin: 0 0.769230769230769%;
+    width: 20%;
+    margin: 0 0.714285714285714%;
   }
 }
 @media screen and (min-width: 800px) and (max-width: 1199px) {
   #sidebar {
     display: inline;
     float: left;
-    width: 29.230769230769234%;
-    margin: 0 0.769230769230769%;
+    width: 27.142857142857142%;
+    margin: 0 0.714285714285714%;
   }
 }
 .widget {
@@ -2094,6 +2133,9 @@ ol.toc {
 }
 .article-entry .highlight {
   margin: 1.6em 0;
+}
+.article-entry .highlight .line {
+  height: 1.6em;
 }
 .highlight {
   color: #ddd;

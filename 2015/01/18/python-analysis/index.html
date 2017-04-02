@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>python进行文档抽取与解析的简单实现         | ENJOYHOT</title>
+    <title>Python进行文档抽取与解析的简单实现         | ENJOYHOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="一、前文  之前被叫去做网络爬虫，爬取新浪新闻的url，标题，内容和评论，不过在需求上有点改变，主要是评论的间隔被要求有‘\t’的分割，比如将
 1234&amp;lt;comment&amp;gt;2014-12-10 18:53:20	1004400533	遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？2014-12-10 17:17:07	3294923134	这父亲是人吗？&amp;lt;/comme">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python进行文档抽取与解析的简单实现        ">
+<meta property="og:title" content="Python进行文档抽取与解析的简单实现        ">
 <meta property="og:url" content="http://enjoyhot.github.io/2015/01/18/python-analysis/index.html">
 <meta property="og:site_name" content="ENJOYHOT">
 <meta property="og:description" content="一、前文  之前被叫去做网络爬虫，爬取新浪新闻的url，标题，内容和评论，不过在需求上有点改变，主要是评论的间隔被要求有‘\t’的分割，比如将
 1234&amp;lt;comment&amp;gt;2014-12-10 18:53:20	1004400533	遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？2014-12-10 17:17:07	3294923134	这父亲是人吗？&amp;lt;/comme">
 <meta property="og:image" content="http://img.blog.csdn.net/20150118141804512?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2016-07-16T12:17:39.534Z">
+<meta property="og:updated_time" content="2017-04-02T09:32:28.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python进行文档抽取与解析的简单实现        ">
+<meta name="twitter:title" content="Python进行文档抽取与解析的简单实现        ">
 <meta name="twitter:description" content="一、前文  之前被叫去做网络爬虫，爬取新浪新闻的url，标题，内容和评论，不过在需求上有点改变，主要是评论的间隔被要求有‘\t’的分割，比如将
 1234&amp;lt;comment&amp;gt;2014-12-10 18:53:20	1004400533	遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？2014-12-10 17:17:07	3294923134	这父亲是人吗？&amp;lt;/comme">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20150118141804512?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
@@ -176,11 +176,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                37
+                39
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                28
+                33
                 <span>tags</span>
             </div>
         </div>
@@ -236,7 +236,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-            python进行文档抽取与解析的简单实现        
+            Python进行文档抽取与解析的简单实现        
         </h1>
     
 
@@ -254,13 +254,13 @@ var _hmt = _hmt || [];
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/python/">python</a>
+        <a class="article-category-link" href="/categories/Python/">Python</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/spider/">spider</a>
+        <a class="tag-link" href="/tags/Python/">Python</a>, <a class="tag-link" href="/tags/Spider/">Spider</a>
     </div>
 
                     </div>
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>  （正则表达式的方法参考以下注释）</p>
 <p>  完整代码：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from sgmllib import SGMLParser</div><div class="line">import re,os</div><div class="line">rootdir = 'F:\\Python27\\pythonproject\\fuck\\file1\\'</div><div class="line">rootdir2 = 'F:\\Python27\\pythonproject\\fuck\\file2\\'</div><div class="line"></div><div class="line"></div><div class="line">class Parse(SGMLParser):</div><div class="line">    def __init__(self,filename):</div><div class="line">        self.filename = filename  </div><div class="line">        self.comment = '' </div><div class="line">        SGMLParser.__init__(self)       </div><div class="line">    def reset(self):</div><div class="line">        self.found_comment = False</div><div class="line">        SGMLParser.reset(self)</div><div class="line">    def start_comment(self, attrs):</div><div class="line">        self.found_comment = True</div><div class="line">    def end_comment(self):</div><div class="line">        self.found_comment = False</div><div class="line">    def handle_data(self, text):</div><div class="line">        if self.found_comment == True:</div><div class="line">            self.comment=solve(self.filename,text)</div><div class="line"></div><div class="line">def solve(filename,text):   </div><div class="line">    #找到3个或3个以上空格的地方，替换为'\t'</div><div class="line">    strinfo = re.compile('(\s\s\s*)')</div><div class="line">    str_result = strinfo.sub('\t',text)</div><div class="line">    return str_result</div><div class="line">    </div><div class="line"></div><div class="line">if __name__ == '__main__':</div><div class="line">        </div><div class="line">    global rootdir,rootdir2</div><div class="line">    for parent,dirnames,filenames in os.walk(rootdir):    #三个参数：分别返回1.父目录 2.所有文件夹名字（不含路径） 3.所有文件名字</div><div class="line">        for filename in filenames:</div><div class="line">            #print filename</div><div class="line">            </div><div class="line">            filesource = open(rootdir+filename, 'a+')    </div><div class="line">            s = filesource.read()            </div><div class="line">            filesource.close()</div><div class="line">            #初始化实例p,feed()函数为添加处理字符串</div><div class="line">            p = Parse(filename)            </div><div class="line">            p.feed(s)</div><div class="line">            </div><div class="line">            filedes = open(rootdir2+filename, 'a+')</div><div class="line">            #因为原来原数据中存在不以&lt;/comment&gt;;结尾的内容，因此需要先做处理</div><div class="line">            pattern1='&lt;/comment&gt;;'</div><div class="line">            if re.findall(pattern1,s) == []:</div><div class="line">                s=s+'\n&lt;/comment&gt;;'</div><div class="line">            </div><div class="line">&lt;span style="white-space:pre"&gt;;	&lt;/span&gt;;    #定位到comment标签位置，([\s\S]*)能够匹配所有字符，包括换行符，然后替换</div><div class="line">            strinfo = re.compile('&lt;comment&gt;;([\s\S]*)&lt;/comment&gt;;')</div><div class="line">            str_result = strinfo.sub('&lt;comment&gt;;'+p.comment+'&lt;/comment&gt;;',s)</div><div class="line">            </div><div class="line">            filedes.write(str_result)</div><div class="line">            filedes.close()</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: utf-8 -*-</div><div class="line"></div><div class="line">from sgmllib import SGMLParser</div><div class="line">import re,os</div><div class="line">rootdir = 'F:\\Python27\\pythonproject\\fuck\\file1\\'</div><div class="line">rootdir2 = 'F:\\Python27\\pythonproject\\fuck\\file2\\'</div><div class="line"></div><div class="line"></div><div class="line">class Parse(SGMLParser):</div><div class="line">    def __init__(self,filename):</div><div class="line">        self.filename = filename</div><div class="line">        self.comment = ''</div><div class="line">        SGMLParser.__init__(self)</div><div class="line">    def reset(self):</div><div class="line">        self.found_comment = False</div><div class="line">        SGMLParser.reset(self)</div><div class="line">    def start_comment(self, attrs):</div><div class="line">        self.found_comment = True</div><div class="line">    def end_comment(self):</div><div class="line">        self.found_comment = False</div><div class="line">    def handle_data(self, text):</div><div class="line">        if self.found_comment == True:</div><div class="line">            self.comment=solve(self.filename,text)</div><div class="line"></div><div class="line">def solve(filename,text):</div><div class="line">    #找到3个或3个以上空格的地方，替换为'\t'</div><div class="line">    strinfo = re.compile('(\s\s\s*)')</div><div class="line">    str_result = strinfo.sub('\t',text)</div><div class="line">    return str_result</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == '__main__':</div><div class="line"></div><div class="line">    global rootdir,rootdir2</div><div class="line">    for parent,dirnames,filenames in os.walk(rootdir):    #三个参数：分别返回1.父目录 2.所有文件夹名字（不含路径） 3.所有文件名字</div><div class="line">        for filename in filenames:</div><div class="line">            #print filename</div><div class="line"></div><div class="line">            filesource = open(rootdir+filename, 'a+')</div><div class="line">            s = filesource.read()</div><div class="line">            filesource.close()</div><div class="line">            #初始化实例p,feed()函数为添加处理字符串</div><div class="line">            p = Parse(filename)</div><div class="line">            p.feed(s)</div><div class="line"></div><div class="line">            filedes = open(rootdir2+filename, 'a+')</div><div class="line">            #因为原来原数据中存在不以&lt;/comment&gt;;结尾的内容，因此需要先做处理</div><div class="line">            pattern1='&lt;/comment&gt;;'</div><div class="line">            if re.findall(pattern1,s) == []:</div><div class="line">                s=s+'\n&lt;/comment&gt;;'</div><div class="line"></div><div class="line">&lt;span style="white-space:pre"&gt;;	&lt;/span&gt;;    #定位到comment标签位置，([\s\S]*)能够匹配所有字符，包括换行符，然后替换</div><div class="line">            strinfo = re.compile('&lt;comment&gt;;([\s\S]*)&lt;/comment&gt;;')</div><div class="line">            str_result = strinfo.sub('&lt;comment&gt;;'+p.comment+'&lt;/comment&gt;;',s)</div><div class="line"></div><div class="line">            filedes.write(str_result)</div><div class="line">            filedes.close()</div></pre></td></tr></table></figure>
 <p> 结果：</p>
 <p>   <img src="http://img.blog.csdn.net/20150118141804512?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="image_mark"></p>
 <p>  注意：win7系统一般文件夹下的文件总数（包括文件夹）不能超过21845个，不然会提示错误。</p>
@@ -363,7 +363,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
         <a href="/2015/01/15/python-web/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">【python web学习】python web窥探        </div>
+            <div class="article-nav-title">【python web学习】python web窥探</div>
         </a>
     
 </nav>
@@ -377,7 +377,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2015/01/18/python-analysis/" data-title="python进行文档抽取与解析的简单实现        " data-url="http://enjoyhot.github.io/2015/01/18/python-analysis/"></div>
+    <div class="ds-thread" data-thread-key="2015/01/18/python-analysis/" data-title="Python进行文档抽取与解析的简单实现        " data-url="http://enjoyhot.github.io/2015/01/18/python-analysis/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -420,6 +420,169 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </section>
 
 </section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/02/Java基础篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
+                            <p class="item-title"><a href="/2017/04/02/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-02T08:03:51.000Z" itemprop="datePublished">2017-04-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/01/or-know/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="或明" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-title"><a href="/2016/08/01/or-know/" class="title">或明</a></p>
+                            <p class="item-date"><time datetime="2016-08-01T13:23:50.000Z" itemprop="datePublished">2016-08-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/ensemble-stacking/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.blog.csdn.net/20160708170152466)" alt="ensemble-stacking" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a></p>
+                            <p class="item-title"><a href="/2016/05/08/ensemble-stacking/" class="title">ensemble-stacking</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T09:04:30.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/03/12/MS-document-online-preview/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="MS-document-online-preview" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2016/03/12/MS-document-online-preview/" class="title">MS-document-online-preview</a></p>
+                            <p class="item-date"><time datetime="2016-03-12T10:41:00.000Z" itemprop="datePublished">2016-03-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/02/09/linux-management-command/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="linux系统管理常用命令（不定时更新）" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2016/02/09/linux-management-command/" class="title">linux系统管理常用命令（不定时更新）</a></p>
+                            <p class="item-date"><time datetime="2016-02-09T13:51:00.000Z" itemprop="datePublished">2016-02-09</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/photo/">photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 12px;">benchmark</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/photo/" style="font-size: 10px;">photo</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/gugugujiawei">enjoyhot&#39;s CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
             
         </div>
         <footer id="footer">
