@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://enjoyhot.github.io/"/>
-  <updated>2017-04-02T08:04:19.240Z</updated>
+  <updated>2017-04-02T09:32:28.800Z</updated>
   <id>http://enjoyhot.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://enjoyhot.github.io/2017/04/02/Java%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://enjoyhot.github.io/2017/04/02/Java基础篇/</id>
     <published>2017-04-02T08:03:51.000Z</published>
-    <updated>2017-04-02T08:04:19.240Z</updated>
+    <updated>2017-04-02T09:32:28.800Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;本系列文章将分为三部分：&quot;&gt;&lt;a href=&quot;#本系列文章将分为三部分：&quot; class=&quot;headerlink&quot; title=&quot;本系列文章将分为三部分：&quot;&gt;&lt;/a&gt;本系列文章将分为三部分：&lt;/h2&gt;&lt;h3 id=&quot;Java基础篇&quot;&gt;&lt;a href=&quot;#Java基础篇&quot; class=&quot;headerlink&quot; title=&quot;Java基础篇&quot;&gt;&lt;/a&gt;Java基础篇&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;语法篇&lt;/li&gt;
@@ -447,7 +447,7 @@
     <link href="http://enjoyhot.github.io/2016/08/01/or-know/"/>
     <id>http://enjoyhot.github.io/2016/08/01/or-know/</id>
     <published>2016-08-01T13:23:50.000Z</published>
-    <updated>2017-04-02T07:38:28.998Z</updated>
+    <updated>2017-04-02T09:32:28.884Z</updated>
     
     <content type="html">&lt;p&gt;时值8月，离毕业更近了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在入学时就开始算计留在学校还有多少时间，毕竟，在学校的日子将会一去不复返，总得做些有意义的事情，弥补一些遗憾或空缺。&lt;/p&gt;
 &lt;p&gt;依托客观存在的24小时，寻找忙碌的理由，为未来打算，是多年来的行事法则。希望每天过得充实而又收获，但往往做到一半（呵呵），这又是另外一种境遇。有个计划，遵守计划，能完成78成，就很成功。&lt;/p&gt;
@@ -885,9 +885,9 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
       <category term="Search Engine" scheme="http://enjoyhot.github.io/categories/Search-Engine/"/>
     
     
-      <category term="PageRank" scheme="http://enjoyhot.github.io/tags/PageRank/"/>
-    
       <category term="Search Engine" scheme="http://enjoyhot.github.io/tags/Search-Engine/"/>
+    
+      <category term="PageRank" scheme="http://enjoyhot.github.io/tags/PageRank/"/>
     
   </entry>
   
@@ -934,9 +934,9 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
       <category term="Search Engine" scheme="http://enjoyhot.github.io/categories/Search-Engine/"/>
     
     
-      <category term="PageRank" scheme="http://enjoyhot.github.io/tags/PageRank/"/>
-    
       <category term="Search Engine" scheme="http://enjoyhot.github.io/tags/Search-Engine/"/>
+    
+      <category term="PageRank" scheme="http://enjoyhot.github.io/tags/PageRank/"/>
     
   </entry>
   
@@ -966,33 +966,9 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
       <category term="Markdown" scheme="http://enjoyhot.github.io/categories/Markdown/"/>
     
     
-      <category term="CSDN" scheme="http://enjoyhot.github.io/tags/CSDN/"/>
-    
       <category term="Markdown" scheme="http://enjoyhot.github.io/tags/Markdown/"/>
     
-  </entry>
-  
-  <entry>
-    <title>photos</title>
-    <link href="http://enjoyhot.github.io/2015/03/26/photoshow01/"/>
-    <id>http://enjoyhot.github.io/2015/03/26/photoshow01/</id>
-    <published>2015-03-26T15:45:21.000Z</published>
-    <updated>2017-04-02T07:38:28.998Z</updated>
-    
-    <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;You just say something I don’t know.&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="photo" scheme="http://enjoyhot.github.io/categories/photo/"/>
-    
-    
-      <category term="photo" scheme="http://enjoyhot.github.io/tags/photo/"/>
+      <category term="CSDN" scheme="http://enjoyhot.github.io/tags/CSDN/"/>
     
   </entry>
   
@@ -1017,6 +993,30 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     
     
       <category term="Photo" scheme="http://enjoyhot.github.io/tags/Photo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>photos</title>
+    <link href="http://enjoyhot.github.io/2015/03/26/photoshow01/"/>
+    <id>http://enjoyhot.github.io/2015/03/26/photoshow01/</id>
+    <published>2015-03-26T15:45:21.000Z</published>
+    <updated>2017-04-02T09:32:28.884Z</updated>
+    
+    <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You just say something I don’t know.&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="photo" scheme="http://enjoyhot.github.io/categories/photo/"/>
+    
+    
+      <category term="photo" scheme="http://enjoyhot.github.io/tags/photo/"/>
     
   </entry>
   
@@ -1105,71 +1105,6 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
   
   <entry>
     <title>HPC性能测试</title>
-    <link href="http://enjoyhot.github.io/2015/03/24/hpc-benchmark/"/>
-    <id>http://enjoyhot.github.io/2015/03/24/hpc-benchmark/</id>
-    <published>2015-03-24T06:43:00.000Z</published>
-    <updated>2017-04-02T07:38:28.905Z</updated>
-    
-    <content type="html">&lt;p&gt;#一、介绍&lt;/p&gt;
-&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;　　&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;　　Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark。通过利用高性能计算机，用高斯消元法求解N元一次稠密线性代数方程组的测试，评价高性能计算机的浮点性能。&lt;br&gt;　　Linpack测试包括三类，Linpack100、Linpack1000和HPL。Linpack100求解规模为100阶的稠密线性代数方程组，它只允许采用编译优化选项进行优化，不得更改代码，甚至代码中的注释也不得修改。Linpack1000要求求解规模为1000阶的线性代数方程组，达到指定的精度要求，可以在不改变计算量的前提下做算法和代码上做优化。HPL即High Performance Linpack，也叫高度并行计算基准测试，它对数组大小N没有限制，求解问题的规模可以改变，除基本算法（计算量）不可改变外，可以采用其它任何优化方法。前两种测试运行规模较小，已不是很适合现代计算机的发展，因此现在使用较多的测试标准为HPL，而且阶次N也是linpack测试必须指明的参数。&lt;br&gt;　　HPL是针对现代并行计算机提出的测试方式。用户在不修改任意测试程序的基础上，可以调节问题规模大小N(矩阵大小)、使用到的CPU数目、使用各种优化方法等来执行该测试程序，以获取最佳的性能。HPL采用高斯消元法求解线性方程组。当求解问题规模为N时，浮点运算次数为(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)。因此，只要给出问题规模N，测得系统计算时间T，峰值=计算量(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)/计算时间T，测试结果以浮点运算每秒（Flops）给出。&lt;br&gt;　　&lt;br&gt;计算峰值：&lt;br&gt;　　随着产品硬件的不断的升级，整个的计算能力也以数量级的速度提升。衡量计算机性能的一个重要指标就是计算峰值，例如浮点计算峰值，它是指计算机每秒钟能完成的浮点计算最大次数。包括理论浮点峰值和实测浮点峰值：&lt;br&gt;　　理论浮点峰值是该计算机理论上能达到的每秒钟能完成浮点计算最大次数，它主要是由CPU的主频决定的，&lt;br&gt;理论浮点峰值=CPU主频×CPU每个时钟周期执行浮点运算的次数×系统中CPU核心数目&lt;br&gt;　　实测浮点峰值是指Linpack测试值，也就是说在这台机器上运行Linpack测试程序，通过各种调优方法得到的最优的测试结果。实际上在实际程序运行过程中，几乎不可能达到实测浮点峰值，更不用说达到理论浮点峰值了。这两个值只是作为衡量机器性能的一个指标，用来表明机器处理能力的一个标尺和潜能的度量。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;　　此次参加一个高性能的比赛，虽然做的是平台搭建部分，但对此也有些了解。也了解了一下HPCC测试和NAMD测试，下面主要分这两部分来说一下。&lt;/p&gt;
-&lt;p&gt;#二、正文&lt;/p&gt;
-&lt;h3 id=&quot;1、HPCC&quot;&gt;&lt;a href=&quot;#1、HPCC&quot; class=&quot;headerlink&quot; title=&quot;1、HPCC&quot;&gt;&lt;/a&gt;1、HPCC&lt;/h3&gt;&lt;p&gt; 　　HPCC 全称 HPC Chanllenge Benchmark&lt;/p&gt;
-&lt;p&gt;　　Benchmark 是指一组用来评估硬件或者软件相关性能的基准测试程序&lt;/p&gt;
-&lt;p&gt;　　HPC Chanllenge Benchmark 由一组benchmark组成，共计7个，分别测试了系统7个方面的性能，这7个分别为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;HPL &lt;/li&gt;
-&lt;li&gt;stream&lt;/li&gt;
-&lt;li&gt;Random Access&lt;/li&gt;
-&lt;li&gt;PTRANS,&lt;/li&gt;
-&lt;li&gt;Latency/Bandwidth&lt;/li&gt;
-&lt;li&gt;FFT&lt;/li&gt;
-&lt;li&gt;DGEMM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;stream&lt;/strong&gt;：测试内存带宽&lt;br&gt;内存看作是内存控制器与CPU之间的桥梁与仓库。内存的容量决定“仓库”的大小，而内存的带宽决定“桥梁”的宽窄&lt;br&gt;&lt;strong&gt;Random Access&lt;/strong&gt;：测试内存刷新的速率（随机存储中电容器需要刷新）&lt;br&gt;&lt;strong&gt;PTRANS&lt;/strong&gt;：通过多处理器结构中两两之间的通信，来衡量在整个网络的通信能力&lt;br&gt;&lt;strong&gt;Latency/Bandwidth&lt;/strong&gt;：测试延时与带宽&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Latency：8 byte 数据从一个节点到另一个节点所需时间&lt;/li&gt;
-&lt;li&gt;Bandwidth：节点间网络通信的带宽&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;HPL&lt;/strong&gt;：测试系统在解线性方程组时进行浮点运算的性能&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;浮点运算：超级计算机应用的场景主要是在科学计算，经常涉及矩阵运算、各种数值模拟等。&lt;/li&gt;
-&lt;li&gt;超级计算机经常以FLOPS（每秒浮点运算次数）去衡量计算能力&lt;/li&gt;
-&lt;li&gt;HPCC里有3种benchmark是测试浮点计算性能的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;FFT&lt;/strong&gt;：涉及到双精度一维离散傅里叶变换时，浮点运算的速度&lt;br&gt;&lt;strong&gt;DGEMM&lt;/strong&gt;：在做双精度矩阵乘法时，浮点运算的速度&lt;/p&gt;
-&lt;p&gt;HPCC的下载地址见：&lt;a href=&quot;http://icl.cs.utk.edu/hpcc/software/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;　　这个软件13年8月后就没更新了，网上查阅了很多资料，发现使用的人好像也不多，对于高性能计算，大多都是HPL的文章和测试。要想使用好这个软件，需要研读其源代码。&lt;br&gt;　　其中的安装使用方法可参照网站的&lt;strong&gt;FAQ&lt;/strong&gt;以及软件中的&lt;strong&gt;README.html&lt;/strong&gt;&lt;br&gt;　　编译之前，需要下载好相关的库，包括MPI（mpich，mpich2，mvapich，openmpi，platform_mpi，hpmpi……）、MKL/BLAS/GotoBLAS2……、C语言编译器等，前两者集群一般需要自己去找对应的软件，详细配置请自行上网搜一下，和Linpack基本一样。&lt;/p&gt;
-&lt;p&gt;###2、NAMD测试&lt;/p&gt;
-&lt;p&gt;　　NAMD是一个与分子动力学有关，用来高仿真大型生物分子系统的程序。即生物分子建模程序。&lt;br&gt;　　现提供两个工作负载apoa1, f1atpase&lt;br&gt;　　它们可以从 &lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&lt;/a&gt;
-　　&lt;/p&gt;
-&lt;p&gt;至于性能的话，且看图：&lt;br&gt;　　&lt;img src=&quot;http://img.blog.csdn.net/20150324144222556&quot; alt=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot;&gt;&lt;/p&gt;
-&lt;p&gt;图片来源：&lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;NAMD 2.8 在天津超算天河-1A上的测试结果：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;表1 每节点不同进程数以及使用不同节点数的NAMD性能（days/ns）比较&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144513425&quot; alt=&quot;数据&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144634870&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
-&lt;p&gt;　　结论：为了在天河上达到性能最优，最佳的方案是使用GPU，并且每个节点开6个进程。参照：&lt;a href=&quot;http://blog.sina.com.cn/s/blog_a43b3cf2010157pz.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#一、介绍&lt;/p&gt;
-&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;
-    
-    </summary>
-    
-      <category term="HPC" scheme="http://enjoyhot.github.io/categories/HPC/"/>
-    
-    
-      <category term="benchmark" scheme="http://enjoyhot.github.io/tags/benchmark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HPC性能测试</title>
     <link href="http://enjoyhot.github.io/2015/03/24/HPC-benchmark/"/>
     <id>http://enjoyhot.github.io/2015/03/24/HPC-benchmark/</id>
     <published>2015-03-24T06:43:00.000Z</published>
@@ -1229,9 +1164,74 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
       <category term="HPC" scheme="http://enjoyhot.github.io/categories/HPC/"/>
     
     
+      <category term="HPC" scheme="http://enjoyhot.github.io/tags/HPC/"/>
+    
       <category term="benchmark" scheme="http://enjoyhot.github.io/tags/benchmark/"/>
     
-      <category term="HPC" scheme="http://enjoyhot.github.io/tags/HPC/"/>
+  </entry>
+  
+  <entry>
+    <title>HPC性能测试</title>
+    <link href="http://enjoyhot.github.io/2015/03/24/hpc-benchmark/"/>
+    <id>http://enjoyhot.github.io/2015/03/24/hpc-benchmark/</id>
+    <published>2015-03-24T06:43:00.000Z</published>
+    <updated>2017-04-02T08:04:19.228Z</updated>
+    
+    <content type="html">&lt;p&gt;#一、介绍&lt;/p&gt;
+&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;　　&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;　　Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark。通过利用高性能计算机，用高斯消元法求解N元一次稠密线性代数方程组的测试，评价高性能计算机的浮点性能。&lt;br&gt;　　Linpack测试包括三类，Linpack100、Linpack1000和HPL。Linpack100求解规模为100阶的稠密线性代数方程组，它只允许采用编译优化选项进行优化，不得更改代码，甚至代码中的注释也不得修改。Linpack1000要求求解规模为1000阶的线性代数方程组，达到指定的精度要求，可以在不改变计算量的前提下做算法和代码上做优化。HPL即High Performance Linpack，也叫高度并行计算基准测试，它对数组大小N没有限制，求解问题的规模可以改变，除基本算法（计算量）不可改变外，可以采用其它任何优化方法。前两种测试运行规模较小，已不是很适合现代计算机的发展，因此现在使用较多的测试标准为HPL，而且阶次N也是linpack测试必须指明的参数。&lt;br&gt;　　HPL是针对现代并行计算机提出的测试方式。用户在不修改任意测试程序的基础上，可以调节问题规模大小N(矩阵大小)、使用到的CPU数目、使用各种优化方法等来执行该测试程序，以获取最佳的性能。HPL采用高斯消元法求解线性方程组。当求解问题规模为N时，浮点运算次数为(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)。因此，只要给出问题规模N，测得系统计算时间T，峰值=计算量(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)/计算时间T，测试结果以浮点运算每秒（Flops）给出。&lt;br&gt;　　&lt;br&gt;计算峰值：&lt;br&gt;　　随着产品硬件的不断的升级，整个的计算能力也以数量级的速度提升。衡量计算机性能的一个重要指标就是计算峰值，例如浮点计算峰值，它是指计算机每秒钟能完成的浮点计算最大次数。包括理论浮点峰值和实测浮点峰值：&lt;br&gt;　　理论浮点峰值是该计算机理论上能达到的每秒钟能完成浮点计算最大次数，它主要是由CPU的主频决定的，&lt;br&gt;理论浮点峰值=CPU主频×CPU每个时钟周期执行浮点运算的次数×系统中CPU核心数目&lt;br&gt;　　实测浮点峰值是指Linpack测试值，也就是说在这台机器上运行Linpack测试程序，通过各种调优方法得到的最优的测试结果。实际上在实际程序运行过程中，几乎不可能达到实测浮点峰值，更不用说达到理论浮点峰值了。这两个值只是作为衡量机器性能的一个指标，用来表明机器处理能力的一个标尺和潜能的度量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;　　此次参加一个高性能的比赛，虽然做的是平台搭建部分，但对此也有些了解。也了解了一下HPCC测试和NAMD测试，下面主要分这两部分来说一下。&lt;/p&gt;
+&lt;p&gt;#二、正文&lt;/p&gt;
+&lt;h3 id=&quot;1、HPCC&quot;&gt;&lt;a href=&quot;#1、HPCC&quot; class=&quot;headerlink&quot; title=&quot;1、HPCC&quot;&gt;&lt;/a&gt;1、HPCC&lt;/h3&gt;&lt;p&gt; 　　HPCC 全称 HPC Chanllenge Benchmark&lt;/p&gt;
+&lt;p&gt;　　Benchmark 是指一组用来评估硬件或者软件相关性能的基准测试程序&lt;/p&gt;
+&lt;p&gt;　　HPC Chanllenge Benchmark 由一组benchmark组成，共计7个，分别测试了系统7个方面的性能，这7个分别为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HPL &lt;/li&gt;
+&lt;li&gt;stream&lt;/li&gt;
+&lt;li&gt;Random Access&lt;/li&gt;
+&lt;li&gt;PTRANS,&lt;/li&gt;
+&lt;li&gt;Latency/Bandwidth&lt;/li&gt;
+&lt;li&gt;FFT&lt;/li&gt;
+&lt;li&gt;DGEMM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;stream&lt;/strong&gt;：测试内存带宽&lt;br&gt;内存看作是内存控制器与CPU之间的桥梁与仓库。内存的容量决定“仓库”的大小，而内存的带宽决定“桥梁”的宽窄&lt;br&gt;&lt;strong&gt;Random Access&lt;/strong&gt;：测试内存刷新的速率（随机存储中电容器需要刷新）&lt;br&gt;&lt;strong&gt;PTRANS&lt;/strong&gt;：通过多处理器结构中两两之间的通信，来衡量在整个网络的通信能力&lt;br&gt;&lt;strong&gt;Latency/Bandwidth&lt;/strong&gt;：测试延时与带宽&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Latency：8 byte 数据从一个节点到另一个节点所需时间&lt;/li&gt;
+&lt;li&gt;Bandwidth：节点间网络通信的带宽&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;HPL&lt;/strong&gt;：测试系统在解线性方程组时进行浮点运算的性能&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;浮点运算：超级计算机应用的场景主要是在科学计算，经常涉及矩阵运算、各种数值模拟等。&lt;/li&gt;
+&lt;li&gt;超级计算机经常以FLOPS（每秒浮点运算次数）去衡量计算能力&lt;/li&gt;
+&lt;li&gt;HPCC里有3种benchmark是测试浮点计算性能的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;FFT&lt;/strong&gt;：涉及到双精度一维离散傅里叶变换时，浮点运算的速度&lt;br&gt;&lt;strong&gt;DGEMM&lt;/strong&gt;：在做双精度矩阵乘法时，浮点运算的速度&lt;/p&gt;
+&lt;p&gt;HPCC的下载地址见：&lt;a href=&quot;http://icl.cs.utk.edu/hpcc/software/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;　　这个软件13年8月后就没更新了，网上查阅了很多资料，发现使用的人好像也不多，对于高性能计算，大多都是HPL的文章和测试。要想使用好这个软件，需要研读其源代码。&lt;br&gt;　　其中的安装使用方法可参照网站的&lt;strong&gt;FAQ&lt;/strong&gt;以及软件中的&lt;strong&gt;README.html&lt;/strong&gt;&lt;br&gt;　　编译之前，需要下载好相关的库，包括MPI（mpich，mpich2，mvapich，openmpi，platform_mpi，hpmpi……）、MKL/BLAS/GotoBLAS2……、C语言编译器等，前两者集群一般需要自己去找对应的软件，详细配置请自行上网搜一下，和Linpack基本一样。&lt;/p&gt;
+&lt;p&gt;###2、NAMD测试&lt;/p&gt;
+&lt;p&gt;　　NAMD是一个与分子动力学有关，用来高仿真大型生物分子系统的程序。即生物分子建模程序。&lt;br&gt;　　现提供两个工作负载apoa1, f1atpase&lt;br&gt;　　它们可以从 &lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&lt;/a&gt;
+　　&lt;/p&gt;
+&lt;p&gt;至于性能的话，且看图：&lt;br&gt;　　&lt;img src=&quot;http://img.blog.csdn.net/20150324144222556&quot; alt=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot;&gt;&lt;/p&gt;
+&lt;p&gt;图片来源：&lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;NAMD 2.8 在天津超算天河-1A上的测试结果：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;表1 每节点不同进程数以及使用不同节点数的NAMD性能（days/ns）比较&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144513425&quot; alt=&quot;数据&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144634870&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
+&lt;p&gt;　　结论：为了在天河上达到性能最优，最佳的方案是使用GPU，并且每个节点开6个进程。参照：&lt;a href=&quot;http://blog.sina.com.cn/s/blog_a43b3cf2010157pz.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#一、介绍&lt;/p&gt;
+&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;
+    
+    </summary>
+    
+      <category term="HPC" scheme="http://enjoyhot.github.io/categories/HPC/"/>
+    
+    
+      <category term="benchmark" scheme="http://enjoyhot.github.io/tags/benchmark/"/>
     
   </entry>
   
