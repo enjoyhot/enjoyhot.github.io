@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://enjoyhot.github.io/"/>
-  <updated>2017-04-02T09:32:28.800Z</updated>
+  <updated>2017-04-02T09:53:40.648Z</updated>
   <id>http://enjoyhot.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://enjoyhot.github.io/2017/04/02/Java%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
     <id>http://enjoyhot.github.io/2017/04/02/Java基础篇/</id>
     <published>2017-04-02T08:03:51.000Z</published>
-    <updated>2017-04-02T09:32:28.800Z</updated>
+    <updated>2017-04-02T09:53:40.648Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;本系列文章将分为三部分：&quot;&gt;&lt;a href=&quot;#本系列文章将分为三部分：&quot; class=&quot;headerlink&quot; title=&quot;本系列文章将分为三部分：&quot;&gt;&lt;/a&gt;本系列文章将分为三部分：&lt;/h2&gt;&lt;h3 id=&quot;Java基础篇&quot;&gt;&lt;a href=&quot;#Java基础篇&quot; class=&quot;headerlink&quot; title=&quot;Java基础篇&quot;&gt;&lt;/a&gt;Java基础篇&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;语法篇&lt;/li&gt;
@@ -447,7 +447,7 @@
     <link href="http://enjoyhot.github.io/2016/08/01/or-know/"/>
     <id>http://enjoyhot.github.io/2016/08/01/or-know/</id>
     <published>2016-08-01T13:23:50.000Z</published>
-    <updated>2017-04-02T09:32:28.884Z</updated>
+    <updated>2017-04-02T09:53:40.704Z</updated>
     
     <content type="html">&lt;p&gt;时值8月，离毕业更近了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在入学时就开始算计留在学校还有多少时间，毕竟，在学校的日子将会一去不复返，总得做些有意义的事情，弥补一些遗憾或空缺。&lt;/p&gt;
 &lt;p&gt;依托客观存在的24小时，寻找忙碌的理由，为未来打算，是多年来的行事法则。希望每天过得充实而又收获，但往往做到一半（呵呵），这又是另外一种境遇。有个计划，遵守计划，能完成78成，就很成功。&lt;/p&gt;
@@ -474,7 +474,7 @@
     <link href="http://enjoyhot.github.io/2016/05/08/ensemble-stacking/"/>
     <id>http://enjoyhot.github.io/2016/05/08/ensemble-stacking/</id>
     <published>2016-05-08T09:04:30.000Z</published>
-    <updated>2017-04-02T09:32:28.744Z</updated>
+    <updated>2017-04-02T09:53:40.592Z</updated>
     
     <content type="html">&lt;h1 id=&quot;测试blog&quot;&gt;&lt;a href=&quot;#测试blog&quot; class=&quot;headerlink&quot; title=&quot;测试blog&quot;&gt;&lt;/a&gt;测试blog&lt;/h1&gt;&lt;hr&gt;
 &lt;ul&gt;
@@ -514,7 +514,7 @@
     <link href="http://enjoyhot.github.io/2016/03/12/MS-document-online-preview/"/>
     <id>http://enjoyhot.github.io/2016/03/12/MS-document-online-preview/</id>
     <published>2016-03-12T10:41:00.000Z</published>
-    <updated>2017-04-02T09:32:28.860Z</updated>
+    <updated>2017-04-02T09:53:40.680Z</updated>
     
     <content type="html">&lt;h1 id=&quot;doc-xls-ppt-pdf实现浏览器在线预览小记&quot;&gt;&lt;a href=&quot;#doc-xls-ppt-pdf实现浏览器在线预览小记&quot; class=&quot;headerlink&quot; title=&quot;doc,xls,ppt,pdf实现浏览器在线预览小记&quot;&gt;&lt;/a&gt;doc,xls,ppt,pdf实现浏览器在线预览小记&lt;/h1&gt;&lt;hr&gt;
 &lt;h2 id=&quot;一般有两种方式&quot;&gt;&lt;a href=&quot;#一般有两种方式&quot; class=&quot;headerlink&quot; title=&quot;一般有两种方式&quot;&gt;&lt;/a&gt;一般有两种方式&lt;/h2&gt;&lt;h3 id=&quot;方式一：&quot;&gt;&lt;a href=&quot;#方式一：&quot; class=&quot;headerlink&quot; title=&quot;方式一：&quot;&gt;&lt;/a&gt;方式一：&lt;/h3&gt;&lt;h3 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h3&gt;&lt;blockquote&gt;
@@ -603,7 +603,7 @@
     <link href="http://enjoyhot.github.io/2016/02/09/linux-management-command/"/>
     <id>http://enjoyhot.github.io/2016/02/09/linux-management-command/</id>
     <published>2016-02-09T13:51:00.000Z</published>
-    <updated>2017-04-02T09:32:28.804Z</updated>
+    <updated>2017-04-02T09:53:40.660Z</updated>
     
     <content type="html">&lt;h2 id=&quot;运行脚本的方法&quot;&gt;&lt;a href=&quot;#运行脚本的方法&quot; class=&quot;headerlink&quot; title=&quot;运行脚本的方法&quot;&gt;&lt;/a&gt;运行脚本的方法&lt;/h2&gt;&lt;h3 id=&quot;常用运行方法&quot;&gt;&lt;a href=&quot;#常用运行方法&quot; class=&quot;headerlink&quot; title=&quot;常用运行方法:&quot;&gt;&lt;/a&gt;常用运行方法:&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ bash a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ chmod +x a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ ./a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ source a.sh&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;用bash和用source的不同在于：&lt;/p&gt;
@@ -735,7 +735,7 @@
     <link href="http://enjoyhot.github.io/2015/12/12/git-notes/"/>
     <id>http://enjoyhot.github.io/2015/12/12/git-notes/</id>
     <published>2015-12-12T10:41:00.000Z</published>
-    <updated>2017-04-02T09:32:28.756Z</updated>
+    <updated>2017-04-02T09:53:40.600Z</updated>
     
     <content type="html">&lt;h3 id=&quot;一、常用开发模式&quot;&gt;&lt;a href=&quot;#一、常用开发模式&quot; class=&quot;headerlink&quot; title=&quot;一、常用开发模式&quot;&gt;&lt;/a&gt;一、常用开发模式&lt;/h3&gt;&lt;p&gt;先看一张图&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20151212204330712&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;br&gt;1、少用pull或不用pull；&lt;br&gt;2、本地的多个分支，如果不是用命令行的话，对文件修改是对所有分支内容修改。&lt;/p&gt;
@@ -825,7 +825,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/05/03/%E9%80%9A%E8%BF%87%E6%AC%A2%E8%BF%8E%E5%BA%A6%E5%AF%B9%E7%BD%91%E9%A1%B5%E6%8E%92%E5%90%8D/"/>
     <id>http://enjoyhot.github.io/2015/05/03/通过欢迎度对网页排名/</id>
     <published>2015-05-03T07:30:50.000Z</published>
-    <updated>2017-04-02T09:32:28.968Z</updated>
+    <updated>2017-04-02T09:53:40.772Z</updated>
     
     <content type="html">&lt;p&gt;声明：由于此次第一次使用动态加载的表达式，hexo对LaTex支持可能不太好，因此这里有些公式显示奇奇怪怪，排版比较好一点的参考csdn:&lt;a href=&quot;http://blog.csdn.net/gugugujiawei/article/details/45459089&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客链接&lt;/a&gt;,下次就直接上图片算了。免得这边不兼容。&lt;/p&gt;
 &lt;h1 id=&quot;一、欢迎度历史&quot;&gt;&lt;a href=&quot;#一、欢迎度历史&quot; class=&quot;headerlink&quot; title=&quot;一、欢迎度历史&quot;&gt;&lt;/a&gt;一、欢迎度历史&lt;/h1&gt;&lt;p&gt;1998年 Jon Kleinberg致力于HITS的万维网搜索引擎项目，其中的算法使用了万维网的超链接结构来改进搜索引擎所得的结果。&lt;/p&gt;
@@ -896,7 +896,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/04/21/%E7%BD%91%E7%BB%9C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%AE%80%E4%BB%8B/"/>
     <id>http://enjoyhot.github.io/2015/04/21/网络搜索引擎简介/</id>
     <published>2015-04-21T05:23:50.000Z</published>
-    <updated>2017-04-02T09:32:28.968Z</updated>
+    <updated>2017-04-02T09:53:40.772Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、传统信息检索回顾&quot;&gt;&lt;a href=&quot;#一、传统信息检索回顾&quot; class=&quot;headerlink&quot; title=&quot;一、传统信息检索回顾&quot;&gt;&lt;/a&gt;一、传统信息检索回顾&lt;/h1&gt;&lt;p&gt;传统信息检索文档集的搜索有三种基本的计算机辅助技术：布尔模型、向量空间模型和概率模型。这些模型发展与20世纪60年代，直到2000年6月，便存在3500种不同的搜索引擎技术，并且大多数搜索引擎仍然依赖于以上三种基本模型的一种或数种。下图摘自《搜索引擎-原理技术与系统》，显示了搜索的主干流程。&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150421133224646&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;##1.1 布尔搜索引擎&lt;br&gt;信息检索中最早而且最简单的检索方法之一。布尔逻辑检索也称作布尔逻辑搜索，严格意义上的布尔检索法是指利用布尔逻辑运算符连接各个检索词，然后由计算机进行相应逻辑运算，以找出所需信息的方法。它使用面最广、使用频率最高。布尔逻辑运算符的作用是把检索词连接起来，构成一个逻辑检索式。&lt;/p&gt;
@@ -945,7 +945,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/29/CSDN2Markdown/"/>
     <id>http://enjoyhot.github.io/2015/03/29/CSDN2Markdown/</id>
     <published>2015-03-29T08:40:00.000Z</published>
-    <updated>2017-04-02T09:32:28.720Z</updated>
+    <updated>2017-04-02T09:53:40.548Z</updated>
     
     <content type="html">&lt;p&gt;#一、综述&lt;/p&gt;
 &lt;p&gt;最开始的博客用的是oschina, 自我感觉小清新，支持比较多风格的编辑器，容易编辑程度比csdn的要好。后来因为csdn人气的关系，又转到csdn，不过csdn编辑确实比较虐心，再后来就在服务器上搭一个WordPress的博客，不过用起来不是很爽。几个月前支持Markdown编辑，这无疑给用github pages的用户一个福音，因为可以直接上传到自己的github博客上。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;用github pages生成静态的页面，目前比较流行有Jekyll,Octopress,Hexo等，其他的我没怎么调查，jekyll是github推荐的，上面有他们给的官方框架、主题，支持网页书写Markdown文章。后两者需要编译后再上传，github上呈现出来的是html文件。总体而言，后两者的界面更好，用起来更加舒适。我用的是Hexo，命令简洁，不过要注意备份整个工程，不然后果不堪设想。&lt;/p&gt;
@@ -977,14 +977,14 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/26/myphoto/"/>
     <id>http://enjoyhot.github.io/2015/03/26/myphoto/</id>
     <published>2015-03-26T15:45:21.000Z</published>
-    <updated>2017-04-02T09:32:28.860Z</updated>
+    <updated>2017-04-02T09:53:40.680Z</updated>
     
-    <content type="html">&lt;p&gt;say something show&lt;/p&gt;
+    <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;say something show&lt;/p&gt;
+      &lt;p&gt;You just say something I don’t know.&lt;/p&gt;
 
     
     </summary>
@@ -1025,7 +1025,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/24/HPC-cluster/"/>
     <id>http://enjoyhot.github.io/2015/03/24/HPC-cluster/</id>
     <published>2015-03-24T12:23:50.000Z</published>
-    <updated>2017-04-02T09:32:28.764Z</updated>
+    <updated>2017-04-02T09:53:40.612Z</updated>
     
     <content type="html">&lt;p&gt;　　在本文之前，我建议先看完这篇文章：&lt;a href=&quot;http://www.jointforce.com.cn/page/hardware_linux.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux高性能计算集群 – Beowulf集群&lt;/a&gt;　　&lt;/p&gt;
 &lt;p&gt;#一、搭建集群中可能会遇到的问题&lt;/p&gt;
@@ -1108,7 +1108,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/24/HPC-benchmark/"/>
     <id>http://enjoyhot.github.io/2015/03/24/HPC-benchmark/</id>
     <published>2015-03-24T06:43:00.000Z</published>
-    <updated>2017-04-02T09:32:28.764Z</updated>
+    <updated>2017-04-02T09:53:40.608Z</updated>
     
     <content type="html">&lt;p&gt;#一、介绍&lt;/p&gt;
 &lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;　　&lt;/p&gt;
@@ -1240,7 +1240,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/19/study-thinking-20150319/"/>
     <id>http://enjoyhot.github.io/2015/03/19/study-thinking-20150319/</id>
     <published>2015-03-19T05:42:00.000Z</published>
-    <updated>2017-04-02T09:32:28.960Z</updated>
+    <updated>2017-04-02T09:53:40.764Z</updated>
     
     <content type="html">&lt;h1 id=&quot;社会篇&quot;&gt;&lt;a href=&quot;#社会篇&quot; class=&quot;headerlink&quot; title=&quot;社会篇&quot;&gt;&lt;/a&gt;社会篇&lt;/h1&gt;&lt;p&gt;   走过2014，看得很多是互联网如何在颠覆各个行业。以下说的都是感悟，可能有些无序，多多包含。&lt;/p&gt;
 &lt;p&gt;   无论是做科研也好，投入社会工作也罢，在做以互联网技术为核心的技术学习时，都要有一个目标，做出为社会认可的有价值的“产品”，并间接体现为金钱财富。&lt;/p&gt;
@@ -1279,7 +1279,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/02/25/machinelearning-KNN/"/>
     <id>http://enjoyhot.github.io/2015/02/25/machinelearning-KNN/</id>
     <published>2015-02-25T08:04:00.000Z</published>
-    <updated>2017-04-02T09:32:28.804Z</updated>
+    <updated>2017-04-02T09:53:40.664Z</updated>
     
     <content type="html">&lt;p&gt;适逢学习机器学习基础知识，就将书中内容读读记记，本博文代码参考书本Machine Learning in Action（《机器学习实战》）。&lt;/p&gt;
 &lt;h1 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h1&gt;&lt;p&gt;kNN算法又称为k近邻分类(k-nearest neighbor classification)算法。&lt;/p&gt;
@@ -1331,7 +1331,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/21/python-scrapy/"/>
     <id>http://enjoyhot.github.io/2015/01/21/python-scrapy/</id>
     <published>2015-01-21T07:12:00.000Z</published>
-    <updated>2017-04-02T09:32:28.940Z</updated>
+    <updated>2017-04-02T09:53:40.744Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、综述&quot;&gt;&lt;a href=&quot;#一、综述&quot; class=&quot;headerlink&quot; title=&quot;一、综述&quot;&gt;&lt;/a&gt;一、综述&lt;/h1&gt;&lt;p&gt;  开始这篇博文之前，调研了相关的爬虫方法，简单罗列冰山一角。&lt;/p&gt;
 &lt;p&gt;  综述：&lt;/p&gt;
@@ -1415,7 +1415,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/21/machinelearning-linear-regularization/"/>
     <id>http://enjoyhot.github.io/2015/01/21/machinelearning-linear-regularization/</id>
     <published>2015-01-21T06:57:00.000Z</published>
-    <updated>2017-04-02T09:32:28.808Z</updated>
+    <updated>2017-04-02T09:53:40.664Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、机器学习范式&quot;&gt;&lt;a href=&quot;#一、机器学习范式&quot; class=&quot;headerlink&quot; title=&quot;一、机器学习范式&quot;&gt;&lt;/a&gt;一、机器学习范式&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1、按数据类型划分(带标签与否)&lt;/strong&gt;&lt;br&gt;  &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  &lt;img src=&quot;http://img.blog.csdn.net/20150121143726836?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;  这是从样本的数据进行划分，现实中大部分属于半监督学习，并且大部分数据是没分类好的。&lt;/p&gt;
@@ -1494,7 +1494,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/20/songsong/"/>
     <id>http://enjoyhot.github.io/2015/01/20/songsong/</id>
     <published>2015-01-20T13:30:26.000Z</published>
-    <updated>2017-04-02T09:32:28.960Z</updated>
+    <updated>2017-04-02T09:53:40.764Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://enjoyhot.github.io/img/arcticle_pic/201501/012001.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我唱自己的歌&lt;br&gt;在布满车前草的道路上&lt;br&gt;在灌木的集市上&lt;br&gt;在雪松和白桦树的舞会上&lt;br&gt;在那山野的原始欢乐上&lt;br&gt;我唱自己的歌&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;我唱自己的歌&lt;br&gt;在热电厂恐怖的烟云中&lt;br&gt;在变速箱复杂的组织中&lt;br&gt;在砂轮的亲吻中&lt;br&gt;在那社会文明的运行中&lt;br&gt;我唱自己的歌&lt;/p&gt;
@@ -1527,7 +1527,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/18/machinelearning-linear-regression/"/>
     <id>http://enjoyhot.github.io/2015/01/18/machinelearning-linear-regression/</id>
     <published>2015-01-18T11:43:00.000Z</published>
-    <updated>2017-04-02T09:32:28.808Z</updated>
+    <updated>2017-04-02T09:53:40.664Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、曲线拟合&quot;&gt;&lt;a href=&quot;#一、曲线拟合&quot; class=&quot;headerlink&quot; title=&quot;一、曲线拟合&quot;&gt;&lt;/a&gt;一、曲线拟合&lt;/h1&gt;&lt;p&gt;  &lt;strong&gt;1、问题引入&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;  ①假设现在有一份关于某城市的住房面积与相应房价的数据集&lt;br&gt; &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
