@@ -5,29 +5,17 @@
     
     <title>linux系统管理常用命令（不定时更新） | ENJOYHOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh
-用bash和用source的不同在于：
-
-用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；
-用source执行时，是">
+    <meta name="description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux系统管理常用命令（不定时更新）">
 <meta property="og:url" content="http://enjoyhot.github.io/2016/02/09/linux-management-command/index.html">
 <meta property="og:site_name" content="ENJOYHOT">
-<meta property="og:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh
-用bash和用source的不同在于：
-
-用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；
-用source执行时，是">
+<meta property="og:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta property="og:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
-<meta property="og:updated_time" content="2017-04-02T10:13:14.316Z">
+<meta property="og:updated_time" content="2017-04-04T13:56:58.293Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux系统管理常用命令（不定时更新）">
-<meta name="twitter:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh
-用bash和用source的不同在于：
-
-用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；
-用source执行时，是">
+<meta name="twitter:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta name="twitter:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
 <link rel="publisher" href="111736291216286617217">
     
@@ -185,11 +173,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                39
+                38
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                33
+                32
                 <span>tags</span>
             </div>
         </div>
@@ -281,6 +269,7 @@ var _hmt = _hmt || [];
         
             
             <h2 id="运行脚本的方法"><a href="#运行脚本的方法" class="headerlink" title="运行脚本的方法"></a>运行脚本的方法</h2><h3 id="常用运行方法"><a href="#常用运行方法" class="headerlink" title="常用运行方法:"></a>常用运行方法:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ bash a.sh</div><div class="line"></div><div class="line">$ chmod +x a.sh</div><div class="line">$ ./a.sh</div><div class="line"></div><div class="line">$ source a.sh</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>用bash和用source的不同在于：</p>
 <ul>
 <li>用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；</li>
@@ -292,7 +281,7 @@ var _hmt = _hmt || [];
 <h2 id="test命令"><a href="#test命令" class="headerlink" title="test命令"></a>test命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">test -e a.txt &amp;&amp; echo &quot;exists&quot; || echo &quot;not exists&quot;</div></pre></td></tr></table></figure>
 <p>当a.txt存在时，执行echo “exists”，否则执行echo “not exists”，多个命令用&amp;&amp;连接即可。改变test参数可以进行多种决策判断，可以研究一下。</p>
 <h2 id="关闭apache"><a href="#关闭apache" class="headerlink" title="关闭apache"></a>关闭apache</h2><h3 id="版本一"><a href="#版本一" class="headerlink" title="版本一"></a>版本一</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/httpd stop</div></pre></td></tr></table></figure>
-<a id="more"></a>
+<!--more-->
 <h3 id="版本二"><a href="#版本二" class="headerlink" title="版本二"></a>版本二</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 stop</div></pre></td></tr></table></figure>
 <h2 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">netstat -anp | grep <span class="number">9200</span></div><div class="line">(Not all processes could be identified, non-owned process info</div><div class="line"> will <span class="keyword">not</span> be shown, you would have to be root to see it all.)</div><div class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">53570</span>       <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        ESTABLISHED -</div><div class="line">tcp6       <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        :::*                    LISTEN      -</div><div class="line">tcp6       <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">53570</span>       ESTABLISHED -</div><div class="line">unix  <span class="number">3</span>      [ ]         STREAM     CONNECTED     <span class="number">105509200</span> -</div></pre></td></tr></table></figure>
 <p>参数说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-p  process</div><div class="line">-a  all,显示所有连接和监听端口。</div><div class="line">-n  以数字显示地址和端口（否则忽略虚拟机动态ip，127.0.0.1会以localhost显示）</div></pre></td></tr></table></figure></p>
@@ -516,7 +505,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/04/02/Java基础篇/" class="thumbnail">
+                            <a href="/2017/04/04/Java基础篇/" class="thumbnail">
     
     
         <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
@@ -526,9 +515,28 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/java/">java</a></p>
-                            <p class="item-title"><a href="/2017/04/02/Java基础篇/" class="title">Java基础篇</a></p>
-                            <p class="item-date"><time datetime="2017-04-02T08:03:51.000Z" itemprop="datePublished">2017-04-02</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/04/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-04T13:32:27.000Z" itemprop="datePublished">2017-04-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/04/Spark计算平台/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://spark.apache.org/docs/latest/img/cluster-overview.png)" alt="Spark计算平台" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Spark/">Spark</a></p>
+                            <p class="item-title"><a href="/2017/04/04/Spark计算平台/" class="title">Spark计算平台</a></p>
+                            <p class="item-date"><time datetime="2017-04-04T13:32:27.000Z" itemprop="datePublished">2017-04-04</time></p>
                         </div>
                     </li>
                 
@@ -538,14 +546,14 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2016/08/01/or-know/" class="thumbnail">
     
     
-        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="或明" class="thumbnail-image"></span>
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.png)" alt="或明" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/life/">life</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
                             <p class="item-title"><a href="/2016/08/01/or-know/" class="title">或明</a></p>
                             <p class="item-date"><time datetime="2016-08-01T13:23:50.000Z" itemprop="datePublished">2016-08-01</time></p>
                         </div>
@@ -589,25 +597,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/02/09/linux-management-command/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="linux系统管理常用命令（不定时更新）" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
-                            <p class="item-title"><a href="/2016/02/09/linux-management-command/" class="title">linux系统管理常用命令（不定时更新）</a></p>
-                            <p class="item-date"><time datetime="2016-02-09T13:51:00.000Z" itemprop="datePublished">2016-02-09</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -617,7 +606,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/photo/">photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -626,7 +615,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -635,7 +624,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -644,7 +633,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 16px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 12px;">benchmark</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/life/" style="font-size: 10px;">life</a> <a href="/tags/photo/" style="font-size: 10px;">photo</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 10px;">benchmark</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
         </div>
     </div>
 

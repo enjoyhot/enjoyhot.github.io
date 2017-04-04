@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://enjoyhot.github.io/"/>
-  <updated>2017-04-02T10:13:14.312Z</updated>
+  <updated>2017-04-04T13:56:58.289Z</updated>
   <id>http://enjoyhot.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Java基础篇</title>
-    <link href="http://enjoyhot.github.io/2017/04/02/Java%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
-    <id>http://enjoyhot.github.io/2017/04/02/Java基础篇/</id>
-    <published>2017-04-02T08:03:51.000Z</published>
-    <updated>2017-04-02T10:13:14.312Z</updated>
+    <link href="http://enjoyhot.github.io/2017/04/04/Java%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+    <id>http://enjoyhot.github.io/2017/04/04/Java基础篇/</id>
+    <published>2017-04-04T13:32:27.000Z</published>
+    <updated>2017-04-04T13:56:58.289Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;本系列文章将分为三部分：&quot;&gt;&lt;a href=&quot;#本系列文章将分为三部分：&quot; class=&quot;headerlink&quot; title=&quot;本系列文章将分为三部分：&quot;&gt;&lt;/a&gt;本系列文章将分为三部分：&lt;/h2&gt;&lt;h3 id=&quot;Java基础篇&quot;&gt;&lt;a href=&quot;#Java基础篇&quot; class=&quot;headerlink&quot; title=&quot;Java基础篇&quot;&gt;&lt;/a&gt;Java基础篇&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;语法篇&lt;/li&gt;
@@ -65,7 +65,8 @@
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;javac a.java b.java main.java&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;无顺序之分&lt;/li&gt;
-&lt;li&gt;生成的class文件在原目录&lt;/li&gt;
+&lt;li&gt;生成的class文件默认在原目录&lt;/li&gt;
+&lt;li&gt;-s 能指定编译结果要置于哪个目录（directory）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;运行&lt;br&gt;进入src目录&lt;/p&gt;
@@ -262,10 +263,13 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;例3&lt;br&gt;==号，低精度自动转为高精度比较，如long与float，会自动转为float，+-*/亦然。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;低———————————————&amp;gt;高&lt;br&gt;byte,short,char-&amp;gt; int -&amp;gt; long -&amp;gt; float -&amp;gt; double&lt;/p&gt;
+&lt;p&gt;低———————————————&amp;gt;高&lt;br&gt;byte,short,char-&amp;gt; int -&amp;gt; long -&amp;gt; float -&amp;gt; double&lt;br&gt;高到低需要强制转换，如：&lt;br&gt;int aa = (int)4.0;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;switch&lt;br&gt;参数是只能放int类型，但是放byte，short，char类型的也可以，是因为byte，short，shar可以自动提升（自动类型转换）为int,也不能boolean类型,任何类型不能转换为boolean类型型，强转也不行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;final相关&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 被fianl修饰的变量不会自动改变类型&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt; b1=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,b2=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,b3,b6;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;byte&lt;/span&gt; b4=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,b5=&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b3=(b1+b2);  &lt;span class=&quot;comment&quot;&gt;/*语句1*/&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// 错，高到低需要强制转换&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b6=b4+b5;    &lt;span class=&quot;comment&quot;&gt;/*语句2*/&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;// 对，b4+b5受final影响，是byte&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;反射&quot;&gt;&lt;a href=&quot;#反射&quot; class=&quot;headerlink&quot; title=&quot;反射&quot;&gt;&lt;/a&gt;反射&lt;/h2&gt;&lt;h3 id=&quot;类型类&quot;&gt;&lt;a href=&quot;#类型类&quot; class=&quot;headerlink&quot; title=&quot;类型类&quot;&gt;&lt;/a&gt;类型类&lt;/h3&gt;&lt;p&gt;Object类中包含一个方法名叫getClass，利用这个方法就可以获得一个实例的类型类。类型类指的是代表一个类型的类，因为一切皆是对象，类型也不例外，在Java使用类型类来表示一个类型。所有的类型类都是Class类的实例。&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;A a = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; A();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// print equal&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(a.getClass()==A.class)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;equal&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;unequal&quot;&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -304,6 +308,8 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;关于finally&lt;/p&gt;
 &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(String[] args)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; k = f_test();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(k);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;f_test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;finally&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        System.out.println(&lt;span class=&quot;string&quot;&gt;&quot;It is in final chunk.&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        a = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 输出：&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// It is in final chunk.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 如果将 return a; 注释掉，将输出&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// It is in final chunk.&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 1&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Java标识符由数字，字母和下划线（_），美元符号（$）组成&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;数据结构章&quot;&gt;&lt;a href=&quot;#数据结构章&quot; class=&quot;headerlink&quot; title=&quot;数据结构章&quot;&gt;&lt;/a&gt;数据结构章&lt;/h1&gt;&lt;h2 id=&quot;ArrayList&quot;&gt;&lt;a href=&quot;#ArrayList&quot; class=&quot;headerlink&quot; title=&quot;ArrayList&quot;&gt;&lt;/a&gt;ArrayList&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;For jdk1.7 &amp;amp; 1.8&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -435,10 +441,225 @@
     
     </summary>
     
-      <category term="java" scheme="http://enjoyhot.github.io/categories/java/"/>
+      <category term="Java" scheme="http://enjoyhot.github.io/categories/Java/"/>
     
     
-      <category term="java" scheme="http://enjoyhot.github.io/tags/java/"/>
+      <category term="Java" scheme="http://enjoyhot.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spark计算平台</title>
+    <link href="http://enjoyhot.github.io/2017/04/04/Spark%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0/"/>
+    <id>http://enjoyhot.github.io/2017/04/04/Spark计算平台/</id>
+    <published>2017-04-04T13:32:27.000Z</published>
+    <updated>2017-04-04T13:56:58.317Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;官方文档&quot;&gt;&lt;a href=&quot;#官方文档&quot; class=&quot;headerlink&quot; title=&quot;官方文档&quot;&gt;&lt;/a&gt;官方文档&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;相关平台&quot;&gt;&lt;a href=&quot;#相关平台&quot; class=&quot;headerlink&quot; title=&quot;相关平台&quot;&gt;&lt;/a&gt;相关平台&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://databricks.com/blog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;databricks blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gitter.im/spark-scala/Lobby&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;A place to discuss and ask questions about using Scala for Spark programming&lt;/a&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://issues.apache.org/jira/browse/SPARK/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark jira&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sparkhub.databricks.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SPARKHUB&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;学习文档&quot;&gt;&lt;a href=&quot;#学习文档&quot; class=&quot;headerlink&quot; title=&quot;学习文档&quot;&gt;&lt;/a&gt;学习文档&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/JerryLead/SparkInternals/tree/master/markdown&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark Internals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/lw-lin/CoolplaySpark&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CoolplaySpark&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;注：&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Spark更新较快，具体操作查看&lt;a href=&quot;http://spark.apache.org/docs/latest/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网doc&lt;/a&gt;可能更详细&lt;/em&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;架构&quot;&gt;&lt;a href=&quot;#架构&quot; class=&quot;headerlink&quot; title=&quot;架构&quot;&gt;&lt;/a&gt;架构&lt;/h1&gt;&lt;h2 id=&quot;集群基础图&quot;&gt;&lt;a href=&quot;#集群基础图&quot; class=&quot;headerlink&quot; title=&quot;集群基础图&quot;&gt;&lt;/a&gt;集群基础图&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;来自官网说明的集群结构&lt;br&gt;&lt;a href=&quot;http://spark.apache.org/docs/latest/cluster-overview.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://spark.apache.org/docs/latest/cluster-overview.html&lt;/a&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://spark.apache.org/docs/latest/img/cluster-overview.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;相关组件说明&quot;&gt;&lt;a href=&quot;#相关组件说明&quot; class=&quot;headerlink&quot; title=&quot;相关组件说明&quot;&gt;&lt;/a&gt;相关组件说明&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Driver Program：请求Executor启动Task等，数据归约操作收集端；&lt;/li&gt;
+&lt;li&gt;Cluster Manager：standalone 集群管理器或 Mesos/YARN&lt;/li&gt;
+&lt;li&gt;Worker Node：一台机器默认一个worker (&lt;strong&gt;multi only for standalone&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;Executor Process : 默认一个worker节点的一个JVM实例，服务于单个spark app，执行 Task任务，生命周期等于spark app task :&lt;br&gt;一个Spark app可以有多个job（action），一个job可以有多个stage（shuffle data）,一个stage可以有多个task（partition, 开发者视角）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;启动程序&quot;&gt;&lt;a href=&quot;#启动程序&quot; class=&quot;headerlink&quot; title=&quot;启动程序&quot;&gt;&lt;/a&gt;启动程序&lt;/h2&gt;&lt;h2 id=&quot;运行模式&quot;&gt;&lt;a href=&quot;#运行模式&quot; class=&quot;headerlink&quot; title=&quot;运行模式&quot;&gt;&lt;/a&gt;运行模式&lt;/h2&gt;&lt;p&gt;Spark的运行模式取决于传递给SparkContext的MASTER环境变量的值。master URL可以是以下任一种形式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;local 使用一个Worker线程本地化运行SPARK&lt;ul&gt;
+&lt;li&gt;local[*]使用逻辑CPU个数数量的线程来本地化运行Spark&lt;/li&gt;
+&lt;li&gt;local[K]使用K个Worker线程本地化运行Spark（理想情况下，K应该根据运行机器的CPU逻辑核数设定）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;standalone&lt;br&gt;官方自己开发的集群模式，地址为spark://HOST:PORT，连接到指定的Spark standalone master。默认端口是7077。利用该模式不能解决单点故障问题，可以使用zookeeper解决该问题。&lt;/li&gt;
+&lt;li&gt;yarn&lt;ul&gt;
+&lt;li&gt;yarn-client以客户端模式连接YARN集群。&lt;/li&gt;
+&lt;li&gt;yarn-cluster 以集群模式连接YARN集群。集群的位置可以在HADOOP_CONF_DIR 环境变量中找到，默认Hadoop namenode 8088端口。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;mesos&lt;br&gt;mesos://HOST:PORT 连接到指定的Mesos集群。默认接口是5050.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;运行方式&quot;&gt;&lt;a href=&quot;#运行方式&quot; class=&quot;headerlink&quot; title=&quot;运行方式&quot;&gt;&lt;/a&gt;运行方式&lt;/h2&gt;&lt;p&gt;&lt;em&gt;该部分查看Spark2.1源码入口程序而知，以后更新版本可能会有所改变不得而知。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Spark程序运行包括交互式运行(除spark-submit和restful api的形式)和脚本提交。以下从交互式方式说起。&lt;/p&gt;
+&lt;h3 id=&quot;程序提交&quot;&gt;&lt;a href=&quot;#程序提交&quot; class=&quot;headerlink&quot; title=&quot;程序提交&quot;&gt;&lt;/a&gt;程序提交&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;spark-shell&lt;br&gt;  bash脚本启动交互式scala环境，脚本内部执行main函数，调用spark-submit脚本，指定java程序的中main入口，比如：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;quot;$&amp;#123;SPARK_HOME&amp;#125;&amp;quot;/bin/spark-submit --class org.apache.spark.repl.Main --name &amp;quot;Spark shell&amp;quot; &amp;quot;$@&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;$@&lt;/strong&gt; 是脚本运行时带的所有参数&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;pyspark&lt;br&gt;  bash脚本启动交互式python环境，脚本内部执行main函数，调用spark-submit脚本，指定java程序的中main入口，比如：&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;exec &amp;quot;$&amp;#123;SPARK_HOME&amp;#125;&amp;quot;/bin/spark-submit pyspark-shell-main --name &amp;quot;PySparkShell&amp;quot; &amp;quot;$@&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;spark-submit探讨&quot;&gt;&lt;a href=&quot;#spark-submit探讨&quot; class=&quot;headerlink&quot; title=&quot;spark-submit探讨&quot;&gt;&lt;/a&gt;spark-submit探讨&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;脚本说明&lt;br&gt;&lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/bin/spark-submit&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程序&lt;/a&gt;很简单，将接收参数转到spark-class脚本的第二个参数。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;exec &amp;quot;$&amp;#123;SPARK_HOME&amp;#125;&amp;quot;/bin/spark-class org.apache.spark.deploy.SparkSubmit &amp;quot;$@&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;spark-class&lt;br&gt;&lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/bin/spark-class&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;spark-class&lt;/a&gt;是所有提交程序的入口，代码相比另外的脚本复杂一些，归根到底执行一条命令，通过后面解释可知道，该命令执行scala程序：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;exec &amp;quot;$&amp;#123;CMD[@]&amp;#125;&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CMD变量的构造关键在这里(调用java程序生成命令行字符串)：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;build_command() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;$RUNNER&amp;quot; -Xmx128m -cp &amp;quot;$LAUNCH_CLASSPATH&amp;quot; org.apache.spark.launcher.Main &amp;quot;$@&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  printf &amp;quot;%d\0&amp;quot; $?&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;CMD=()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;while IFS= read -d &amp;apos;&amp;apos; -r ARG; do&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  CMD+=(&amp;quot;$ARG&amp;quot;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;done &amp;lt; &amp;lt;(build_command &amp;quot;$@&amp;quot;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/bin/spark-class#L26-L36&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;$RUNNER&lt;/a&gt;是本地机器java的地址。因此，我们可以知道，整个交互式的spark程序的入口程序类似如下语法：&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;exec (java -Xmx128m -cp xxx org.apache.spark.launcher.Main “org.apache.spark.deploy.SparkSubmit&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;+ pyspark-shell-main --name &quot;PySparkShell&quot; &quot;$@&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(或 --class org.apache.spark.repl.Main --name &quot;Spark shell&quot; &quot;$@&quot;)”)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;对于单纯spark-submit的脚本提交方式，只是&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;org.apache.spark.deploy.SparkSubmit&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;后面带的参数不同而已。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;org.apache.spark.launcher.Main&lt;br&gt;该 &lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/launcher/src/main/java/org/apache/spark/launcher/Main.java&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Java入口程序&lt;/a&gt; 将输出以’\0’分割的字符串命令&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;org.apache.spark.deploy.SparkSubmit&lt;br&gt;scala程序，真正的 &lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/core/src/main/scala/org/apache/spark/deploy/SparkSubmit.scala&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;spark入口&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;提交Spark应用&quot;&gt;&lt;a href=&quot;#提交Spark应用&quot; class=&quot;headerlink&quot; title=&quot;提交Spark应用&quot;&gt;&lt;/a&gt;提交Spark应用&lt;/h2&gt;&lt;p&gt;对于交互式的传给你下，会在启动的时候自动构建SparkContext，名称为sc。其它方式由开发者新建SparkContext对象。&lt;/p&gt;
+&lt;h1 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h1&gt;&lt;h2 id=&quot;程序提交-1&quot;&gt;&lt;a href=&quot;#程序提交-1&quot; class=&quot;headerlink&quot; title=&quot;程序提交&quot;&gt;&lt;/a&gt;程序提交&lt;/h2&gt;&lt;h3 id=&quot;主要方式&quot;&gt;&lt;a href=&quot;#主要方式&quot; class=&quot;headerlink&quot; title=&quot;主要方式&quot;&gt;&lt;/a&gt;主要方式&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;官方方式&lt;ul&gt;
+&lt;li&gt;命令行&lt;/li&gt;
+&lt;li&gt;REST API&lt;/li&gt;
+&lt;li&gt;SparkLauncher类接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;相关&lt;a href=&quot;https://spark.apache.org/third-party-projects.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;第三方工具&lt;/a&gt;：&lt;ul&gt;
+&lt;li&gt;Spark-jobserver&lt;/li&gt;
+&lt;li&gt;Livy&lt;/li&gt;
+&lt;li&gt;Oozie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;使用Spark&quot;&gt;&lt;a href=&quot;#使用Spark&quot; class=&quot;headerlink&quot; title=&quot;使用Spark&quot;&gt;&lt;/a&gt;使用Spark&lt;/h2&gt;&lt;h3 id=&quot;Pyspark&quot;&gt;&lt;a href=&quot;#Pyspark&quot; class=&quot;headerlink&quot; title=&quot;Pyspark&quot;&gt;&lt;/a&gt;Pyspark&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;./spark/bin$ ./pyspark --executor-memory 4G --total-executor-cores 80&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;例子:&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;./spark/bin/pyspark --executor-memory 4G --total-executor-cores 20 --packages com.databricks:spark-csv_2.10:1.4.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;./spark/bin/spark-shell --executor-memory 4G --total-executor-cores 20 --packages com.databricks:spark-csv_2.10:1.4.0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;&lt;br&gt;通过添加packages，可以使一下转换操作合法，paquet转换为csv格式：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;row_1000_df.write.format(&lt;span class=&quot;string&quot;&gt;&quot;com.databricks.spark.csv&quot;&lt;/span&gt;).save(filepath)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Submit&quot;&gt;&lt;a href=&quot;#Submit&quot; class=&quot;headerlink&quot; title=&quot;Submit&quot;&gt;&lt;/a&gt;Submit&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;例子:&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;./spark/bin/spark-submit --executor-memory 4G --total-executor-cores 80 --py-files loadDataSetSpark.py mainSpark.py&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Launcher&quot;&gt;&lt;a href=&quot;#Launcher&quot; class=&quot;headerlink&quot; title=&quot;Launcher&quot;&gt;&lt;/a&gt;Launcher&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;例子:&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Map&amp;lt;String, String&amp;gt; env = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HashMap&amp;lt;String,String&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;env.put(&lt;span class=&quot;string&quot;&gt;&quot;SPARK_PRINT_LAUNCH_COMMAND&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;1&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Process spark  = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SparkLauncher(env)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setAppResource(&lt;span class=&quot;string&quot;&gt;&quot;file:/data/home/gujw/projects/spark/jar_test/SparkDataSet-0.0.1-SNAPSHOT.jar&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setMainClass(&lt;span class=&quot;string&quot;&gt;&quot;com.SparkMain&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setConf(&lt;span class=&quot;string&quot;&gt;&quot;spark.cores.max&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;20&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .addSparkArg(&lt;span class=&quot;string&quot;&gt;&quot;--verbose&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setMaster(&lt;span class=&quot;string&quot;&gt;&quot;spark://192.168.0.11:7077&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setConf(&lt;span class=&quot;string&quot;&gt;&quot;spark.dynamicAllocation.enabled&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;true&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setConf(SparkLauncher.DRIVER_MEMORY, &lt;span class=&quot;string&quot;&gt;&quot;2g&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .setVerbose(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    .launch();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;认识RDD&quot;&gt;&lt;a href=&quot;#认识RDD&quot; class=&quot;headerlink&quot; title=&quot;认识RDD&quot;&gt;&lt;/a&gt;认识RDD&lt;/h2&gt;&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;RDD：弹性分布式数据集，表示分布在多个计算节点上可以并行操作的元素集合。&lt;/li&gt;
+&lt;li&gt;操作：转化操作（transformation，以是否shuffle定stage的边界）和行动操作（action，决定了job的划分），可通过返回值区别，转化操作返回RDD类型，行动操作为其它类型。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如以下lines就是一个RDD：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lines = sc.parallelize([&lt;span class=&quot;string&quot;&gt;&#39;pandas&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;i like pandas&#39;&lt;/span&gt;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines = sc.textFile(&lt;span class=&quot;string&quot;&gt;&#39;readme.md&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;lines是Spark的RDD，第二行的lines包含了在哪些机器上有file文件的块，信息是从HDFS加载而来。每文件块映射到RDD上就是一个分区。如果一个文件块128MB（默认），那么HDFS上一个1GB大小的文件就有8个文件块，由这个文件创建的RDD就会有8个分区。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 能把这个RDD缓存，降低action计算的成本（因为每次新的action操作都要重新计算一次），对应的就有RDD.unpersist()，当内存吃紧时可以用&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# persist(storageLevel=StorageLevel(False, True, False, False, 1))&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RDD.persist()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Persist this RDD with the default storage level (MEMORY_ONLY_SER).&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;RDD.cache()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;RDD操作流程示例&quot;&gt;&lt;a href=&quot;#RDD操作流程示例&quot; class=&quot;headerlink&quot; title=&quot;RDD操作流程示例&quot;&gt;&lt;/a&gt;RDD操作流程示例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lines_data = sc.textFile(&amp;apos;readme.md&amp;apos;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines = lines_data.filter()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines.persist()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines.count()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines.first()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;rdd.collect()操作是将数据存在单台机器的内存（driver）上;&lt;/li&gt;
+&lt;li&gt;rdd.filter(lambda x: x &amp;gt; 90)会分发整个self对象;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;RDD基本函数&quot;&gt;&lt;a href=&quot;#RDD基本函数&quot; class=&quot;headerlink&quot; title=&quot;RDD基本函数&quot;&gt;&lt;/a&gt;RDD基本函数&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;更多见官网&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;RDD操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;distinct()&lt;/li&gt;
+&lt;li&gt;union(rdd)&lt;/li&gt;
+&lt;li&gt;intersection(rdd) #交集&lt;/li&gt;
+&lt;li&gt;substract(rdd) #减去交集&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;转化操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;map(func)  # 能实现list append&lt;/li&gt;
+&lt;li&gt;flatMap(func) # 能实现list expend&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;行动操作:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;reduce(fun)&lt;/li&gt;
+&lt;li&gt;top(n),take(n)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;pair RDD转化操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mapValues(func): rdd.mapValues(lambda x : x+1) # key不变，value+1&lt;/li&gt;
+&lt;li&gt;reduceByKey(func) #接收对相同的key的2个value参数&lt;/li&gt;
+&lt;li&gt;keys()&lt;/li&gt;
+&lt;li&gt;values()&lt;/li&gt;
+&lt;li&gt;combineByKey():该函数用于对key的值进行各种操作，相比其它ByKey更原生，计算(key,mean)例子如下：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sumCount = keyValue&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        .combineByKey((&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x: (x,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    (&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x,value:(x[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] + y,x[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)),&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                    &lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x,y: (x[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]+y[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;],x[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]+y[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;])))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sumCount.map(&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; key,xy:(key,xy[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]/xy[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;])).collectAsMap()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 其它：&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rdd.reduceByKey(func) == rdd.groupByKey().mapValues(&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x:x.reduce(func))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rdd1.join(rdd2) &lt;span class=&quot;comment&quot;&gt;#&amp;#123;(1,(2,3)),(2,(4,5)),...&amp;#125;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;pair RDD行动操作：&lt;ul&gt;
+&lt;li&gt;rdd.lookup(1) #{(1,2),(1,3),(2,3)}  返回[2,3]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;存取文件&quot;&gt;&lt;a href=&quot;#存取文件&quot; class=&quot;headerlink&quot; title=&quot;存取文件&quot;&gt;&lt;/a&gt;存取文件&lt;/h2&gt;&lt;h3 id=&quot;存取HDFS并保存为一般格式&quot;&gt;&lt;a href=&quot;#存取HDFS并保存为一般格式&quot; class=&quot;headerlink&quot; title=&quot;存取HDFS并保存为一般格式&quot;&gt;&lt;/a&gt;存取HDFS并保存为一般格式&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;tow_state = sc.textFile(&lt;span class=&quot;string&quot;&gt;&#39;/user/enjoyhot/town_state.csv&#39;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tow_state.saveAsTextFile(&lt;span class=&quot;string&quot;&gt;&#39;/user/enjoyhot/town_state.csv&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在Hadoop namenode 50070端口可查看上传到分布式文件系统的情况。&lt;/p&gt;
+&lt;h3 id=&quot;存取pickle文件&quot;&gt;&lt;a href=&quot;#存取pickle文件&quot; class=&quot;headerlink&quot; title=&quot;存取pickle文件&quot;&gt;&lt;/a&gt;存取pickle文件&lt;/h3&gt;&lt;p&gt;&lt;em&gt;python独有&lt;/em&gt;&lt;br&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;adData = sc.pickleFile(&#39;/user/enjoyhot/2016-06-01’)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;title=Row(&#39;field1&#39;,&#39;field2&#39;,&#39;field3&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ad_df = sqlContext.createDataFrame(adData.map(lambda e:title(*e)))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ad_df.select([&#39;field1&#39;,&#39;field2&#39;]).show()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;存取parquet格式文件&quot;&gt;&lt;a href=&quot;#存取parquet格式文件&quot; class=&quot;headerlink&quot; title=&quot;存取parquet格式文件&quot;&gt;&lt;/a&gt;存取parquet格式文件&lt;/h2&gt;&lt;p&gt;parquet格式，一种流行的文件列式存储格式，相对高效。&lt;/p&gt;
+&lt;h3 id=&quot;转换与保存&quot;&gt;&lt;a href=&quot;#转换与保存&quot; class=&quot;headerlink&quot; title=&quot;转换与保存&quot;&gt;&lt;/a&gt;转换与保存&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#from pyspark.sql import *&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#sqlc = SQLContext(sc)&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lines_rdd = sc.textFile(&lt;span class=&quot;string&quot;&gt;&#39;/user/gujw/town_state.csv&#39;&lt;/span&gt;).map(&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; line: line.split(&lt;span class=&quot;string&quot;&gt;&quot;,&quot;&lt;/span&gt;))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;header = lines_rdd.first()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rdd = lines_rdd.filter(&lt;span class=&quot;keyword&quot;&gt;lambda&lt;/span&gt; x:x!=header)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tow_state_df = rdd.toDF([&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;town&#39;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&#39;state&#39;&lt;/span&gt;]) &lt;span class=&quot;comment&quot;&gt;# [&#39;id&#39;,&#39;town&#39;,&#39;state&#39;]&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tow_state_df.show()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// tow_state_df.write.parquet(save_path)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tow_state_df.saveAsParquetFile(&lt;span class=&quot;string&quot;&gt;&#39;/user/gujw/test/town_state.parquet&#39;&lt;/span&gt;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;读取与操作&quot;&gt;&lt;a href=&quot;#读取与操作&quot; class=&quot;headerlink&quot; title=&quot;读取与操作&quot;&gt;&lt;/a&gt;读取与操作&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pyspark.sql &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; *&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sqlc = SQLContext(sc)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;df = sqlc.read.parquet(&lt;span class=&quot;string&quot;&gt;&quot;/user/gujw/test/town_state.parquet&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;df.registerTempTable(&lt;span class=&quot;string&quot;&gt;&quot;dft&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sqlc.cacheTable(&lt;span class=&quot;string&quot;&gt;&quot;dft&quot;&lt;/span&gt;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;s = &lt;span class=&quot;string&quot;&gt;&quot;select id,town from dft&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sqlc.sql(s).show()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160715192713880&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;本地打印元素&quot;&gt;&lt;a href=&quot;#本地打印元素&quot; class=&quot;headerlink&quot; title=&quot;本地打印元素&quot;&gt;&lt;/a&gt;本地打印元素&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;id_town_list = sqlc.sql(s).collect()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;for item in id_town_list:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print item[0]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    break&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160715192811268&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;Shuffle&quot;&gt;&lt;a href=&quot;#Shuffle&quot; class=&quot;headerlink&quot; title=&quot;Shuffle&quot;&gt;&lt;/a&gt;Shuffle&lt;/h1&gt;&lt;h2 id=&quot;概念-1&quot;&gt;&lt;a href=&quot;#概念-1&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;Shuffle操作介于Map phase和Reduce phase之间，当Map的输出结果要被Reduce使用时，输出结果需要&lt;strong&gt;按key哈希&lt;/strong&gt;，并且分发到每一个Reducer上去，这个过程就是shuffle。由于shuffle涉及到了磁盘的读写和网络的传输，因此shuffle性能的高低直接影响到了整个程序的运行效率。如图：&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://jerryshao.me/img/2014-01-04-spark-shuffle/mapreduce-process.jpg&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;可将 map 端划分数据、持久化数据的过程称为 shuffle write，而将 reducer 读入数据、aggregate 数据的过程称为 shuffle read。&lt;br&gt;&lt;br&gt;## Spark和Hadoop的前期Shuffle方式&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://jerryshao.me/img/2014-01-04-spark-shuffle/spark-shuffle.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;- 每一个Mapper会根据Reducer的数量创建出相应的bucket(一个抽象的概念)，bucket的数量是M×R，其中M是Map的个数，R是Reduce的个数。&lt;br&gt;- Mapper产生的结果会根据设置的partition算法填充到每个bucket中去。这里的partition算法是可以自定义的，默认的算法是根据key哈希到不同的bucket中去。&lt;br&gt;- Reducer启动时，它会根据自己task的id和所依赖的Mapper的id从远端或是本地的block manager中取得相应的bucket作为Reducer的输入进行处理。&lt;br&gt;&lt;br&gt;&amp;gt; bucket是一个抽象概念，在实现中每个bucket可以对应一个文件，可以对应文件的一部分或是其他等。&lt;br&gt;&lt;br&gt;PS:Spark的内存计算是指Job中间输出结果可以保存在内存中，不是说shuffle过程的中间实现，Map结果的分片数据Spark和MapReduce都存放在磁盘上。&lt;br&gt;&lt;br&gt;## 发展&lt;br&gt;### hash-based&lt;br&gt;&lt;a href=&quot;https://github.com/JerryLead/SparkInternals/blob/master/markdown/4-shuffleDetails.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/JerryLead/SparkInternals/blob/master/markdown/4-shuffleDetails.md&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://jerryshao.me/architecture/2014/01/04/spark-shuffle-detail-investigation/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jerryshao.me/architecture/2014/01/04/spark-shuffle-detail-investigation/&lt;/a&gt;&lt;br&gt;&lt;strong&gt;Spark 0.8.1做了改进后还是有缺点：&lt;/strong&gt;&lt;br&gt;&lt;br&gt;- shuffle write过程中会产生大量的shffle文件，总体来说多少个reduce task,一台机器就有多少个文件，不再是MXR。而bucket数量依然为MXR，一个bucket将会对应writer handler的buffer，内存开销依然很大。因此必要的措施是减少Mapper和Reducer的数量。看图：&lt;br&gt;&lt;img src=&quot;http://jerryshao.me/img/2014-01-04-spark-shuffle/spark-shuffle-consolidate.png&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;- 另一方面，shffle read中在做诸如groupByKey操作时，需要将每个partition中的value都保存到同一key对应的hashMap中，就得确保Map操作对应的partition足够小到内存能够容纳，因此合理的设计是增加task的数量，task数量增多又会带来buffer开销更大的问题，因此陷入了内存使用的两难境地。&lt;br&gt;&lt;br&gt;- 来自知乎&lt;br&gt;&amp;gt; 以前对 shuffle write/read 的分类是 sort-based 和 hash-based。MapReduce 可以说是 sort-based，shuffle write 和 shuffle read 过程都是基于key sorting 的 (buffering records + in-memory sort + on-disk external sorting)。早期的 Spark 是 hash-based，shuffle write 和 shuffle read 都使用 HashMap-like 的数据结构进行 aggregate (without key sorting)。但目前的 Spark 是两者的结合体，shuffle write 可以是 sort-based (only sort partition id, without key sorting)，shuffle read 阶段可以是 hash-based。因此，目前 sort-based 和 hash-based 已经“你中有我，我中有你”，界限已经不那么清晰。&lt;br&gt;参考：&lt;a href=&quot;https://www.zhihu.com/question/27643595&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/27643595&lt;/a&gt;&lt;br&gt;&lt;br&gt;### SortBasedShuffle&lt;br&gt;“取代”Hash BasedShuffle作为默认选项的原因是什么？&lt;br&gt;&lt;br&gt;- hashbased shuffle的每个mapper都需要为每个reducer写一个文件，需要产生M&lt;em&gt;R个数量的文件，如果mapper和reducer的数量比较大，产生的文件数会非常多。hashbased shuffle设计的目标之一就是避免不需要的排序（Hadoop Map Reduce被人诟病的地方，很多不需要sort的地方的sort导致了不必要的开销）。但是它在处理超大规模数据集的时候，产生了大量的DiskIO和内存的消耗，这无疑很影响性能。&lt;br&gt;- hashbased shuffle也在不断的优化中，为了更好的解决这个问题，&lt;em&gt;*Spark 1.1&lt;/em&gt;&lt;/em&gt; 引入了Sortbased shuffle。首先，每个Shuffle Map Task不会为每个Reducer生成一个单独的文件；相反，它会将所有的结果写到一个文件里，同时会生成一个index文件，Reducer可以通过这个index文件取得它需要处理的数据。避免产生大量的文件的直接收益就是节省了内存的使用和顺序Disk IO带来的低延时。节省内存的使用可以减少GC的风险和频率。而减少文件的数量可以避免同时写多个文件对系统带来的压力。&lt;br&gt;- Spark2.0中已明确指出移除掉hash-based shuffle，详见&lt;a href=&quot;http://spark.apache.org/releases/spark-release-2-0-0.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;release-note&lt;/a&gt;。&lt;br&gt;&lt;br&gt;&lt;br&gt;# 提高速度的方法&lt;br&gt;&lt;br&gt;## 读取文件&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;RDD = sc.textFile(dir | part-*.txt) &lt;span class=&quot;comment&quot;&gt;# 读取目录或正则匹配&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pairRDD = sc.wholeTextFile(dir | part-*.txt)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;wholeTextFile如果是读一个文件，一次读取所有行，返回&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;rdd(filepath,contents)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;## 代码逻辑层面&lt;br&gt;&lt;br&gt;### 对数据分区&lt;br&gt;- 如pair RDD采用partitionBy(100)进行自定义哈希分区,避免不必要的混洗，但注意需要persist持久化才能避免重新分区；对RDD的结果有分区的是&lt;br&gt;    - cogroup&lt;br&gt;    - groupWith&lt;br&gt;    - join,leftOuterJoin,rightOuterJoin&lt;br&gt;    - groupByKey,reduceByKey,combineByKey&lt;br&gt;    - partitionBy&lt;br&gt;    - sort&lt;br&gt;    - mapValues(父RDD需有分区),flatMapValues(父RDD需有分区)&lt;br&gt;- 自定义分区&lt;br&gt;如下代码，拥有相似的URL页面可能会被分到完全不同的节点上，然而，同一个域名下的网页更有可能相互链接，因此，分区时考虑将rdd中拥有同一个域名的url放在一起。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;string&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;print urlparse.urlparse(&quot;http://www.baidu.com&quot;).netloc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;www.baidu.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;print urlparse.urlparse(&quot;http://www.baidu.com/a/b&quot;).netloc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;www.baidu.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&quot;&quot;&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; urlparse&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;hash_domain&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(url)&lt;/span&gt;:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; hash(urlparse.urlparse(url).netloc)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rdd.partitionBy(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;,hash_domain)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;更详细的实战推荐两篇美团的文章：&lt;br&gt;&lt;br&gt;- &lt;a href=&quot;http://tech.meituan.com/spark-tuning-basic.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark性能优化指南-基础篇&lt;/a&gt;&lt;br&gt;- &lt;a href=&quot;http://tech.meituan.com/spark-tuning-pro.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark性能优化指南-高级篇&lt;/a&gt;&lt;br&gt;&lt;br&gt;# 实时计算相关&lt;br&gt;&lt;br&gt;## Spark Streaming&lt;br&gt;Spark可以接受来自文件系统, Akka actors, rsKafka, Flume, Twitter, ZeroMQ和TCP Socket的数据源或者你自己定义的输入源。&lt;br&gt;&lt;br&gt;- 读取TCP源数据&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// Create a DStream that will connect to hostname:port, like localhost:9999&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;JavaReceiverInputDStream&amp;lt;String&amp;gt; lines = jssc.socketTextStream(&lt;span class=&quot;string&quot;&gt;&quot;localhost&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9999&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;简单测试的方法：&lt;br&gt;运行Netcat工具作为数据服务器,在netcat服务器中输入的每一行都会被读取，在Spark streaming程序中做好统计即可。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ nc -lk 9999&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;- 消费kafka数据&lt;br&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;SparkConf conf = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; SparkConf().setAppName(&lt;span class=&quot;string&quot;&gt;&quot;streaming_top10&quot;&lt;/span&gt;).setMaster(&lt;span class=&quot;string&quot;&gt;&quot;local[4]&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;JavaStreamingContext jssc = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; JavaStreamingContext(conf, Durations.seconds(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;jssc.checkpoint(Constants.CHECKPOINT);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String zk_quorum = Constants.ZK_QUORUM;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;String consumer_group_id=&lt;span class=&quot;string&quot;&gt;&quot;test-consumer-group&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Map&amp;lt;String, Integer&amp;gt; topicMap = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; HashMap &amp;lt;String, Integer&amp;gt;();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;topicMap.put(&lt;span class=&quot;string&quot;&gt;&quot;topic-kafka&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;JavaPairReceiverInputDStream&amp;lt;String,String&amp;gt; messages =&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        KafkaUtils.createStream(jssc, zk_quorum, consumer_group_id, topicMap);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;&lt;br&gt;- 待续&lt;br&gt;&lt;br&gt;## SparkSQL&lt;br&gt;实际上该功能是否真正实时依然由业务具体决定，对于比较轻量级的操作，可以直接返回，做到准实时。&lt;br&gt;&lt;br&gt;&lt;br&gt;# 资源管理系统&lt;br&gt;&lt;br&gt;## Yarn&lt;br&gt;### 结构&lt;br&gt;Hadoop2.0对MapReduce框架做了彻底的设计重构，称Hadoop2.0中的MapReduce为MRv2或者Yarn。&lt;br&gt;&lt;br&gt;- Hadoop1.x主要组件&lt;br&gt;JobTracker和TaskTracker&lt;br&gt;- Hadoop2.X中引入yarn之组件&lt;br&gt;    - ResourceManger：全局的资源管理器进程，它主要由两个组件构成：调度器（Scheduler）和应用程序管理器（Application Manager，ASM）。ResourceManager 将各个资源部分（计算、内存、带宽等）精心安排给基础 NodeManager（YARN 的每节点代理）。ResourceManager 还与 ApplicationMaster 一起分配资源，与 NodeManager 一起启动和监视它们的基础应用程序。&lt;br&gt;        - 应用程序管理器（Application Manager）&lt;br&gt;应用程序管理器负责管理整个系统中所有应用程序，包括应用程序提交、与调度器协商资源以启动ApplicationMaster、监控ApplicationMaster运行状态并在失败时重新启动它等。&lt;br&gt;    - ApplicationMaster：&lt;br&gt;对于Map-Reduce计算模型而言有它自己的ApplicationMaster实现，用于向ResourceManager（全局的）申请计算资源（Containers）并且和NodeManager交互来执行和监控具体的task。&lt;br&gt;    - NodeManager：&lt;br&gt;YARN中每个节点上的代理，管理Hadoop集群中单个计算节点，包括与ResourceManger保持通信，监督Container的生命周期管理，监控每个Container的资源使用（内存、CPU等）情况，追踪节点健康状况，管理日志和不同应用程序用到的附属服务（auxiliary service）。&lt;br&gt;    - container&lt;br&gt;Yarn对计算机计算资源的抽象，它其实就是一组CPU和内存资源。&lt;br&gt;&lt;br&gt;### 调度器&lt;br&gt;在Yarn中有三种调度器可以选择：&lt;br&gt;&lt;br&gt;- FIFO Scheduler&lt;br&gt;可能导致其它应用被阻塞&lt;br&gt;- Capacity Scheduler&lt;br&gt;有一个专门用来运行小任务的队列，意味着一些需要大量资源的任务执行时间会相比可用上所有资源的FIFO调度器时间长。&lt;br&gt;- FairS cheduler&lt;br&gt;资源运行时动态调整。&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20151030111100329&quot; alt=&quot;此处输入图片的描述&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;粗细粒度探讨&quot;&gt;&lt;a href=&quot;#粗细粒度探讨&quot; class=&quot;headerlink&quot; title=&quot;粗细粒度探讨&quot;&gt;&lt;/a&gt;粗细粒度探讨&lt;/h3&gt;&lt;p&gt;细粒度可以提高CPU的利用率，但对于短作业延迟大。待补充……&lt;/p&gt;
+&lt;h1 id=&quot;进一步了解Spark&quot;&gt;&lt;a href=&quot;#进一步了解Spark&quot; class=&quot;headerlink&quot; title=&quot;进一步了解Spark&quot;&gt;&lt;/a&gt;进一步了解Spark&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;基于Spark1.6&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Spark-map-reduce基本原理&quot;&gt;&lt;a href=&quot;#Spark-map-reduce基本原理&quot; class=&quot;headerlink&quot; title=&quot;Spark map reduce基本原理&quot;&gt;&lt;/a&gt;Spark map reduce基本原理&lt;/h2&gt;&lt;p&gt;RDD可理解为关系数据库里的一个个操作，比如 map，filter，Join 等。在 Spark 里面实现了许多这样的RDD类，即可以看成是操作类。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当我们调用一个map接口，底层实现是会生成一个MapPartitionsRDD对象，当RDD真正执行时，会调用MapPartitionsRDD对象里面的compute方法来执行这个操作的计算逻辑。&lt;/li&gt;
+&lt;li&gt;但是不同的是，RDD是lazy模式，只有像count，saveasText这种action动作被调用后再会去触发runJob动作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;RDD基本组成&quot;&gt;&lt;a href=&quot;#RDD基本组成&quot; class=&quot;headerlink&quot; title=&quot;RDD基本组成&quot;&gt;&lt;/a&gt;RDD基本组成&lt;/h2&gt;&lt;p&gt;在 &lt;a href=&quot;https://github.com/apache/spark/blob/branch-1.6/core/src/main/scala/org/apache/spark/rdd/RDD.scala&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Spark1.6&lt;/a&gt; 中，有以下四个函数比较重要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;def compute(split: Partition, context: TaskContext): Iterator[T]&lt;br&gt;作用：用于计算&lt;/li&gt;
+&lt;li&gt;protected def getPartitions: Array[Partition]&lt;br&gt;作用：获取分片消息&lt;/li&gt;
+&lt;li&gt;protected def getDependencies: Seq[Dependency[_]]&lt;br&gt;作用：获取父RDD的依赖关系，依赖分二种——如果RDD的每个分区最多只能被一个Child RDD的一个分区使用，则称之为narrow dependency(如map)；若依赖于多个 Child RDD 分区，则称之为 wide dependency(如join)。&lt;/li&gt;
+&lt;li&gt;protected def getPreferredLocations(split: Partition): Seq[String]&lt;br&gt;作用：获取Spark的执行模式，local等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;blockManager&quot;&gt;&lt;a href=&quot;#blockManager&quot; class=&quot;headerlink&quot; title=&quot;blockManager&quot;&gt;&lt;/a&gt;blockManager&lt;/h2&gt;&lt;p&gt;实现缓存的&lt;a href=&quot;https://github.com/apache/spark/blob/branch-2.1/core/src/main/scala/org/apache/spark/storage/BlockManager.scala&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;重要类&lt;/a&gt;，通过类似于在内部再构建了一个KV系统，K表示每个分区 ID 号，V 表示这个分区计算后的结果。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例如在streaming计算时，每个batch会去消息队列上拉取这个时间段的数据，每个Recevier接收过来数据形成block块并存放到blockManager上，为了可靠性，这个block块可以远程备份，后续的batch计算就直接在之前已读取的block块上进行计算，这样不断循环迭代来完成流处理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;计算任务流程的梳理&quot;&gt;&lt;a href=&quot;#计算任务流程的梳理&quot; class=&quot;headerlink&quot; title=&quot;计算任务流程的梳理&quot;&gt;&lt;/a&gt;计算任务流程的梳理&lt;/h2&gt;&lt;h3 id=&quot;划分Stage&quot;&gt;&lt;a href=&quot;#划分Stage&quot; class=&quot;headerlink&quot; title=&quot;划分Stage&quot;&gt;&lt;/a&gt;划分Stage&lt;/h3&gt;&lt;p&gt;当某个操作触发计算，向DAGScheduler提交作业时，DAGScheduler需要从RDD依赖链最末端的RDD出发，遍历整个RDD依赖链，划分Stage任务阶段，并决定各个Stage之间的依赖关系。&lt;/p&gt;
+&lt;h3 id=&quot;提交&quot;&gt;&lt;a href=&quot;#提交&quot; class=&quot;headerlink&quot; title=&quot;提交&quot;&gt;&lt;/a&gt;提交&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;理解&lt;br&gt;Stage—&amp;gt;TaskSet&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;DAGScheduler.call(TaskSet)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;res = TaskScheduler.submit(TaskSet)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    TaskSetManager(res)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;文字说明&lt;br&gt;每个Stage的提交，最终是转换成一个TaskSet任务集的提交，DAGScheduler通过TaskScheduler接口提交TaskSet，这个TaskSet最终会触发TaskScheduler构建一个TaskSetManager的实例来管理这个TaskSet的生命周期，对于 DAGScheduler来说提交Stage的工作到此就完成了。&lt;br&gt;而TaskScheduler的具体实现则会在得到计算资源的时候，进一步通过 TaskSetManager调度具体的Task到对应的Executor节点上进行运算。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;监控&quot;&gt;&lt;a href=&quot;#监控&quot; class=&quot;headerlink&quot; title=&quot;监控&quot;&gt;&lt;/a&gt;监控&lt;/h3&gt;&lt;p&gt;DAGScheduler就必然需要监控当前Job/Stage乃至Task的完成情况。这是通过对外（主要是对TaskScheduler）暴露一系列的回调函数来实现的。&lt;/p&gt;
+&lt;h3 id=&quot;任务结果的获取&quot;&gt;&lt;a href=&quot;#任务结果的获取&quot; class=&quot;headerlink&quot; title=&quot;任务结果的获取&quot;&gt;&lt;/a&gt;任务结果的获取&lt;/h3&gt;&lt;p&gt;一个具体的任务在Executor中执行完毕以后，其结果需要以某种形式返回给DAGScheduler，根据任务类型的不同，任务的结果的返回方式也不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于FinalStage所对应的任务（触发action的那个，对应的类为ResultTask）返回给DAGScheduler的是运算结果本身；&lt;/li&gt;
+&lt;li&gt;而对于 ShuffleMapTask，返回给DAGScheduler的是一个MapStatus对象，MapStatus对象管理了ShuffleMapTask的运算输出结果在BlockManager里的相关存储信息，而非结果本身，这些存储位置信息将作为下一个Stage的任务获取输入数据的依据。&lt;br&gt;参考：&lt;a href=&quot;http://blog.csdn.net/laiwenqiang/article/details/50032171&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/laiwenqiang/article/details/50032171&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;h2 id=&quot;官方文档&quot;&gt;&lt;a href=&quot;#官方文档&quot; class=&quot;headerlink&quot; title=&quot;官方文档&quot;&gt;&lt;/a&gt;官方文档&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://spark.apache.org/docs/latest/&quot;&gt;Spark doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;相关平台&quot;&gt;&lt;a href=&quot;#相关平台&quot; class=&quot;headerlink&quot; title=&quot;相关平台&quot;&gt;&lt;/a&gt;相关平台&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://databricks.com/blog&quot;&gt;databricks blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gitter.im/spark-scala/Lobby&quot;&gt;A place to discuss and ask questions about using Scala for Spark programming&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="Spark" scheme="http://enjoyhot.github.io/categories/Spark/"/>
+    
+    
+      <category term="Spark" scheme="http://enjoyhot.github.io/tags/Spark/"/>
     
   </entry>
   
@@ -447,7 +668,7 @@
     <link href="http://enjoyhot.github.io/2016/08/01/or-know/"/>
     <id>http://enjoyhot.github.io/2016/08/01/or-know/</id>
     <published>2016-08-01T13:23:50.000Z</published>
-    <updated>2017-04-02T10:13:14.332Z</updated>
+    <updated>2017-04-04T13:56:58.305Z</updated>
     
     <content type="html">&lt;p&gt;时值8月，离毕业更近了。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在入学时就开始算计留在学校还有多少时间，毕竟，在学校的日子将会一去不复返，总得做些有意义的事情，弥补一些遗憾或空缺。&lt;/p&gt;
 &lt;p&gt;依托客观存在的24小时，寻找忙碌的理由，为未来打算，是多年来的行事法则。希望每天过得充实而又收获，但往往做到一半（呵呵），这又是另外一种境遇。有个计划，遵守计划，能完成78成，就很成功。&lt;/p&gt;
@@ -462,10 +683,10 @@
     
     </summary>
     
-      <category term="life" scheme="http://enjoyhot.github.io/categories/life/"/>
+      <category term="Life" scheme="http://enjoyhot.github.io/categories/Life/"/>
     
     
-      <category term="life" scheme="http://enjoyhot.github.io/tags/life/"/>
+      <category term="Life" scheme="http://enjoyhot.github.io/tags/Life/"/>
     
   </entry>
   
@@ -474,7 +695,7 @@
     <link href="http://enjoyhot.github.io/2016/05/08/ensemble-stacking/"/>
     <id>http://enjoyhot.github.io/2016/05/08/ensemble-stacking/</id>
     <published>2016-05-08T09:04:30.000Z</published>
-    <updated>2017-04-02T10:13:14.300Z</updated>
+    <updated>2017-04-04T13:56:58.277Z</updated>
     
     <content type="html">&lt;h1 id=&quot;测试blog&quot;&gt;&lt;a href=&quot;#测试blog&quot; class=&quot;headerlink&quot; title=&quot;测试blog&quot;&gt;&lt;/a&gt;测试blog&lt;/h1&gt;&lt;hr&gt;
 &lt;ul&gt;
@@ -514,7 +735,7 @@
     <link href="http://enjoyhot.github.io/2016/03/12/MS-document-online-preview/"/>
     <id>http://enjoyhot.github.io/2016/03/12/MS-document-online-preview/</id>
     <published>2016-03-12T10:41:00.000Z</published>
-    <updated>2017-04-02T10:13:14.324Z</updated>
+    <updated>2017-04-04T13:56:58.301Z</updated>
     
     <content type="html">&lt;h1 id=&quot;doc-xls-ppt-pdf实现浏览器在线预览小记&quot;&gt;&lt;a href=&quot;#doc-xls-ppt-pdf实现浏览器在线预览小记&quot; class=&quot;headerlink&quot; title=&quot;doc,xls,ppt,pdf实现浏览器在线预览小记&quot;&gt;&lt;/a&gt;doc,xls,ppt,pdf实现浏览器在线预览小记&lt;/h1&gt;&lt;hr&gt;
 &lt;h2 id=&quot;一般有两种方式&quot;&gt;&lt;a href=&quot;#一般有两种方式&quot; class=&quot;headerlink&quot; title=&quot;一般有两种方式&quot;&gt;&lt;/a&gt;一般有两种方式&lt;/h2&gt;&lt;h3 id=&quot;方式一：&quot;&gt;&lt;a href=&quot;#方式一：&quot; class=&quot;headerlink&quot; title=&quot;方式一：&quot;&gt;&lt;/a&gt;方式一：&lt;/h3&gt;&lt;h3 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h3&gt;&lt;blockquote&gt;
@@ -603,9 +824,10 @@
     <link href="http://enjoyhot.github.io/2016/02/09/linux-management-command/"/>
     <id>http://enjoyhot.github.io/2016/02/09/linux-management-command/</id>
     <published>2016-02-09T13:51:00.000Z</published>
-    <updated>2017-04-02T10:13:14.316Z</updated>
+    <updated>2017-04-04T13:56:58.293Z</updated>
     
     <content type="html">&lt;h2 id=&quot;运行脚本的方法&quot;&gt;&lt;a href=&quot;#运行脚本的方法&quot; class=&quot;headerlink&quot; title=&quot;运行脚本的方法&quot;&gt;&lt;/a&gt;运行脚本的方法&lt;/h2&gt;&lt;h3 id=&quot;常用运行方法&quot;&gt;&lt;a href=&quot;#常用运行方法&quot; class=&quot;headerlink&quot; title=&quot;常用运行方法:&quot;&gt;&lt;/a&gt;常用运行方法:&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ bash a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ chmod +x a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ ./a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ source a.sh&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;用bash和用source的不同在于：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；&lt;/li&gt;
@@ -617,7 +839,7 @@
 &lt;h2 id=&quot;test命令&quot;&gt;&lt;a href=&quot;#test命令&quot; class=&quot;headerlink&quot; title=&quot;test命令&quot;&gt;&lt;/a&gt;test命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;test -e a.txt &amp;amp;&amp;amp; echo &amp;quot;exists&amp;quot; || echo &amp;quot;not exists&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;当a.txt存在时，执行echo “exists”，否则执行echo “not exists”，多个命令用&amp;amp;&amp;amp;连接即可。改变test参数可以进行多种决策判断，可以研究一下。&lt;/p&gt;
 &lt;h2 id=&quot;关闭apache&quot;&gt;&lt;a href=&quot;#关闭apache&quot; class=&quot;headerlink&quot; title=&quot;关闭apache&quot;&gt;&lt;/a&gt;关闭apache&lt;/h2&gt;&lt;h3 id=&quot;版本一&quot;&gt;&lt;a href=&quot;#版本一&quot; class=&quot;headerlink&quot; title=&quot;版本一&quot;&gt;&lt;/a&gt;版本一&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/etc/init.d/httpd stop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!--more--&gt;
 &lt;h3 id=&quot;版本二&quot;&gt;&lt;a href=&quot;#版本二&quot; class=&quot;headerlink&quot; title=&quot;版本二&quot;&gt;&lt;/a&gt;版本二&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/etc/init.d/apache2 stop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;查看端口&quot;&gt;&lt;a href=&quot;#查看端口&quot; class=&quot;headerlink&quot; title=&quot;查看端口&quot;&gt;&lt;/a&gt;查看端口&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;netstat -anp | grep &lt;span class=&quot;number&quot;&gt;9200&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(Not all processes could be identified, non-owned process info&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; will &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; be shown, you would have to be root to see it all.)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tcp        &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;192.168&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;53570&lt;/span&gt;       &lt;span class=&quot;number&quot;&gt;192.168&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;9200&lt;/span&gt;        ESTABLISHED -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tcp6       &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;192.168&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;9200&lt;/span&gt;        :::*                    LISTEN      -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tcp6       &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;      &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;192.168&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;9200&lt;/span&gt;        &lt;span class=&quot;number&quot;&gt;192.168&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.1&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;53570&lt;/span&gt;       ESTABLISHED -&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;unix  &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;      [ ]         STREAM     CONNECTED     &lt;span class=&quot;number&quot;&gt;105509200&lt;/span&gt; -&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;参数说明：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;-p  process&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-a  all,显示所有连接和监听端口。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-n  以数字显示地址和端口（否则忽略虚拟机动态ip，127.0.0.1会以localhost显示）&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -709,17 +931,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;运行脚本的方法&quot;&gt;&lt;a href=&quot;#运行脚本的方法&quot; class=&quot;headerlink&quot; title=&quot;运行脚本的方法&quot;&gt;&lt;/a&gt;运行脚本的方法&lt;/h2&gt;&lt;h3 id=&quot;常用运行方法&quot;&gt;&lt;a href=&quot;#常用运行方法&quot; class=&quot;headerlink&quot; title=&quot;常用运行方法:&quot;&gt;&lt;/a&gt;常用运行方法:&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ bash a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ chmod +x a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ ./a.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ source a.sh&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;用bash和用source的不同在于：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;用bash执行时，shell script其实是在在父程序bash下新建了一个 bash子程序，之后这个子程序中执行，当程序执行完后，shell script里定义的变量都会随子程序的结束而消失；&lt;/li&gt;
-&lt;li&gt;用source执行时，是在父程序bash中执行,shell script里定义的变量都还在。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;shell-script的追踪与Debug&quot;&gt;&lt;a href=&quot;#shell-script的追踪与Debug&quot; class=&quot;headerlink&quot; title=&quot;shell script的追踪与Debug&quot;&gt;&lt;/a&gt;shell script的追踪与Debug&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sh -n xx.sh # 语法检查&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sh -x xx.sh # 列出xx.sh的执行过程&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;脚本输入输出例子&quot;&gt;&lt;a href=&quot;#脚本输入输出例子&quot; class=&quot;headerlink&quot; title=&quot;脚本输入输出例子&quot;&gt;&lt;/a&gt;脚本输入输出例子&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;# !/bin/bash&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Program:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#   This program is used to ouput parameter of the shell script&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# History:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 2013/2/3 on_1y First release&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;PATH=$PATH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;export PATH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;echo &amp;quot;The script&amp;apos;s name is ==&amp;gt; $0&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;echo &amp;quot;Total parameter number is ==&amp;gt; $#&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# Check whether number of the parameter is less than 2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[ &amp;quot;$#&amp;quot; -lt 2 ] &amp;amp;&amp;amp; echo &amp;quot;The number of parameter is less than 2.Stop here.&amp;quot; &amp;amp;&amp;amp; exit 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;echo &amp;quot;The whole parameter is ==&amp;gt; &amp;apos;$@&amp;apos;&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;echo &amp;quot;The first parameter is ==&amp;gt; $1&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;echo &amp;quot;The first parameter is ==&amp;gt; $2&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;exit 0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;输入和输出为：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ bash sh05.sh 1a 2b 3c 4d&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The script&amp;apos;s name is ==&amp;gt; sh05.sh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Total parameter number is ==&amp;gt; 4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The whole parameter is ==&amp;gt; &amp;apos;1a 2b 3c 4d&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The first parameter is ==&amp;gt; 1a&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;The first parameter is ==&amp;gt; 2b&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;test命令&quot;&gt;&lt;a href=&quot;#test命令&quot; class=&quot;headerlink&quot; title=&quot;test命令&quot;&gt;&lt;/a&gt;test命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;test -e a.txt &amp;amp;&amp;amp; echo &amp;quot;exists&amp;quot; || echo &amp;quot;not exists&amp;quot;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;当a.txt存在时，执行echo “exists”，否则执行echo “not exists”，多个命令用&amp;amp;&amp;amp;连接即可。改变test参数可以进行多种决策判断，可以研究一下。&lt;/p&gt;
-&lt;h2 id=&quot;关闭apache&quot;&gt;&lt;a href=&quot;#关闭apache&quot; class=&quot;headerlink&quot; title=&quot;关闭apache&quot;&gt;&lt;/a&gt;关闭apache&lt;/h2&gt;&lt;h3 id=&quot;版本一&quot;&gt;&lt;a href=&quot;#版本一&quot; class=&quot;headerlink&quot; title=&quot;版本一&quot;&gt;&lt;/a&gt;版本一&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/etc/init.d/httpd stop&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -735,7 +946,7 @@
     <link href="http://enjoyhot.github.io/2015/12/12/git-notes/"/>
     <id>http://enjoyhot.github.io/2015/12/12/git-notes/</id>
     <published>2015-12-12T10:41:00.000Z</published>
-    <updated>2017-04-02T10:13:14.304Z</updated>
+    <updated>2017-04-04T13:56:58.281Z</updated>
     
     <content type="html">&lt;h3 id=&quot;一、常用开发模式&quot;&gt;&lt;a href=&quot;#一、常用开发模式&quot; class=&quot;headerlink&quot; title=&quot;一、常用开发模式&quot;&gt;&lt;/a&gt;一、常用开发模式&lt;/h3&gt;&lt;p&gt;先看一张图&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20151212204330712&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;br&gt;1、少用pull或不用pull；&lt;br&gt;2、本地的多个分支，如果不是用命令行的话，对文件修改是对所有分支内容修改。&lt;/p&gt;
@@ -813,10 +1024,10 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
-      <category term="git" scheme="http://enjoyhot.github.io/categories/git/"/>
+      <category term="Git" scheme="http://enjoyhot.github.io/categories/Git/"/>
     
     
-      <category term="git" scheme="http://enjoyhot.github.io/tags/git/"/>
+      <category term="Git" scheme="http://enjoyhot.github.io/tags/Git/"/>
     
   </entry>
   
@@ -825,7 +1036,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/05/03/%E9%80%9A%E8%BF%87%E6%AC%A2%E8%BF%8E%E5%BA%A6%E5%AF%B9%E7%BD%91%E9%A1%B5%E6%8E%92%E5%90%8D/"/>
     <id>http://enjoyhot.github.io/2015/05/03/通过欢迎度对网页排名/</id>
     <published>2015-05-03T07:30:50.000Z</published>
-    <updated>2017-04-02T10:13:14.360Z</updated>
+    <updated>2017-04-04T13:56:58.321Z</updated>
     
     <content type="html">&lt;p&gt;声明：由于此次第一次使用动态加载的表达式，hexo对LaTex支持可能不太好，因此这里有些公式显示奇奇怪怪，排版比较好一点的参考csdn:&lt;a href=&quot;http://blog.csdn.net/gugugujiawei/article/details/45459089&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客链接&lt;/a&gt;,下次就直接上图片算了。免得这边不兼容。&lt;/p&gt;
 &lt;h1 id=&quot;一、欢迎度历史&quot;&gt;&lt;a href=&quot;#一、欢迎度历史&quot; class=&quot;headerlink&quot; title=&quot;一、欢迎度历史&quot;&gt;&lt;/a&gt;一、欢迎度历史&lt;/h1&gt;&lt;p&gt;1998年 Jon Kleinberg致力于HITS的万维网搜索引擎项目，其中的算法使用了万维网的超链接结构来改进搜索引擎所得的结果。&lt;/p&gt;
@@ -896,7 +1107,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/04/21/%E7%BD%91%E7%BB%9C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%AE%80%E4%BB%8B/"/>
     <id>http://enjoyhot.github.io/2015/04/21/网络搜索引擎简介/</id>
     <published>2015-04-21T05:23:50.000Z</published>
-    <updated>2017-04-02T10:13:14.360Z</updated>
+    <updated>2017-04-04T13:56:58.321Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、传统信息检索回顾&quot;&gt;&lt;a href=&quot;#一、传统信息检索回顾&quot; class=&quot;headerlink&quot; title=&quot;一、传统信息检索回顾&quot;&gt;&lt;/a&gt;一、传统信息检索回顾&lt;/h1&gt;&lt;p&gt;传统信息检索文档集的搜索有三种基本的计算机辅助技术：布尔模型、向量空间模型和概率模型。这些模型发展与20世纪60年代，直到2000年6月，便存在3500种不同的搜索引擎技术，并且大多数搜索引擎仍然依赖于以上三种基本模型的一种或数种。下图摘自《搜索引擎-原理技术与系统》，显示了搜索的主干流程。&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150421133224646&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;##1.1 布尔搜索引擎&lt;br&gt;信息检索中最早而且最简单的检索方法之一。布尔逻辑检索也称作布尔逻辑搜索，严格意义上的布尔检索法是指利用布尔逻辑运算符连接各个检索词，然后由计算机进行相应逻辑运算，以找出所需信息的方法。它使用面最广、使用频率最高。布尔逻辑运算符的作用是把检索词连接起来，构成一个逻辑检索式。&lt;/p&gt;
@@ -945,7 +1156,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/29/CSDN2Markdown/"/>
     <id>http://enjoyhot.github.io/2015/03/29/CSDN2Markdown/</id>
     <published>2015-03-29T08:40:00.000Z</published>
-    <updated>2017-04-02T10:13:14.296Z</updated>
+    <updated>2017-04-04T13:56:58.269Z</updated>
     
     <content type="html">&lt;p&gt;#一、综述&lt;/p&gt;
 &lt;p&gt;最开始的博客用的是oschina, 自我感觉小清新，支持比较多风格的编辑器，容易编辑程度比csdn的要好。后来因为csdn人气的关系，又转到csdn，不过csdn编辑确实比较虐心，再后来就在服务器上搭一个WordPress的博客，不过用起来不是很爽。几个月前支持Markdown编辑，这无疑给用github pages的用户一个福音，因为可以直接上传到自己的github博客上。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;用github pages生成静态的页面，目前比较流行有Jekyll,Octopress,Hexo等，其他的我没怎么调查，jekyll是github推荐的，上面有他们给的官方框架、主题，支持网页书写Markdown文章。后两者需要编译后再上传，github上呈现出来的是html文件。总体而言，后两者的界面更好，用起来更加舒适。我用的是Hexo，命令简洁，不过要注意备份整个工程，不然后果不堪设想。&lt;/p&gt;
@@ -973,35 +1184,11 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
   </entry>
   
   <entry>
-    <title>photos</title>
-    <link href="http://enjoyhot.github.io/2015/03/26/photoshow01/"/>
-    <id>http://enjoyhot.github.io/2015/03/26/photoshow01/</id>
+    <title>Album</title>
+    <link href="http://enjoyhot.github.io/2015/03/26/Album/"/>
+    <id>http://enjoyhot.github.io/2015/03/26/Album/</id>
     <published>2015-03-26T15:45:21.000Z</published>
-    <updated>2017-04-02T09:32:28.884Z</updated>
-    
-    <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;You just say something I don’t know.&lt;/p&gt;
-
-    
-    </summary>
-    
-      <category term="photo" scheme="http://enjoyhot.github.io/categories/photo/"/>
-    
-    
-      <category term="photo" scheme="http://enjoyhot.github.io/tags/photo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>photos</title>
-    <link href="http://enjoyhot.github.io/2015/03/26/myphoto/"/>
-    <id>http://enjoyhot.github.io/2015/03/26/myphoto/</id>
-    <published>2015-03-26T15:45:21.000Z</published>
-    <updated>2017-04-02T10:13:14.324Z</updated>
+    <updated>2017-04-04T13:56:58.253Z</updated>
     
     <content type="html">&lt;p&gt;You just say something I don’t know.&lt;/p&gt;
 </content>
@@ -1025,7 +1212,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/24/HPC-cluster/"/>
     <id>http://enjoyhot.github.io/2015/03/24/HPC-cluster/</id>
     <published>2015-03-24T12:23:50.000Z</published>
-    <updated>2017-04-02T10:13:14.308Z</updated>
+    <updated>2017-04-04T13:56:58.281Z</updated>
     
     <content type="html">&lt;p&gt;　　在本文之前，我建议先看完这篇文章：&lt;a href=&quot;http://www.jointforce.com.cn/page/hardware_linux.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Linux高性能计算集群 – Beowulf集群&lt;/a&gt;　　&lt;/p&gt;
 &lt;p&gt;#一、搭建集群中可能会遇到的问题&lt;/p&gt;
@@ -1105,75 +1292,10 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
   
   <entry>
     <title>HPC性能测试</title>
-    <link href="http://enjoyhot.github.io/2015/03/24/hpc-benchmark/"/>
-    <id>http://enjoyhot.github.io/2015/03/24/hpc-benchmark/</id>
-    <published>2015-03-24T06:43:00.000Z</published>
-    <updated>2017-04-02T08:04:19.228Z</updated>
-    
-    <content type="html">&lt;p&gt;#一、介绍&lt;/p&gt;
-&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;　　&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;　　Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark。通过利用高性能计算机，用高斯消元法求解N元一次稠密线性代数方程组的测试，评价高性能计算机的浮点性能。&lt;br&gt;　　Linpack测试包括三类，Linpack100、Linpack1000和HPL。Linpack100求解规模为100阶的稠密线性代数方程组，它只允许采用编译优化选项进行优化，不得更改代码，甚至代码中的注释也不得修改。Linpack1000要求求解规模为1000阶的线性代数方程组，达到指定的精度要求，可以在不改变计算量的前提下做算法和代码上做优化。HPL即High Performance Linpack，也叫高度并行计算基准测试，它对数组大小N没有限制，求解问题的规模可以改变，除基本算法（计算量）不可改变外，可以采用其它任何优化方法。前两种测试运行规模较小，已不是很适合现代计算机的发展，因此现在使用较多的测试标准为HPL，而且阶次N也是linpack测试必须指明的参数。&lt;br&gt;　　HPL是针对现代并行计算机提出的测试方式。用户在不修改任意测试程序的基础上，可以调节问题规模大小N(矩阵大小)、使用到的CPU数目、使用各种优化方法等来执行该测试程序，以获取最佳的性能。HPL采用高斯消元法求解线性方程组。当求解问题规模为N时，浮点运算次数为(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)。因此，只要给出问题规模N，测得系统计算时间T，峰值=计算量(2/3 &lt;em&gt; N^3－2&lt;/em&gt;N^2)/计算时间T，测试结果以浮点运算每秒（Flops）给出。&lt;br&gt;　　&lt;br&gt;计算峰值：&lt;br&gt;　　随着产品硬件的不断的升级，整个的计算能力也以数量级的速度提升。衡量计算机性能的一个重要指标就是计算峰值，例如浮点计算峰值，它是指计算机每秒钟能完成的浮点计算最大次数。包括理论浮点峰值和实测浮点峰值：&lt;br&gt;　　理论浮点峰值是该计算机理论上能达到的每秒钟能完成浮点计算最大次数，它主要是由CPU的主频决定的，&lt;br&gt;理论浮点峰值=CPU主频×CPU每个时钟周期执行浮点运算的次数×系统中CPU核心数目&lt;br&gt;　　实测浮点峰值是指Linpack测试值，也就是说在这台机器上运行Linpack测试程序，通过各种调优方法得到的最优的测试结果。实际上在实际程序运行过程中，几乎不可能达到实测浮点峰值，更不用说达到理论浮点峰值了。这两个值只是作为衡量机器性能的一个指标，用来表明机器处理能力的一个标尺和潜能的度量。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;　　此次参加一个高性能的比赛，虽然做的是平台搭建部分，但对此也有些了解。也了解了一下HPCC测试和NAMD测试，下面主要分这两部分来说一下。&lt;/p&gt;
-&lt;p&gt;#二、正文&lt;/p&gt;
-&lt;h3 id=&quot;1、HPCC&quot;&gt;&lt;a href=&quot;#1、HPCC&quot; class=&quot;headerlink&quot; title=&quot;1、HPCC&quot;&gt;&lt;/a&gt;1、HPCC&lt;/h3&gt;&lt;p&gt; 　　HPCC 全称 HPC Chanllenge Benchmark&lt;/p&gt;
-&lt;p&gt;　　Benchmark 是指一组用来评估硬件或者软件相关性能的基准测试程序&lt;/p&gt;
-&lt;p&gt;　　HPC Chanllenge Benchmark 由一组benchmark组成，共计7个，分别测试了系统7个方面的性能，这7个分别为：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;HPL &lt;/li&gt;
-&lt;li&gt;stream&lt;/li&gt;
-&lt;li&gt;Random Access&lt;/li&gt;
-&lt;li&gt;PTRANS,&lt;/li&gt;
-&lt;li&gt;Latency/Bandwidth&lt;/li&gt;
-&lt;li&gt;FFT&lt;/li&gt;
-&lt;li&gt;DGEMM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;stream&lt;/strong&gt;：测试内存带宽&lt;br&gt;内存看作是内存控制器与CPU之间的桥梁与仓库。内存的容量决定“仓库”的大小，而内存的带宽决定“桥梁”的宽窄&lt;br&gt;&lt;strong&gt;Random Access&lt;/strong&gt;：测试内存刷新的速率（随机存储中电容器需要刷新）&lt;br&gt;&lt;strong&gt;PTRANS&lt;/strong&gt;：通过多处理器结构中两两之间的通信，来衡量在整个网络的通信能力&lt;br&gt;&lt;strong&gt;Latency/Bandwidth&lt;/strong&gt;：测试延时与带宽&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Latency：8 byte 数据从一个节点到另一个节点所需时间&lt;/li&gt;
-&lt;li&gt;Bandwidth：节点间网络通信的带宽&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;HPL&lt;/strong&gt;：测试系统在解线性方程组时进行浮点运算的性能&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;浮点运算：超级计算机应用的场景主要是在科学计算，经常涉及矩阵运算、各种数值模拟等。&lt;/li&gt;
-&lt;li&gt;超级计算机经常以FLOPS（每秒浮点运算次数）去衡量计算能力&lt;/li&gt;
-&lt;li&gt;HPCC里有3种benchmark是测试浮点计算性能的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;FFT&lt;/strong&gt;：涉及到双精度一维离散傅里叶变换时，浮点运算的速度&lt;br&gt;&lt;strong&gt;DGEMM&lt;/strong&gt;：在做双精度矩阵乘法时，浮点运算的速度&lt;/p&gt;
-&lt;p&gt;HPCC的下载地址见：&lt;a href=&quot;http://icl.cs.utk.edu/hpcc/software/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;　　这个软件13年8月后就没更新了，网上查阅了很多资料，发现使用的人好像也不多，对于高性能计算，大多都是HPL的文章和测试。要想使用好这个软件，需要研读其源代码。&lt;br&gt;　　其中的安装使用方法可参照网站的&lt;strong&gt;FAQ&lt;/strong&gt;以及软件中的&lt;strong&gt;README.html&lt;/strong&gt;&lt;br&gt;　　编译之前，需要下载好相关的库，包括MPI（mpich，mpich2，mvapich，openmpi，platform_mpi，hpmpi……）、MKL/BLAS/GotoBLAS2……、C语言编译器等，前两者集群一般需要自己去找对应的软件，详细配置请自行上网搜一下，和Linpack基本一样。&lt;/p&gt;
-&lt;p&gt;###2、NAMD测试&lt;/p&gt;
-&lt;p&gt;　　NAMD是一个与分子动力学有关，用来高仿真大型生物分子系统的程序。即生物分子建模程序。&lt;br&gt;　　现提供两个工作负载apoa1, f1atpase&lt;br&gt;　　它们可以从 &lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.ks.uiuc.edu/Research/namd/utilities/f1atpase.tar.gz和http://www.ks.uiuc.edu/Research/namd/utilities/apoa1.tar.gz下载。&lt;/a&gt;
-　　&lt;/p&gt;
-&lt;p&gt;至于性能的话，且看图：&lt;br&gt;　　&lt;img src=&quot;http://img.blog.csdn.net/20150324144222556&quot; alt=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot;&gt;&lt;/p&gt;
-&lt;p&gt;图片来源：&lt;a href=&quot;http://www.ks.uiuc.edu/Research/namd/performance.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;NAMD 2.8 在天津超算天河-1A上的测试结果：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;表1 每节点不同进程数以及使用不同节点数的NAMD性能（days/ns）比较&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144513425&quot; alt=&quot;数据&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20150324144634870&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;/p&gt;
-&lt;p&gt;　　结论：为了在天河上达到性能最优，最佳的方案是使用GPU，并且每个节点开6个进程。参照：&lt;a href=&quot;http://blog.sina.com.cn/s/blog_a43b3cf2010157pz.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#一、介绍&lt;/p&gt;
-&lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;
-    
-    </summary>
-    
-      <category term="HPC" scheme="http://enjoyhot.github.io/categories/HPC/"/>
-    
-    
-      <category term="benchmark" scheme="http://enjoyhot.github.io/tags/benchmark/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HPC性能测试</title>
     <link href="http://enjoyhot.github.io/2015/03/24/HPC-benchmark/"/>
     <id>http://enjoyhot.github.io/2015/03/24/HPC-benchmark/</id>
     <published>2015-03-24T06:43:00.000Z</published>
-    <updated>2017-04-02T10:13:14.304Z</updated>
+    <updated>2017-04-04T13:56:58.281Z</updated>
     
     <content type="html">&lt;p&gt;#一、介绍&lt;/p&gt;
 &lt;p&gt;　　说到高性能计算，一般都是利用搭建集群配合加速卡做并行计算实现。但用相同的硬件实现更快的方法，那就是做测试了。比较有名的就是Linpack测试了，Linpack现在在国际上已经成为最流行的用于测试高性能计算机系统浮点性能的benchmark，在高性能领域，就是利用其中的HPL测试进行测试。下面摘一段百科上的解释:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;　　&lt;/p&gt;
@@ -1240,7 +1362,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/03/19/study-thinking-20150319/"/>
     <id>http://enjoyhot.github.io/2015/03/19/study-thinking-20150319/</id>
     <published>2015-03-19T05:42:00.000Z</published>
-    <updated>2017-04-02T10:13:14.352Z</updated>
+    <updated>2017-04-04T13:56:58.317Z</updated>
     
     <content type="html">&lt;h1 id=&quot;社会篇&quot;&gt;&lt;a href=&quot;#社会篇&quot; class=&quot;headerlink&quot; title=&quot;社会篇&quot;&gt;&lt;/a&gt;社会篇&lt;/h1&gt;&lt;p&gt;   走过2014，看得很多是互联网如何在颠覆各个行业。以下说的都是感悟，可能有些无序，多多包含。&lt;/p&gt;
 &lt;p&gt;   无论是做科研也好，投入社会工作也罢，在做以互联网技术为核心的技术学习时，都要有一个目标，做出为社会认可的有价值的“产品”，并间接体现为金钱财富。&lt;/p&gt;
@@ -1279,7 +1401,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/02/25/machinelearning-KNN/"/>
     <id>http://enjoyhot.github.io/2015/02/25/machinelearning-KNN/</id>
     <published>2015-02-25T08:04:00.000Z</published>
-    <updated>2017-04-02T10:13:14.316Z</updated>
+    <updated>2017-04-04T13:56:58.293Z</updated>
     
     <content type="html">&lt;p&gt;适逢学习机器学习基础知识，就将书中内容读读记记，本博文代码参考书本Machine Learning in Action（《机器学习实战》）。&lt;/p&gt;
 &lt;h1 id=&quot;一、概述&quot;&gt;&lt;a href=&quot;#一、概述&quot; class=&quot;headerlink&quot; title=&quot;一、概述&quot;&gt;&lt;/a&gt;一、概述&lt;/h1&gt;&lt;p&gt;kNN算法又称为k近邻分类(k-nearest neighbor classification)算法。&lt;/p&gt;
@@ -1331,7 +1453,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/21/python-scrapy/"/>
     <id>http://enjoyhot.github.io/2015/01/21/python-scrapy/</id>
     <published>2015-01-21T07:12:00.000Z</published>
-    <updated>2017-04-02T10:13:14.344Z</updated>
+    <updated>2017-04-04T13:56:58.313Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、综述&quot;&gt;&lt;a href=&quot;#一、综述&quot; class=&quot;headerlink&quot; title=&quot;一、综述&quot;&gt;&lt;/a&gt;一、综述&lt;/h1&gt;&lt;p&gt;  开始这篇博文之前，调研了相关的爬虫方法，简单罗列冰山一角。&lt;/p&gt;
 &lt;p&gt;  综述：&lt;/p&gt;
@@ -1415,7 +1537,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/21/machinelearning-linear-regularization/"/>
     <id>http://enjoyhot.github.io/2015/01/21/machinelearning-linear-regularization/</id>
     <published>2015-01-21T06:57:00.000Z</published>
-    <updated>2017-04-02T10:13:14.320Z</updated>
+    <updated>2017-04-04T13:56:58.297Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、机器学习范式&quot;&gt;&lt;a href=&quot;#一、机器学习范式&quot; class=&quot;headerlink&quot; title=&quot;一、机器学习范式&quot;&gt;&lt;/a&gt;一、机器学习范式&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1、按数据类型划分(带标签与否)&lt;/strong&gt;&lt;br&gt;  &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  &lt;img src=&quot;http://img.blog.csdn.net/20150121143726836?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;  这是从样本的数据进行划分，现实中大部分属于半监督学习，并且大部分数据是没分类好的。&lt;/p&gt;
@@ -1494,7 +1616,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/20/songsong/"/>
     <id>http://enjoyhot.github.io/2015/01/20/songsong/</id>
     <published>2015-01-20T13:30:26.000Z</published>
-    <updated>2017-04-02T10:13:14.348Z</updated>
+    <updated>2017-04-04T13:56:58.313Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://enjoyhot.github.io/img/arcticle_pic/201501/012001.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我唱自己的歌&lt;br&gt;在布满车前草的道路上&lt;br&gt;在灌木的集市上&lt;br&gt;在雪松和白桦树的舞会上&lt;br&gt;在那山野的原始欢乐上&lt;br&gt;我唱自己的歌&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;我唱自己的歌&lt;br&gt;在热电厂恐怖的烟云中&lt;br&gt;在变速箱复杂的组织中&lt;br&gt;在砂轮的亲吻中&lt;br&gt;在那社会文明的运行中&lt;br&gt;我唱自己的歌&lt;/p&gt;
@@ -1527,7 +1649,7 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     <link href="http://enjoyhot.github.io/2015/01/18/machinelearning-linear-regression/"/>
     <id>http://enjoyhot.github.io/2015/01/18/machinelearning-linear-regression/</id>
     <published>2015-01-18T11:43:00.000Z</published>
-    <updated>2017-04-02T10:13:14.320Z</updated>
+    <updated>2017-04-04T13:56:58.297Z</updated>
     
     <content type="html">&lt;h1 id=&quot;一、曲线拟合&quot;&gt;&lt;a href=&quot;#一、曲线拟合&quot; class=&quot;headerlink&quot; title=&quot;一、曲线拟合&quot;&gt;&lt;/a&gt;一、曲线拟合&lt;/h1&gt;&lt;p&gt;  &lt;strong&gt;1、问题引入&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;  ①假设现在有一份关于某城市的住房面积与相应房价的数据集&lt;br&gt; &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1664,6 +1786,55 @@ git push -f origin master&lt;/code&gt;&lt;/p&gt;
     
     
       <category term="Machine Learning" scheme="http://enjoyhot.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python进行文档抽取与解析的简单实现        </title>
+    <link href="http://enjoyhot.github.io/2015/01/18/python-analysis/"/>
+    <id>http://enjoyhot.github.io/2015/01/18/python-analysis/</id>
+    <published>2015-01-18T05:36:00.000Z</published>
+    <updated>2017-04-04T13:56:58.309Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;一、前文&quot;&gt;&lt;a href=&quot;#一、前文&quot; class=&quot;headerlink&quot; title=&quot;一、前文&quot;&gt;&lt;/a&gt;一、前文&lt;/h1&gt;&lt;p&gt;  之前被叫去做网络爬虫，爬取新浪新闻的url，标题，内容和评论，不过在需求上有点改变，主要是评论的间隔被要求有‘\t’的分割，比如将&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 18:53:20	1004400533	遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 17:17:07	3294923134	这父亲是人吗？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;  改为&lt;br&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 18:53:20 1004400533&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 17:17:07 3294923134&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;这父亲是人吗？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;  试过重新爬取，不过新浪在2015年后，做了些改变，一是评论api下的内容有了些修改，从原本的中文字符变为了’\u’，解决办法可以参考另一篇博文&lt;br&gt;  &lt;a href=&quot;http://blog.csdn.net/gugugujiawei/article/details/42559345&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;三张图告诉你python爬虫时转换\u中文字符的“坑”&lt;/a&gt;，二是在爬虫上需要做好浏览器模拟的工作，不然很容易被封杀，而且，在做大规模爬取的时候，需要利用多线程或者分布式的手段进行，多线程稍不注意，到了系统线程的上限，这是要注意的。&lt;/p&gt;
+&lt;h1 id=&quot;二、抽取和解析&quot;&gt;&lt;a href=&quot;#二、抽取和解析&quot; class=&quot;headerlink&quot; title=&quot;二、抽取和解析&quot;&gt;&lt;/a&gt;二、抽取和解析&lt;/h1&gt;&lt;p&gt;  因为我想爬取这个页面（&lt;a href=&quot;http://news.sina.com.cn/society/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;social&lt;/a&gt;）一年的内容，已经超过2万了（只算那些有评论的新闻），所以经常第二天回来发现中途error。分布式计算的东西现在还没去学习，所以还是复习一下python。&lt;/p&gt;
+&lt;p&gt;  在这个简短的程序中，用到了SGMLParser类进行解析，这个类封装了可以实现对具有标签的字符串的处理函数，当然没有标签也是可以用的，不需要冠以html文本种类的要求，网上很多例子可能会拿HTMLParser与SGMLParser进行说明，通过解析X.html进行说明。这里我只采用单线程的方法。&lt;/p&gt;
+&lt;p&gt;  SGMLParser:&lt;/p&gt;
+&lt;p&gt;  1、通过利用开关变量的方法进行标签间内容的抽取和解析，在此之前，需要进行变量的初始化，可以利用&lt;strong&gt;init&lt;/strong&gt;()或者&lt;strong&gt;reset&lt;/strong&gt;()，一般用&lt;strong&gt;reset&lt;/strong&gt;()。&lt;/p&gt;
+&lt;p&gt;  2、start_x(),end_x(),handle_data()，这三个函数，第一个是当读取到&lt;x&gt;;时，执行的函数，第一个是当读取到&lt;/x&gt;;时，执行的函数,第三个是当遇到标签内的内容，就会调用这个函数，更详细一点可以参考&lt;br&gt;  &lt;a href=&quot;http://blog.csdn.net/nwpulei/article/details/7272832&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇博文&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;  变量说明：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;rootdir：原始文件目录&lt;br&gt;    rootdir2：需要存放转换好的文件目录&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  方法说明：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、通过SGMLParser读取&lt;comment&gt;;&lt;/comment&gt;;中的内容，调用solve()函数，利用正则匹配的方法将原来不符合规范的空格替换为’\t’，返回需要替换的内容到comment变量&lt;br&gt;  2、利用正则匹配找到定位到&lt;comment&gt;;&lt;/comment&gt;;，替换为Parse类对象的comment值&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;  （正则表达式的方法参考以下注释）&lt;/p&gt;
+&lt;p&gt;  完整代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;54&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;55&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;56&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;57&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;58&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#!/usr/bin/env python&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# -*- coding: utf-8 -*-&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;from sgmllib import SGMLParser&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;import re,os&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rootdir = &#39;F:\\Python27\\pythonproject\\fuck\\file1\\&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;rootdir2 = &#39;F:\\Python27\\pythonproject\\fuck\\file2\\&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;class Parse(SGMLParser):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    def __init__(self,filename):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        self.filename = filename&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        self.comment = &#39;&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        SGMLParser.__init__(self)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    def reset(self):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        self.found_comment = False&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        SGMLParser.reset(self)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    def start_comment(self, attrs):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        self.found_comment = True&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    def end_comment(self):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        self.found_comment = False&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    def handle_data(self, text):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        if self.found_comment == True:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            self.comment=solve(self.filename,text)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;def solve(filename,text):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    #找到3个或3个以上空格的地方，替换为&#39;\t&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    strinfo = re.compile(&#39;(\s\s\s*)&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    str_result = strinfo.sub(&#39;\t&#39;,text)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return str_result&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;if __name__ == &#39;__main__&#39;:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    global rootdir,rootdir2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    for parent,dirnames,filenames in os.walk(rootdir):    #三个参数：分别返回1.父目录 2.所有文件夹名字（不含路径） 3.所有文件名字&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        for filename in filenames:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            #print filename&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            filesource = open(rootdir+filename, &#39;a+&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            s = filesource.read()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            filesource.close()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            #初始化实例p,feed()函数为添加处理字符串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            p = Parse(filename)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            p.feed(s)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            filedes = open(rootdir2+filename, &#39;a+&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            #因为原来原数据中存在不以&amp;lt;/comment&amp;gt;;结尾的内容，因此需要先做处理&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            pattern1=&#39;&amp;lt;/comment&amp;gt;;&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            if re.findall(pattern1,s) == []:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;                s=s+&#39;\n&amp;lt;/comment&amp;gt;;&#39;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;span style=&quot;white-space:pre&quot;&amp;gt;;	&amp;lt;/span&amp;gt;;    #定位到comment标签位置，([\s\S]*)能够匹配所有字符，包括换行符，然后替换&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            strinfo = re.compile(&#39;&amp;lt;comment&amp;gt;;([\s\S]*)&amp;lt;/comment&amp;gt;;&#39;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            str_result = strinfo.sub(&#39;&amp;lt;comment&amp;gt;;&#39;+p.comment+&#39;&amp;lt;/comment&amp;gt;;&#39;,s)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            filedes.write(str_result)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            filedes.close()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt; 结果：&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://img.blog.csdn.net/20150118141804512?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center&quot; alt=&quot;image_mark&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  注意：win7系统一般文件夹下的文件总数（包括文件夹）不能超过21845个，不然会提示错误。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、前文&quot;&gt;&lt;a href=&quot;#一、前文&quot; class=&quot;headerlink&quot; title=&quot;一、前文&quot;&gt;&lt;/a&gt;一、前文&lt;/h1&gt;&lt;p&gt;  之前被叫去做网络爬虫，爬取新浪新闻的url，标题，内容和评论，不过在需求上有点改变，主要是评论的间隔被要求有‘\t’的分割，比如将&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 18:53:20	1004400533	遗弃亲生骨肉猪狗不如，难道就不怕受到良心谴责？你能睡得安稳？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2014-12-10 17:17:07	3294923134	这父亲是人吗？&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;comment&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Python" scheme="http://enjoyhot.github.io/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="http://enjoyhot.github.io/tags/Python/"/>
+    
+      <category term="Spider" scheme="http://enjoyhot.github.io/tags/Spider/"/>
     
   </entry>
   
