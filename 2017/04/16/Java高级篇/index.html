@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Java高级篇 | ENJOYHOT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前言本系列文章将分为三部分：Java基础篇
+语法篇
+数据结构篇
+集合框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java高级篇">
+<meta property="og:url" content="http://enjoyhot.github.io/2017/04/16/Java高级篇/index.html">
+<meta property="og:site_name" content="ENJOYHOT">
+<meta property="og:description" content="前言本系列文章将分为三部分：Java基础篇
+语法篇
+数据结构篇
+集合框架">
+<meta property="og:image" content="http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center">
+<meta property="og:updated_time" content="2017-04-16T14:31:43.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java高级篇">
+<meta name="twitter:description" content="前言本系列文章将分为三部分：Java基础篇
+语法篇
+数据结构篇
+集合框架">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center">
+<link rel="publisher" href="111736291216286617217">
+    
+
+    
+        <link rel="alternate" href="atom.xml" title="ENJOYHOT" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?715efc417137bb8b58f6b4edfa378ccd";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">ENJOYHOT</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ENJOYHOT</h2>
+            <h3 id="title">D</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/enjoyhot/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                39
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                32
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/enjoyhot" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/gugugujiawei" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="mailto:gugugujiawei@gmail.com" target="_blank" title="envelope-o" class=tooltip>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.douban.com/people/75493036/" target="_blank" title="user-md" class=tooltip>
+                            <i class="fa fa-user-md"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Java高级篇" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Java高级篇
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/16/Java高级篇/">
+            <time datetime="2017-04-16T14:31:26.000Z" itemprop="datePublished">2017-04-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Java/">Java</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#本系列文章将分为三部分："><span class="toc-number">1.1.</span> <span class="toc-text">本系列文章将分为三部分：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Java基础篇"><span class="toc-number">1.1.1.</span> <span class="toc-text">Java基础篇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java高级篇"><span class="toc-number">1.1.2.</span> <span class="toc-text">Java高级篇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java实践篇"><span class="toc-number">1.1.3.</span> <span class="toc-text">Java实践篇</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接"><span class="toc-number">1.2.</span> <span class="toc-text">相关链接</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JVM知识"><span class="toc-number">2.</span> <span class="toc-text">JVM知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#内存模型"><span class="toc-number">2.1.</span> <span class="toc-text">内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JMM结构"><span class="toc-number">2.1.1.</span> <span class="toc-text">JMM结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM相关概念"><span class="toc-number">2.2.</span> <span class="toc-text">JVM相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">2.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java类加载机制"><span class="toc-number">2.2.2.</span> <span class="toc-text">Java类加载机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM的GC"><span class="toc-number">2.3.</span> <span class="toc-text">JVM的GC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收算法"><span class="toc-number">2.3.1.</span> <span class="toc-text">垃圾回收算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收器"><span class="toc-number">2.3.2.</span> <span class="toc-text">垃圾回收器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型擦除"><span class="toc-number">2.4.</span> <span class="toc-text">泛型擦除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程"><span class="toc-number">3.</span> <span class="toc-text">多线程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#锁"><span class="toc-number">3.1.</span> <span class="toc-text">锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#内置锁"><span class="toc-number">3.1.1.</span> <span class="toc-text">内置锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显式锁"><span class="toc-number">3.1.2.</span> <span class="toc-text">显式锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协定"><span class="toc-number">3.1.3.</span> <span class="toc-text">协定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步队列"><span class="toc-number">3.2.</span> <span class="toc-text">同步队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">3.2.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用类"><span class="toc-number">3.2.2.</span> <span class="toc-text">常用类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayBlockingQueue-VS-LinkedBlockingQueue"><span class="toc-number">3.2.3.</span> <span class="toc-text">ArrayBlockingQueue VS LinkedBlockingQueue</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程间数据交互"><span class="toc-number">3.3.</span> <span class="toc-text">线程间数据交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#线程池"><span class="toc-number">3.4.</span> <span class="toc-text">线程池</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类的介绍"><span class="toc-number">3.4.1.</span> <span class="toc-text">类的介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建线程池的方式"><span class="toc-number">3.4.2.</span> <span class="toc-text">创建线程池的方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-IO"><span class="toc-number">4.</span> <span class="toc-text">Java IO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#同步与阻塞"><span class="toc-number">4.1.</span> <span class="toc-text">同步与阻塞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#同步与异步"><span class="toc-number">4.1.1.</span> <span class="toc-text">同步与异步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#阻塞与非阻塞"><span class="toc-number">4.1.2.</span> <span class="toc-text">阻塞与非阻塞</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多路复用"><span class="toc-number">4.2.</span> <span class="toc-text">多路复用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BIO-NIO-AIO"><span class="toc-number">4.3.</span> <span class="toc-text">BIO,NIO,AIO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BIO"><span class="toc-number">4.3.1.</span> <span class="toc-text">BIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NIO"><span class="toc-number">4.3.2.</span> <span class="toc-text">NIO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-AIO-NIO-2"><span class="toc-number">4.3.3.</span> <span class="toc-text">Java AIO(NIO.2)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java安全"><span class="toc-number">5.</span> <span class="toc-text">Java安全</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设计模式"><span class="toc-number">6.</span> <span class="toc-text">设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分类"><span class="toc-number">6.1.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几种常见设计模式"><span class="toc-number">6.2.</span> <span class="toc-text">几种常见设计模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#观察者模式"><span class="toc-number">6.2.1.</span> <span class="toc-text">观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#装饰者模式"><span class="toc-number">6.2.2.</span> <span class="toc-text">装饰者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工厂模式"><span class="toc-number">6.2.3.</span> <span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单例模式"><span class="toc-number">6.2.4.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#适配器模式"><span class="toc-number">6.2.5.</span> <span class="toc-text">适配器模式</span></a></li></ol></li></ol></li></ol>
+                </div>
+            
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="本系列文章将分为三部分："><a href="#本系列文章将分为三部分：" class="headerlink" title="本系列文章将分为三部分："></a>本系列文章将分为三部分：</h2><h3 id="Java基础篇"><a href="#Java基础篇" class="headerlink" title="Java基础篇"></a>Java基础篇</h3><ul>
+<li>语法篇</li>
+<li>数据结构篇</li>
+<li>集合框架</li>
+</ul>
+<a id="more"></a>
+<h3 id="Java高级篇"><a href="#Java高级篇" class="headerlink" title="Java高级篇"></a>Java高级篇</h3><ul>
+<li>JVM知识</li>
+<li>多线程</li>
+<li>Java IO</li>
+<li>Java安全</li>
+<li>设计模式</li>
+</ul>
+<h3 id="Java实践篇"><a href="#Java实践篇" class="headerlink" title="Java实践篇"></a>Java实践篇</h3><ul>
+<li>并发编程相关</li>
+<li>分布式相关</li>
+<li>框架介绍</li>
+</ul>
+<p><em>有些【疑问】可能会留在笔记中，在学习中补充…</em></p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul>
+<li><a href="http://docs.oracle.com/javase/8/docs/api/index.html" target="_blank" rel="external">javase 1.8 online doc</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank" rel="external">javase 1.7 online doc</a></li>
+<li><a href="http://docs.oracle.com/javase/specs/jvms/se8/html/index.html" target="_blank" rel="external">javase 1.8 JVM Specification online doc</a></li>
+<li><a href="http://docs.oracle.com/javase/specs/jvms/se7/html/index.html" target="_blank" rel="external">javase 1.7 JVM Specification online doc</a></li>
+</ul>
+<h1 id="JVM知识"><a href="#JVM知识" class="headerlink" title="JVM知识"></a>JVM知识</h1><h2 id="内存模型"><a href="#内存模型" class="headerlink" title="内存模型"></a>内存模型</h2><h3 id="JMM结构"><a href="#JMM结构" class="headerlink" title="JMM结构"></a>JMM结构</h3><ul>
+<li>基本结构<ul>
+<li>分为class loader；</li>
+<li>运行时数据区；</li>
+<li>执行引擎；</li>
+<li>本地方法接口</li>
+</ul>
+</li>
+</ul>
+<p><strong>基本示意图如下：</strong></p>
+<center><br><img src="http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center" alt="此处输入图片的描述"><br></center>
+
+<ul>
+<li>类在JVM中的唯一性<br>通过类的全限定名和加载这个类的类加载器ID确定唯一性。</li>
+</ul>
+<h2 id="JVM相关概念"><a href="#JVM相关概念" class="headerlink" title="JVM相关概念"></a>JVM相关概念</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>程序计数器（Program Counter Register）：<br>当前线程执行字节码的行号指示器。通过改变这个指示器的值来选取下一条需要执行的字节码指令。由于多线程间切换时要恢复每一个线程的当前执行位置，所以每个线程都有自己的程序计算器。这个内存区域是Java虚拟机唯一一个没有定义OutOfMemeryError情况的区域。</li>
+<li><p>Java虚拟机栈（Java Visual Machine Stacks）：<br>虚拟机栈描述的是Java方法执行的内存模型：每个方法执行是都会创建栈帧（Stack Frame）用于存储局部变量（包括引用变量），操作栈，方法信息，动态链接，方法出口等信息。<br>&gt;<br>在java虚拟机规范中，对于这两个区域规定了两种情况的异常：1）如果线程请求的栈深度大于虚拟机所允许的深度将会抛出StackOverFlowError异常; 2）如果Java虚拟机可以动态扩展，当无法申请到足够的内存时会抛出OutOfMemeryError。</p>
+</li>
+<li><p>本地方法栈（Native Method Stacks）<br>本地方法栈与Java虚拟机栈区别是Java虚拟机栈为虚拟机执行Java方法服务，而本地方法栈是虚拟机使用到的Native方法服务。如JNI引用的对象。所以本地方法栈也可能出现两种与Java虚拟机栈相同的异常。</p>
+</li>
+<li><p>Java堆（Java Heap）<br>Java堆是Java虚拟机管理的最大的一块内存区域，java堆是被所有Java线程共享的，在Java虚拟机启动时创建，此内存的唯一目的就是存放对象实例。几乎所有的对象实例都要分配在堆中，垃圾回收的主要区域就是这里（还可能有方法区）。（随着JIT编译器的发展，逃逸分析技术的逐渐成熟，栈上分配，标量替换等优化技术，使得部分对象不再分配在堆上。）JNI调用的程序new的空间不受这里管理。<br>Java堆的大小通过:</p>
+<blockquote>
+<p>-Xmx和-Xms两个参数控制。但是当堆的内存再无法扩展时，就会出现OutOfMemeryError。</p>
+</blockquote>
+</li>
+<li><p>方法区（Method Area）<br>方法区与Java堆一样，是各个线程共享的内存区域，他用于存储类信息，常量，静态变量以及及时编译后的代码等数据。当方法区无法满足内存分配需求时，将抛出OutOfMemeryError.</p>
+</li>
+<li><p>简图</p>
+<center><br><img src="http://img.blog.csdn.net/20170311204212679?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br></center></li>
+<li>相关测试方法<center><br><img src="http://img.blog.csdn.net/20170311204320601?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br></center>
+
+</li>
+</ul>
+<h3 id="Java类加载机制"><a href="#Java类加载机制" class="headerlink" title="Java类加载机制"></a>Java类加载机制</h3><ul>
+<li>什么是类的加载<br>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</li>
+</ul>
+<center><br><img src="http://images2015.cnblogs.com/blog/331425/201606/331425-20160621125941772-1913742708.png" alt="此处输入图片的描述"><br></center>
+
+<ul>
+<li><p>类加载的时机<br>类加载器并不需要等到某个类被“首次主动使用”时再加载它，JVM规范允许类加载器在预料某个类将要被使用时就预先加载它，如果在预先加载的过程中遇到了.class文件缺失或存在错误，类加载器必须在程序首次主动使用该类时才报告错误（LinkageError错误）如果这个类一直没有被程序主动使用，那么类加载器就不会报告错误。<br>参考：<a href="http://www.cnblogs.com/ityouknow/p/5603287.html" target="_blank" rel="external">http://www.cnblogs.com/ityouknow/p/5603287.html</a></p>
+</li>
+<li><p>类加载流程</p>
+<ol>
+<li>装载：查找和导入Class文件；</li>
+<li>链接：把类的二进制数据合并到JRE中；<ol>
+<li>校验：检查载入Class文件数据的正确性；</li>
+<li>准备：给类的静态变量分配存储空间，并将其初始化为默认值，普通static为0，final static为设定值；</li>
+<li>解析：将符号引用转成直接引用；</li>
+</ol>
+</li>
+<li>初始化：对类的静态变量，静态代码块执行初始化操作</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>在这五个阶段中，加载、验证、准备和初始化这四个阶段发生的顺序是确定的，而解析阶段则不一定，它在某些情况下可以在初始化阶段之后开始，这是为了支持Java语言的运行时绑定（也成为动态绑定或晚期绑定）。<br>另外注意这里的几个阶段是按顺序开始，而不是按顺序进行或完成，因为这些阶段通常都是互相交叉地混合进行的，通常在一个阶段执行的过程中调用或激活另一个阶段。</p>
+</blockquote>
+<ul>
+<li><p>三个类加载器</p>
+<ul>
+<li>Bootstrap ClassLoader<br>根类加载器，负责核心类的加载，如System,String等，还有jdk中jre的lib目录的rt.jar,也可以通过指定参数-Xbootclasspath再加;</li>
+<li>Extension ClassLoader<br>扩展类加载器，负责jdk中jre的lib目录下的ext目录，或者通过-Djava.ext.dirs再加；</li>
+<li>Application ClassLoader<br>用于加载用户路径上指定的类库。由-classpath或-cp选项定义,或者是JAR中的Manifest的classpath属性定义。</li>
+<li>Tip:<ul>
+<li>用户自定义类加载器，默认情况下父加载器是系统类加载器，也可以指定其它两个。</li>
+<li>Tomcat 为每个 App 创建一个 Loader,里面保存着此 WebApp 的 ClassLoader。需要加载 WebApp 下的类时,就取出 ClassLoader 来使用</li>
+<li>JVM在判定两个class是否相同时（相等包括代表类的Class对象的equals()方法、isAssignableFrom()方法、isInstance()方法、instanceof关键字的结果），不仅要判断两个类名是否相同，而且要判断是否由同一个类加载器实例加载的。</li>
+<li>类加载器相关例子：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Object obj = myClassLoader.loadClass(<span class="string">"com.test.ClassLoaderTest"</span>).newInstance();</div><div class="line">System.out.println(obj.getClass());</div><div class="line"><span class="comment">// return false</span></div><div class="line"><span class="comment">// com.test.ClassLoaderTest类默认使用Application ClassLoader加载，而obj是通过自定义类加载器加载的，类加载不相同，因此不相等</span></div><div class="line">System.out.println(obj <span class="keyword">instanceof</span> com.test.ClassLoaderTest);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>双亲委托模型<br>应用程序都是由以上三种类加载器互相配合进行加载的，还可以加入自己定义的类加载器，称为类加载器的双亲委派模型。</p>
+<ul>
+<li>类加载器之间的父子关系一般不会以继承的关系来实现，而是都使用组合关系来复用父加载器的。</li>
+<li>ClassLoader本身没有父类加载器，但可以用作其它ClassLoader实例的的父类加载器。<ol>
+<li>当一个ClassLoader实例需要加载某个类时，先把这个任务委托给它的父类加载器，这个过程是由上至下依次检查的，首先由最顶层的类加载器Bootstrap ClassLoader试图加载，如果没加载到，则把任务转交给Extension ClassLoader试图加载，如果也没加载到，则转交给App ClassLoader 进行加载;</li>
+<li>如果它也没有加载得到的话，则返回给委托的发起者，由它到指定的文件系统或网络等URL中加载该类。如果它们都没有加载到这个类时，则抛出ClassNotFoundException异常。</li>
+</ol>
+</li>
+<li>为什么要使用双亲委托这种模型呢？<center><br><img src="http://images.cnitblog.com/blog/452797/201504/042100320143771.png" alt="此处输入图片的描述"><br><img src="http://images.cnitblog.com/blog/452797/201504/042100326398413.png" alt="此处输入图片的描述"><br></center>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="JVM的GC"><a href="#JVM的GC" class="headerlink" title="JVM的GC"></a>JVM的GC</h2><h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h3><ul>
+<li>Mark-Sweep（标记-清除）算法<br>  分标记和回收两个阶段，内存碎片问题。</li>
+<li>Copying（复制）算法<br>  内存空间利用率不高。</li>
+<li>Mark-Compact（标记-整理）算法<br>  分标记和整理两个阶段，弥补Copying算法的缺陷，标记后移动，再清除。</li>
+</ul>
+<p>以上三种是传统最常见的方法，具体演示参考：<br><a href="http://www.cnblogs.com/dolphin0520/p/3783345.htm" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3783345.htm</a></p>
+<ul>
+<li><p>分代回收算法<br>在Hotspot JVM中采用分代回收，现在在各种其它JVM中也比较常用。</p>
+<ul>
+<li>JVM区域的划分（Java1.7）<br>从GC的角度，jvm区域总体分两类，heap区（Java堆）和非heap区（其它）。<ul>
+<li>heap区：Eden Space（伊甸园）、Survivor Space(幸存者区)、Tenured Gen（老年代-养老区）；eden和survivor默认比例是8:1:1（新生代实际可用的内存空间为 9/10（即90%）的新生代空间）。</li>
+<li>非heap区：CodeCache(代码缓存区)、PermGen（永久代）等。</li>
+</ul>
+</li>
+<li><p>关于永久代（主要存放的是Java类定义信息，生成大量动态类可能溢出）</p>
+<ul>
+<li>当永久代满时也会引发Full GC，会导致Class、Method元信息的卸载，一般需要避免，因此就不会发生GC了；</li>
+<li>Java8不设永久代，类的元信息等被移到了一个与堆不相连的本地内存区域，这个区域就是元空间（metaspace）。<blockquote>
+<p>a. 对永久代进行调优是很困难的，永久代中的元数据可能会随着每一次FullGC发生而进行移动。并且为永久代设置空间大小也是很难确定的，因为这其中有很多影响因素，比如类的总数，常量池的大小和方法数量等。b. 同时，HotSpot虚拟机的每种类型的垃圾回收器都需要特殊处理永久代中的元数据。将元数据从永久代剥离出来，不仅实现了对元空间的无缝管理，还可以简化Full GC以及对以后的并发隔离类元数据等方面进行优化。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>如何分代回收<br><center><br><img src="http://img.blog.csdn.net/20150315170424355?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdG9ueXRmamluZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/%20%20dissolve/70/gravity/Center" alt="此处输入图片的描述"><br></center></p>
+<ul>
+<li>Minor GC：<br>当Eden区满时，触发Minor GC。新生代采用了<strong>复制算法</strong>，分为一个Eden 区域和两个Survivor区域，真正使用的是一个Eden区域和一个Survivor区域，GC的时候，会把存活的对象放入到另外一个Survivor区域中（总有一块保持为空作为to，用于复制，满就复制到老年区），然后再把这个Eden区域和Survivor区域清除。<br>在发生Minor GC之前，虚拟机会先检查老年代最大可用的连续空间是否大于新生代(年轻代被分为3个部分——Enden区和两个Survivor区（From和to）)所有对象的总空间（这一段似乎有误，有说法是说survival from和to区是否够）：<ol>
+<li>如果大于则进行Minor GC;</li>
+<li>如果小于则看HandlePromotionFailure设置是否允许担保失败。<ol>
+<li>如果允许，那么会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于则尝试Minor GC（如果尝试失败也会触发Full GC），如果小于则进行Full GC。</li>
+<li>如果不允许，则直接Full GC。</li>
+</ol>
+</li>
+<li>如何晋升为老年代：多次Minor GC后还存活的对象会晋升。</li>
+</ol>
+</li>
+<li>Major GC：<br>清理老年代，许多是由 Minor GC 触发的，老年代采用的是Mark-Compact（标记-整理）算法(HotSpot VM，其它的JVM实现并不一定是这样做的)。</li>
+<li>Full GC：<br>老年代空间不足：如上分析，要么是前期的检查，要么是晋升期间。当频繁Full GC时，可通过jstat、GC日志、对象内存工具等查看是什么原因，例如JMap查看。<br>据知乎：<ol>
+<li>fullgc频繁说明old区很快满了，即剩余空间不足（来的多或留的多）。</li>
+<li>如果是一次fullgc后，剩余对象不多。那么说明你eden区设置太小，导致短生命周期的对象进入了old区。</li>
+<li>如果一次fullgc后，old区回收率不大，那么说明old区太小。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>哪些对象需要回收<br>每个应用程序都包含一组根（root）。每个根包含指向引用类型对象的一个指针，该指针要么引用托管堆中的一个对象，要么为null，GC会收集那些不是GC roots且没有被GC roots引用的对象。<br>java中可作为GC Root的对象有：</p>
+<ul>
+<li>虚拟机栈中引用的对象（本地变量表）；</li>
+<li>本地方法栈中引用的对象（Native对象）;</li>
+<li>方法区中静态属性引用的对象；</li>
+<li>方法区中常量引用的对象（对比而言单例可能会被回收）；<br>参考： <a href="http://www.importnew.com/15820.html" target="_blank" rel="external">http://www.importnew.com/15820.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h3><ul>
+<li>Serial/Serial Old</li>
+<li>ParNew</li>
+<li>Parallel Scavenge</li>
+<li>Parallel Old</li>
+<li>CMS<br>CMS（Current Mark Sweep）收集器是一种以获取最短回收停顿时间为目标的收集器，它是一种并发收集器，采用的是Mark-Sweep算法，默认的回收线程数是(CPU个数+3)/4。CMS的缺点也比较明显，CMS会牺牲更多的硬件资源、吞吐量及Heap使用量等，所以在Java1.7之后引入了G1 收集器来全面替代CMS。</li>
+<li>G1(1.7开始引进)<br>G1收集器是当今收集器技术发展最前沿的成果，它是一款面向服务端应用的收集器，它能充分利用多CPU、多核环境。因此它是一款并行与并发收集器，并且它能建立可预测的停顿时间模型。整体上是基于标记整理，局部采用复制回收算法。</li>
+</ul>
+<p>什么时候触发GC：<a href="http://www.tuicool.com/articles/3yuqMzz" target="_blank" rel="external">http://www.tuicool.com/articles/3yuqMzz</a></p>
+<h2 id="泛型擦除"><a href="#泛型擦除" class="headerlink" title="泛型擦除"></a>泛型擦除</h2><p>泛型可以说是Java中最常用的语法糖之一，因此虚拟机是不支持这些语法，在编译时转化为Object，继承的时候利用桥方法动态调用，据此应考虑泛型在开发过程中的约束和局限性。具体用法解释可参考<strong>【Java基础篇】</strong>。</p>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p><em>更多内容请查看Java实践篇</em></p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="内置锁"><a href="#内置锁" class="headerlink" title="内置锁"></a>内置锁</h3><ul>
+<li>synchronized</li>
+</ul>
+<h3 id="显式锁"><a href="#显式锁" class="headerlink" title="显式锁"></a>显式锁</h3><p>java.util.concurrent.locks包中定义了两个锁类，ReentrantLock和ReentrantReadWriteLock类。</p>
+<ul>
+<li><p>ReentrantReadWriteLock<br>在读多于写的情况下，利用读写锁分离访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> ReentrantReadWriteLock rwl = <span class="keyword">new</span> ReentrantReadWriteLock();</div><div class="line"><span class="keyword">private</span> Lock readLock = rwl.readLock();</div><div class="line"><span class="keyword">private</span> Lock writeLock = rwl.writeLock();</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getTotalBalance</span><span class="params">()</span></span>&#123;</div><div class="line">    readLock.lock();</div><div class="line">    <span class="keyword">try</span>&#123;...&#125;</div><div class="line">    <span class="keyword">finally</span>&#123;readLock.unlock();&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">setBalance</span><span class="params">()</span></span>&#123;</div><div class="line">    writeLock.lock();</div><div class="line">    <span class="keyword">try</span>&#123;...&#125;</div><div class="line">    <span class="keyword">finally</span>&#123;writeLock.unlock();&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>ReentantLock<br>类似的，也是需要lock(),并在finally中unlock(),而一般常用的方法，是将其与Condition配合使用，使线程在某些情况下，挂起等待，某些情况下，被唤醒。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> Lock suspendLock = <span class="keyword">new</span> ReentranLock();</div><div class="line"><span class="keyword">private</span> Condition suspendCondition = suspendLock.newCondition();</div><div class="line"></div><div class="line"><span class="comment">// 在某个安全操作下</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getTotalBalance</span><span class="params">()</span></span>&#123;</div><div class="line">    suspendLock.lock();</div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="keyword">while</span>(a==<span class="number">0</span>)&#123;</div><div class="line">            suspendCondition.await(); <span class="comment">// 暂时放弃锁</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">finally</span>&#123;suspendLock.unlock();&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">setBalance</span><span class="params">()</span></span>&#123;</div><div class="line">    suspendLock.lock(); <span class="comment">// 尝试获得锁，假如某个操作线程放弃锁就继续执行</span></div><div class="line">    <span class="keyword">try</span>&#123;</div><div class="line">        <span class="comment">// do someting</span></div><div class="line">        a++;</div><div class="line">        suspendCondition.signalAll(); <span class="comment">// 唤醒其它线程</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">finally</span>&#123;suspendLock.unlock();&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="协定"><a href="#协定" class="headerlink" title="协定"></a>协定</h3><p>每个共享的和可变的变量都应该只由一个锁来保护，从而维护人员知道是哪一个锁。</p>
+<blockquote>
+<p>一种常见的加锁规定是，将所有的可变状态都封装在对象内部，并通过对象的内置锁对所有访问可变状态的代码路径进行同步，使得在该对象上不会发生并发访问。</p>
+</blockquote>
+<h2 id="同步队列"><a href="#同步队列" class="headerlink" title="同步队列"></a>同步队列</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
+<li><p>peek：返回头元素，不删除，队列空为null<br>poll：返回头元素，删除，队列空为null<br>take：返回头元素，删除，队列空阻塞</p>
+</li>
+<li><p>offer：添加元素，队列满为false<br>put：添加元素，队列满阻塞</p>
+</li>
+</ul>
+<h3 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h3><p><em>每一个BlockingQueue都有一个容量，让容量满时往BlockingQueue中添加数据时会造成阻塞，当容量为空时取元素操作会阻塞。</em></p>
+<ul>
+<li>LinkedBockingQueue<br>默认容量没有上限，也可以指定最大容量</li>
+<li>ArrayBlockingQueue<br>构造时需要指定容量</li>
+<li>PriorityBlockingQueue<br>堆的实现可利用PriorityQueue，这里加了Blocking，可以认为是多线程的版本。</li>
+</ul>
+<h3 id="ArrayBlockingQueue-VS-LinkedBlockingQueue"><a href="#ArrayBlockingQueue-VS-LinkedBlockingQueue" class="headerlink" title="ArrayBlockingQueue VS LinkedBlockingQueue"></a>ArrayBlockingQueue VS LinkedBlockingQueue</h3><ul>
+<li>队列中锁的实现不同<br>  ArrayBlockingQueue实现的队列中的锁是没有分离的，即生产和消费用的是同一个锁；<br>  LinkedBlockingQueue实现的队列中的锁是分离的，即生产用的是putLock，消费是takeLock，而在遍历以及删除元素则要两把锁都锁住。</li>
+<li>在生产或消费时操作不同<br>  ArrayBlockingQueue实现的队列中在生产和消费的时候，是直接将枚举对象插入或移除的；<br>  LinkedBlockingQueue实现的队列中在生产和消费的时候，需要把枚举对象转换为Node<e>进行插入或移除，会影响性能</e></li>
+<li>队列大小初始化方式不同<br>  ArrayBlockingQueue实现的队列中必须指定队列的大小；<br>  LinkedBlockingQueue实现的队列中可以不指定队列的大小，但是默认是Integer.MAX_VALUE（如果生产者的速度一旦大于消费者的速度，也许还没有等到队列满阻塞产生，系统内存就有可能已被消耗殆尽）</li>
+</ul>
+<h2 id="线程间数据交互"><a href="#线程间数据交互" class="headerlink" title="线程间数据交互"></a>线程间数据交互</h2><ul>
+<li>Exchanger<br>同步的主要作用是保证一致性，或者说逻辑上的顺序性。但某些场景我们只是想两个线程共享数据，利用锁保证读写分离是没问题的，但还有更优雅的方式。<br>可在两个线程之间交换数据，只能是2个线程，他不支持更多的线程之间互换数据。实际上，一个线程向缓冲区填入数据，另一个线程消耗这些数据，一方线程完成操作，通过交换缓冲区的方式让另一个线程消费数据。如下，我们不必关系同步不同步的问题。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Exchanger&lt;List&lt;Integer&gt;&gt; exchanger = <span class="keyword">new</span> Exchanger&lt;&gt;();</div><div class="line"><span class="keyword">new</span> Consumer(exchanger).start();</div><div class="line"><span class="keyword">new</span> Producer(exchanger).start();</div><div class="line"><span class="comment">// 内部操作</span></div><div class="line">list = exchanger.exchange(list);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>具体例子参考：<a href="http://blog.csdn.net/andycpp/article/details/8854593" target="_blank" rel="external">http://blog.csdn.net/andycpp/article/details/8854593</a></p>
+<ul>
+<li>障栅<br>例如我们想所有线程运行到某个点，再做合并操作（类似MapReduce），可以考虑用CyclicBarrier类，与内存栅障类似：运算线程集内的线程必须等待该集合中所有其他线程都执行完某个运算后，才能继续向下执行。确保在所有线程全部到达某个逻辑执行点前，任何线程都不能越过该逻辑点。当一个线程运行完它那部分，则让其运行到障栅出，<strong>一旦所有线程都到达了这个障栅，障栅自动撤销，所有线程继续运行</strong>。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 表示至少三个线程到障栅才释放</span></div><div class="line">CyclicBarrier barrier = <span class="keyword">new</span> CyclicBarrier(<span class="number">3</span>);</div><div class="line"><span class="comment">// 传到每个线程的run方法中</span></div><div class="line">doWork();</div><div class="line">barrier.await();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对比CountDownLatch：闭锁用来等待事件，而栅栏用于等待其他线程，大家相互等待，只要有一个没完成，所有人都得等着。即闭锁用来等待的事件就是countDown事件,只有该countDown事件执行后所有之前在等待的线程才有可能继续执行;</p>
+<ul>
+<li>信号量（Semaphores）<br>当一个线程想要访问某个共享资源，首先，它必须获得semaphore。如果semaphore的内部计数器的值大于0，那么semaphore减少计数器的值并允许访问共享的资源。计数器的值大于0表示，有可以自由使用的资源，所以线程可以访问并使用它们。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> Semaphore semaphore;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">Class</span><span class="params">()</span></span>&#123;</div><div class="line">    semaphore = <span class="keyword">new</span> Semaphore(<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// in function</span></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    semaphore.acquire();</div><div class="line">    <span class="comment">// do something</span></div><div class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line"></div><div class="line">&#125;<span class="keyword">finally</span>&#123;</div><div class="line">    semaphore.release();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><p>常用例子:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.ExecutorService;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.Executors;</div><div class="line">ExecutorService executor = Executors.newFixedThreadPool(<span class="number">3</span>);</div><div class="line"><span class="comment">// 实现Runnable接口</span></div><div class="line">Runnable runner = <span class="keyword">new</span> ExecutorThread();</div><div class="line">executor.execute(runner);</div></pre></td></tr></table></figure></p>
+<h3 id="类的介绍"><a href="#类的介绍" class="headerlink" title="类的介绍"></a>类的介绍</h3><ul>
+<li><p>Executor<br>接口，该 <a href="https://github.com/enjoyhot/jdk-online/blob/master/1.8/java/util/concurrent/Executor.java" target="_blank" rel="external">接口</a> 只包含一个方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">execute</span><span class="params">(Runnable command)</span></span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>ExecutorService<br>也是一个接口，继承Executor接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ExecutorService</span> <span class="keyword">extends</span> <span class="title">Executor</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Executors<br>Executors类，提供了一系列工厂方法用于创建线程池，返回的线程池都实现了ExecutorService接口。</p>
+</li>
+</ul>
+<h3 id="创建线程池的方式"><a href="#创建线程池的方式" class="headerlink" title="创建线程池的方式"></a>创建线程池的方式</h3><ul>
+<li>newCachedThreadPool<br>创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则新建线程。</li>
+<li>newFixedThreadPool<br>创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待。</li>
+<li>newScheduledThreadPool<br>创建一个定长线程池，支持定时及周期性任务执行。</li>
+<li>newSingleThreadExecutor<br>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行</li>
+</ul>
+<h1 id="Java-IO"><a href="#Java-IO" class="headerlink" title="Java IO"></a>Java IO</h1><h2 id="同步与阻塞"><a href="#同步与阻塞" class="headerlink" title="同步与阻塞"></a>同步与阻塞</h2><p>参考：<a href="http://www.cnblogs.com/dolphin0520/p/3916526.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3916526.html</a></p>
+<blockquote>
+<p>IO请求分两个阶段：</p>
+<ul>
+<li>查看数据是否就绪；</li>
+<li>进行数据拷贝（内核将数据拷贝到用户线程）；</li>
+</ul>
+</blockquote>
+<h3 id="同步与异步"><a href="#同步与异步" class="headerlink" title="同步与异步"></a>同步与异步</h3><p><strong>关键：内核发送通知</strong></p>
+<p>多个任务和事件发生时，一个事件的发生或执行是否会导致整个流程的暂时等待。</p>
+<ul>
+<li>对于同步而言，是需要用户线程或内核去轮询，当数据就绪时，再将数据从内核拷贝到用户空间。</li>
+<li>对于异步而言，IO两个阶段都由内核完成，然后<strong>发送通知</strong>告知用户，由内核主动拷贝数据到用户线程，可见异步需要操作系统底层的支持；</li>
+</ul>
+<h3 id="阻塞与非阻塞"><a href="#阻塞与非阻塞" class="headerlink" title="阻塞与非阻塞"></a>阻塞与非阻塞</h3><p><strong>关键：操作返回标志位</strong></p>
+<ul>
+<li>对于阻塞而言，用户线程一直等待数据，直到就绪；</li>
+<li>对于非阻塞而言，用户线程读取数据，立即返回标志位告知用户线程当前IO状态，下次再读取数据了，一旦就绪，内核就将数据拷贝到用户线程。</li>
+</ul>
+<h2 id="多路复用"><a href="#多路复用" class="headerlink" title="多路复用"></a>多路复用</h2><ul>
+<li><p>select</p>
+<ul>
+<li>遍历，效率线性下降；</li>
+<li>支持的文件描述符数量太小，为1024；</li>
+</ul>
+</li>
+<li><p>poll<br>使用pollfd结构而不是select的fd_set结构,其它方面非常相似</p>
+</li>
+<li><p>epoll</p>
+<ul>
+<li>水平触发<br>LT(level triggered)水平触发：是缺省的工作方式，并且同时支持block和no-block socket.当被监控的文件描述符上有可读写事件发生时，epoll_wait()会通知处理程序去读写。如果你不作任何操作或没读写完，那么下次调用 epoll_wait()时，内核还是会继续通知你的，所以，这种模式编程出错误可能性要小一点。</li>
+<li>边缘触发<br>ET(edge-triggered)边缘触发：是高速工作方式，只支持no-block socket。在这种模式下，当描述符从未就绪变为就绪时，内核通过epoll告诉你。然后它会假设你知道文件描述符已经就绪，并且不会再为那个文件描述符发送更多的就绪通知，直到你做了某些操作导致那个文件描述符不再为就绪状态了。这种模式比水平触发效率高，系统不会充斥大量你不关心的就绪文件描述符。<br>参考 <a href="http://www.tuicool.com/articles/VvU7fum" target="_blank" rel="external">http://www.tuicool.com/articles/VvU7fum</a></li>
+</ul>
+</li>
+</ul>
+<p>在Netty权威指南中写道：</p>
+<blockquote>
+<ol>
+<li>socket描述符数量受限</li>
+<li>需要扫描所有的socket集合，在网络较差（如Wide Area Network-WAN），epoll效率远在前者之上，得益于epoll只有在活跃的socket上才会调用callback函数，而不是轮询。</li>
+<li>epoll是将内核和用户空间通过mmap（内存映射）同一块内存实现FD消息在内核和用户空间的交互，从而避免不必要的内存拷贝。</li>
+</ol>
+</blockquote>
+<h2 id="BIO-NIO-AIO"><a href="#BIO-NIO-AIO" class="headerlink" title="BIO,NIO,AIO"></a>BIO,NIO,AIO</h2><p>推荐阅读：<a href="http://tutorials.jenkov.com/java-nio/index.html" target="_blank" rel="external">java-nio tutorials</a>，更多补充及应用场景参考【Java实践篇】。</p>
+<h3 id="BIO"><a href="#BIO" class="headerlink" title="BIO"></a>BIO</h3><p>同步并阻塞，服务器实现模式为一个连接一个线程，即客户端有连接请求时服务器端就需要启动一个线程进行处理，如果这个连接不做任何事情会造成不必要的线程开销，当然可以通过线程池机制改善。</p>
+<h3 id="NIO"><a href="#NIO" class="headerlink" title="NIO"></a>NIO</h3><ul>
+<li><p>同步非阻塞IO(Java NIO)<br>服务器实现模式为一个请求一个线程，即客户端发送的连接请求都会注册到多路复用器上，多路复用器轮询到连接有I/O请求时才启动一个线程进行处理。用户进程也需要时不时的询问IO操作是否就绪，这就要求用户进程不停的去询问。</p>
+</li>
+<li><p>异步阻塞IO（Java NIO）<br>应用发起一个IO操作以后，不等待内核IO操作的完成，等内核完成IO操作以后会通知应用程序，这其实就是同步和异步最关键的区别，同步必须等待或者主动的去询问IO是否完成，那么为什么说是阻塞的呢？因为此时是通过select系统调用来完成的，而select函数本身的实现方式是阻塞的，而采用select函数有个好处就是它可以同时监听多个文件句柄（如果从UNP的角度看，select属于同步操作。因为select之后，进程还需要读写数据），从而提高系统的并发性。</p>
+</li>
+</ul>
+<h3 id="Java-AIO-NIO-2"><a href="#Java-AIO-NIO-2" class="headerlink" title="Java AIO(NIO.2)"></a>Java AIO(NIO.2)</h3><ul>
+<li>异步非阻塞IO<br>在此种模式下，用户进程只需要发起一个IO操作然后立即返回，等IO操作真正的完成以后，应用程序会得到IO操作完成的通知，此时用户进程只需要对数据进行处理就好了，不需要进行实际的IO读写操作，因为真正的IO读取或者写入操作已经由内核完成了。</li>
+</ul>
+<center><br><img src="http://ifeve.com/wp-content/uploads/2013/06/overview-selectors.png" alt="此处输入图片的描述"><br></center>
+
+<h1 id="Java安全"><a href="#Java安全" class="headerlink" title="Java安全"></a>Java安全</h1><p><em>待补充</em></p>
+<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>共23种设计模式可分为三类：</p>
+<ul>
+<li><p>创建型模式<br>简单工厂模式（Simple Factory）(不属于23种设计模式)<br>工厂方法模式（Factory Method）<br>抽象工厂模式（Abstract Factory）<br>创建者模式（Builder）<br>原型模式（Prototype）<br>单例模式（Singleton）</p>
+</li>
+<li><p>结构型模式<br>外观模式/门面模式（Facade门面模式）<br>适配器模式（Adapter）<br>代理模式（Proxy）<br>装饰模式（Decorator）<br>桥梁模式/桥接模式（Bridge）<br>组合模式（Composite）<br>享元模式（Flyweight）</p>
+</li>
+<li><p>行为型模式<br>模板方法模式（Template Method）<br>观察者模式（Observer）<br>状态模式（State）<br>策略模式（Strategy）<br>职责链模式（Chain of Responsibility）<br>命令模式（Command）<br>访问者模式（Visitor）<br>调停者模式（Mediator）<br>备忘录模式（Memento）<br>迭代器模式（Iterator）<br>解释器模式（Interpreter）</p>
+<h2 id="几种常见设计模式"><a href="#几种常见设计模式" class="headerlink" title="几种常见设计模式"></a>几种常见设计模式</h2><h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3></li>
+</ul>
+<p>一个实现主题接口Observable的类subject，可以往里面注册多个观察者Observer（List维护），名义上由观察者传入(订阅)subject，实际上观察者中还要调用subject的方法register：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">subject s = <span class="keyword">new</span> subject();</div><div class="line"><span class="keyword">new</span> observer(s);  <span class="comment">// 其中调用register(this)，s.get等</span></div></pre></td></tr></table></figure></p>
+<p>s 做其它事情，并触发其中的方法把List中的对象进行逐一调用。</p>
+<h3 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h3><p>（如Java Stream各种类）<br>本质上通过使用虚类（强制实现方法，例如cost），不断继承形成“种类”，装饰器是继承虚类最终的方法类，组合“种类”和“装饰器”：构造函数传入“种类”对象即可构造新种类对象，配合该被装饰对象实现cost方法。</p>
+<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>（包括简单工厂，工厂方法，抽象工厂）</p>
+<ul>
+<li>本质上通过定义接口，将new对象封装在工厂中，而不是暴露在外面具体方法，通过传入type判断需要new什么对象（工厂方法对这些类实现共同接口），缺点就是对于新加类需要修改工厂创建对象的方法；</li>
+<li>工厂方法就是直接在外面new一个对象，这个对象实现某个接口，然后通过固定方法返回特定类型对象；</li>
+<li>抽象工厂方法侧重表示通过顶级接口、接口中工厂方法，来强制所有具体工厂需要实现某些方法。</li>
+</ul>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
+<li>优点：<ol>
+<li>节省内存资源（只有在用这个实例调用方法时，方法才被加入到内存中，当对象不用的时候，gc会将方法回收，效率高了很多，而static常驻内存，但话不能这么说，单例需要在堆中申请资源，static不用）；</li>
+<li>提供了对唯一实例的受控访问，因此便于控制；</li>
+</ol>
+</li>
+<li>主要缺点：<ol>
+<li>由于单例模式中没有抽象层（个人认为Java中的通过接口，虚类等实现的逻辑就是抽象层的表现），因此单例类的扩展有很大的困难。</li>
+<li>单例类的职责过重，在一定程度上违背了“单一职责原则”。（记住数据库不要用，否则效率）</li>
+</ol>
+</li>
+<li>例子</li>
+</ul>
+<ol>
+<li>饱汉式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 线程安全的懒汉式=饱汉式（lazy loading）：</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</div><div class="line">        instance = <span class="keyword">new</span> Singleton();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>特点：加锁会影响效率，一般不用这种方法。不加线程同步可能get的时候会生成多个。</p>
+<ol>
+<li>饿汉式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 饿汉式（not lazy loading占内存）：</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>特点：常用，线程安全；容易产生垃圾对象，可能存在多个类加载器的情况，如一些servlet容器对每个servlet使用完全不同的类装载器。</p>
+<ol>
+<li>静态内部类<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 静态内部类</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</div><div class="line">     <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</div><div class="line">     &#125;</div><div class="line">     <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">         <span class="keyword">return</span> SingletonHolder.INSTANCE;</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>区别：这种达到lazy loading的效果，Singleton类被装载了，instance不一定被初始化。因为SingletonHolder类没有被主动使用，只有显示通过调用getInstance方法时，才会显示装载SingletonHolder类，从而实例化instance。</p>
+<p>想象一下，如果实例化instance很消耗资源，我想让他延迟加载，另外一方面，我不希望在Singleton类加载时就实例化，因为我不能确保Singleton类还可能在其他的地方被主动使用从而被加载，那么这个时候实例化instance显然是不合适的。这个时候，这种方式相比就显得很合理。</p>
+<ol>
+<li>双重锁形式<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 可能是单例模式最优方案（双重锁形式）：</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SingletonTest</span><span class="params">()</span> </span>&#123; &#125;</div><div class="line">    <span class="comment">//定义一个静态私有变量(不初始化，不使用final关键字，使用volatile保证了多线程访问时instance变量的可见性，避免了instance初始化时其他变量属性还没赋值完时，被另外线程调用)</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> SingletonTest instance;</div><div class="line">    <span class="comment">//定义一个共有的静态方法，返回该类型实例</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SingletonTest <span class="title">getIstance</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 对象实例化时与否判断（不使用同步代码块，instance不等于null时，直接返回对象，提高运行效率）</span></div><div class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</div><div class="line">            <span class="comment">//同步代码块（对象未初始化时，使用同步代码块，保证多线程访问时对象在第一次创建后，不再重复被创建）</span></div><div class="line">            <span class="keyword">synchronized</span> (SingletonTest.class) &#123;</div><div class="line">                <span class="comment">//未初始化，则初始instance变量</span></div><div class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</div><div class="line">                    instance = <span class="keyword">new</span> SingletonTest();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>注意，反射可以调用private构造方法，然而我们不管它。</p>
+<ul>
+<li>双重锁为什么使用volatile，而C++不用<br>答案：禁止指令重排序。<br>参考：<br><a href="http://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3920373.html</a><br><a href="http://blog.csdn.net/dl88250/article/details/5439024" target="_blank" rel="external">http://blog.csdn.net/dl88250/article/details/5439024</a><br>volatile可以保证Java虚拟机对代码执行的指令重排序，也会保证它的正确性。 synchronized虽然保证了原子性，但却没有保证指令重排序的正确性。因此，线程A对单例中的对象进行初始化过程中，可能出现构造函数里面的操作太多了（在 Java 中双重检查模式无效的原因是在不同步的情况下<strong>引用类型</strong>不是线程安全的），经过重排序之后，A线程单例实例还没有造出来，但已经被赋值了。而B线程这时过来了，错以为单例被实例化出来，一用才发现其中的功能并不完善（出现不可预知的结果），尚未被初始化。<br>我们的线程虽然可以保证原子性，但程序可能是在多核CPU上执行，JVM进行指令重排序的可能性就更大。</li>
+</ul>
+<h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><p>适配器模式有类的适配器模式和对象的适配器模式两种不同的形式。</p>
+<ul>
+<li><p>类适配器模式：</p>
+<center><br><img src="http://img.blog.csdn.net/20170311233405963?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ3VndWd1amlhd2Vp/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br></center>
+
+<ul>
+<li>目标(Target)角色：这就是所期待得到的接口。注意：由于这里讨论的是类适配器模式，因此目标不可以是类。</li>
+<li>源(Adapee)角色：现在需要适配的接口。</li>
+<li>适配器(Adaper)角色：适配器类是本模式的核心。适配器把源接口转换成目标接口。显然，这一角色不可以是接口，而必须是具体类。<br>本质上：继承Adaptee父类同时实现Target接口；</li>
+</ul>
+</li>
+<li><p>对象适配器模式：<br>实现接口，构造函数中传入源，装饰为Adapter类，实现更多方法以适配，与装饰者模式类似；</p>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://enjoyhot.github.io/2017/04/16/Java高级篇/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://enjoyhot.github.io/2017/04/16/Java高级篇/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/04/16/Java基础篇/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Java基础篇
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/08/01/or-know/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">或明</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/04/16/Java高级篇/" data-title="Java高级篇" data-url="http://enjoyhot.github.io/2017/04/16/Java高级篇/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/Spark计算平台/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://spark.apache.org/docs/latest/img/cluster-overview.png)" alt="Spark计算平台" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Spark/">Spark</a></p>
+                            <p class="item-title"><a href="/2017/04/16/Spark计算平台/" class="title">Spark计算平台</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T14:34:08.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/Java基础篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/16/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T14:31:26.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/16/Java高级篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center)" alt="Java高级篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/16/Java高级篇/" class="title">Java高级篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-16T14:31:26.000Z" itemprop="datePublished">2017-04-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/01/or-know/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.png)" alt="或明" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
+                            <p class="item-title"><a href="/2016/08/01/or-know/" class="title">或明</a></p>
+                            <p class="item-date"><time datetime="2016-08-01T13:23:50.000Z" itemprop="datePublished">2016-08-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/05/08/ensemble-stacking/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.blog.csdn.net/20160708170152466)" alt="ensemble-stacking" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a></p>
+                            <p class="item-title"><a href="/2016/05/08/ensemble-stacking/" class="title">ensemble-stacking</a></p>
+                            <p class="item-date"><time datetime="2016-05-08T09:04:30.000Z" itemprop="datePublished">2016-05-08</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 10px;">benchmark</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/gugugujiawei">enjoyhot&#39;s CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 enjoyhot<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'enjoyhot'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
