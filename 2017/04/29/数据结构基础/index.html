@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>数据结构基础 | ENJOYHOT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Tree完全二叉树只有最下面的两层结点度小于2，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树，不一定有排序；
+满二叉树除了叶结点外每一个结点都有左右子叶且叶结点都处在最底层的二叉树。
+平衡二叉树（AVL）平衡二叉树（Balanced Binary Tree）是二叉查找树（也称为排序二叉树，左小于右）的一个进化体，也是第一个引入平衡概念的二叉树。1962年，G.M. Adelson-Ve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构基础">
+<meta property="og:url" content="http://enjoyhot.github.io/2017/04/29/数据结构基础/index.html">
+<meta property="og:site_name" content="ENJOYHOT">
+<meta property="og:description" content="Tree完全二叉树只有最下面的两层结点度小于2，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树，不一定有排序；
+满二叉树除了叶结点外每一个结点都有左右子叶且叶结点都处在最底层的二叉树。
+平衡二叉树（AVL）平衡二叉树（Balanced Binary Tree）是二叉查找树（也称为排序二叉树，左小于右）的一个进化体，也是第一个引入平衡概念的二叉树。1962年，G.M. Adelson-Ve">
+<meta property="og:image" content="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif">
+<meta property="og:updated_time" content="2017-04-30T09:29:40.184Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构基础">
+<meta name="twitter:description" content="Tree完全二叉树只有最下面的两层结点度小于2，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树，不一定有排序；
+满二叉树除了叶结点外每一个结点都有左右子叶且叶结点都处在最底层的二叉树。
+平衡二叉树（AVL）平衡二叉树（Balanced Binary Tree）是二叉查找树（也称为排序二叉树，左小于右）的一个进化体，也是第一个引入平衡概念的二叉树。1962年，G.M. Adelson-Ve">
+<meta name="twitter:image" content="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif">
+<link rel="publisher" href="111736291216286617217">
+    
+
+    
+        <link rel="alternate" href="atom.xml" title="ENJOYHOT" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?715efc417137bb8b58f6b4edfa378ccd";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">ENJOYHOT</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">ENJOYHOT</h2>
+            <h3 id="title">D</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Guangzhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/enjoyhot/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                42
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                35
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/enjoyhot" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/gugugujiawei" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="mailto:gugugujiawei@gmail.com" target="_blank" title="envelope-o" class=tooltip>
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.douban.com/people/75493036/" target="_blank" title="user-md" class=tooltip>
+                            <i class="fa fa-user-md"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-数据结构基础" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            数据结构基础
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/04/29/数据结构基础/">
+            <time datetime="2017-04-29T09:22:09.000Z" itemprop="datePublished">2017-04-29</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Basis/">Basis</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Basis/">Basis</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Tree"><span class="toc-number">1.</span> <span class="toc-text">Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#完全二叉树"><span class="toc-number">1.1.</span> <span class="toc-text">完全二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#满二叉树"><span class="toc-number">1.2.</span> <span class="toc-text">满二叉树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平衡二叉树（AVL）"><span class="toc-number">1.3.</span> <span class="toc-text">平衡二叉树（AVL）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可能有这种说法"><span class="toc-number">1.3.1.</span> <span class="toc-text">可能有这种说法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Treap树堆"><span class="toc-number">1.4.</span> <span class="toc-text">Treap树堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树"><span class="toc-number">1.5.</span> <span class="toc-text">B-树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树-1"><span class="toc-number">1.6.</span> <span class="toc-text">B+树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树（不追求“完全平衡”）"><span class="toc-number">1.7.</span> <span class="toc-text">红黑树（不追求“完全平衡”）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么需要红黑树？"><span class="toc-number">1.7.1.</span> <span class="toc-text">为什么需要红黑树？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#排序"><span class="toc-number">2.</span> <span class="toc-text">排序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序"><span class="toc-number">2.1.</span> <span class="toc-text">堆排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几种常见的数据结构的操作性能对比"><span class="toc-number">2.2.</span> <span class="toc-text">几种常见的数据结构的操作性能对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于树的FAQ"><span class="toc-number">2.3.</span> <span class="toc-text">关于树的FAQ</span></a></li></ol></li></ol>
+                </div>
+            
+            <h1 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h1><h2 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h2><p>只有最下面的两层结点度小于2，并且最下面一层的结点都集中在该层最左边的若干位置的二叉树，不一定有排序；</p>
+<h2 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h2><p>除了叶结点外每一个结点都有左右子叶且叶结点都处在最底层的二叉树。</p>
+<h2 id="平衡二叉树（AVL）"><a href="#平衡二叉树（AVL）" class="headerlink" title="平衡二叉树（AVL）"></a>平衡二叉树（AVL）</h2><p>平衡二叉树（Balanced Binary Tree）是二叉查找树（也称为排序二叉树，左小于右）的一个进化体，也是第一个引入平衡概念的二叉树。1962年，G.M. Adelson-Velsky 和 E.M. Landis发明了这棵树，所以它又叫AVL树。平衡二叉树要求对于每一个节点来说，它的左右子树的高度之差不能超过1，如果插入或者删除一个节点使得高度之差大于1，就要进行节点之间的旋转，将二叉树重新维持在一个平衡状态。这个方案很好的解决了二叉查找树退化成链表的问题，把插入，查找，删除的时间复杂度最好情况和最坏情况都维持在O(logN)。但是频繁旋转会使插入和删除牺牲掉O(logN)左右的时间，不过相对二叉查找树来说，时间上稳定了很多。<br><a id="more"></a></p>
+<center><br><img src="http://pic002.cnblogs.com/images/2012/229056/2012082016003157.jpg" alt="举例比较"><br></center>
+
+
+<h3 id="可能有这种说法"><a href="#可能有这种说法" class="headerlink" title="可能有这种说法"></a>可能有这种说法</h3><ul>
+<li>一种二叉搜索树<br>1.所有非叶子结点<strong>至多</strong>拥有两个儿子（Left和Right）；<br>2.左边小于右边，大局观也是如此；</li>
+<li>特点<br>1.当B树的所有非叶子结点的左右子树的结点数目均保持差不多（平衡），那么B树<br>的搜索性能逼近二分查找（从线性到log2N），有利于增删改查；<br>2.同时它比连续内存空间的二分查找的优点是，这些操作不需要移动大段的内存数据，甚至通常是常数开销；</li>
+<li>使用<br>尽量将元素构建为左边平衡的结构:<center><br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/manesking/31.JPG" alt="此处输入图片的描述"><br></center>
+
+</li>
+</ul>
+<h2 id="Treap树堆"><a href="#Treap树堆" class="headerlink" title="Treap树堆"></a>Treap树堆</h2><p>作用：Treap的特点是实现简单，且能基本实现随机平衡的结构,避免变为链式结构。</p>
+<p>一棵treap是一棵修改了结点顺序的二叉查找树。通常树内的每个结点x都有一个关键字值key[x]，另外，还要为结点分配priority[x]，treap的结点排列成让关键字遵循二叉查找树性质，并且优先级遵循最小堆顺序性质：</p>
+<ol>
+<li>如果v是u的左孩子，则key[v] &lt; key[u].</li>
+<li>如果v是u的右孩子，则key[v] &gt; key[u].</li>
+<li>如果v是u的孩子，则priority[u] &gt; priority[v].</li>
+</ol>
+<ul>
+<li><p>treap插入操作：<br>1.按照二叉树的插入方法，将结点插入到树中<br>2.根据堆的性质(我们这里为最小堆)和优先级的大小调整结点位置，旋转不破坏排序树的特征。</p>
+</li>
+<li><p>treap删除操作：<br>1.找到相应的结点<br>2.若该结点为叶子结点，则直接删除；<br>若该结点为只包含一个叶子结点的结点，则将其叶子结点赋值给它；<br>若该结点为其他情况下的节点，则进行相应的旋转，直到该结点为上述情况之一，然后进行删除。</p>
+</li>
+</ul>
+<p>具体例子见：<a href="http://blog.csdn.net/yang_yulei/article/details/46005845" target="_blank" rel="external">http://blog.csdn.net/yang_yulei/article/details/46005845</a></p>
+<h2 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h2><ul>
+<li>M叉搜索树</li>
+</ul>
+<ol>
+<li>定义任意非叶子结点<strong>最多只有M个儿子</strong>；且M&gt;2；</li>
+<li>根结点的儿子数为[2, M]；</li>
+<li>除根结点以外的非叶子结点的儿子数为[M/2, M]；</li>
+<li>每个结点存放至少M/2-1（取上整）和至多M-1个关键字；（至少2个关键字）</li>
+<li>非叶子结点的关键字个数=指向儿子的指针个数-1；</li>
+<li>非叶子结点的关键字：K<a href="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif" target="_blank" rel="external">1</a>, K<a href="http://images2015.cnblogs.com/blog/318837/201604/318837-20160422104522991-406805984.png" target="_blank" rel="external">2</a>, …, K[M-1]；且K[i] &lt; K[i+1]；</li>
+<li>非叶子结点的指针：P<a href="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif" target="_blank" rel="external">1</a>, P<a href="http://images2015.cnblogs.com/blog/318837/201604/318837-20160422104522991-406805984.png" target="_blank" rel="external">2</a>, …, P[M]；其中P<a href="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif" target="_blank" rel="external">1</a>指向关键字小于K<a href="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif" target="_blank" rel="external">1</a>的子树，P[M]指向关键字大于K[M-1]的子树，其它P[i]指向关键字属于(K[i-1], K[i])的子树；</li>
+<li>所有叶子结点位于同一层；</li>
+</ol>
+<ul>
+<li>特点</li>
+</ul>
+<ol>
+<li>关键字集合分布在整颗树中；</li>
+<li>任何一个关键字出现且只出现在一个结点中；</li>
+<li>搜索有可能在非叶子结点结束；</li>
+<li>其搜索性能等价于在关键字全集内做一次二分查找；</li>
+<li>自动层次控制；</li>
+<li>根节点使用关键字个数：<strong>最多M-1</strong>,最少M/2-1，向上取整</li>
+</ol>
+<ul>
+<li>使用<br>M=3:<br><center><br><img src="http://img.blog.csdn.net/20160805191715603" alt="M=3"><br><img src="http://hi.csdn.net/attachment/201112/18/0_1324206104Z6fI.gif" alt="此处输入图片的描述"><br></center><br>例子：<a href="http://blog.csdn.net/u013400245/article/details/52824744" target="_blank" rel="external">http://blog.csdn.net/u013400245/article/details/52824744</a></li>
+</ul>
+<h2 id="B-树-1"><a href="#B-树-1" class="headerlink" title="B+树"></a>B+树</h2><ul>
+<li>与B-树的差异</li>
+</ul>
+<ol>
+<li>有n棵子树的结点中含有n个关键字，每个关键字不保存数据，只用来索引，所有数据都保存在叶子节点。</li>
+<li>所有的叶子结点中包含了全部关键字的信息，及指向含这些关键字记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接。</li>
+<li>所有的非终端结点可以看成是索引部分，结点中仅含其子树（根结点）中的最大（或最小）关键字。<br><strong>通常在B+树上有两个头指针，一个指向根结点，一个指向关键字最小的叶子结点。</strong></li>
+</ol>
+<ul>
+<li>特点<br>其定义基本与B-树同，除了：</li>
+</ul>
+<ol>
+<li>非叶子结点的子树指针与关键字个数相同(据July，有争议)；</li>
+<li>非叶子结点的子树指针P[i]，指向关键字值属于[K[i], K[i+1])的子树（B-树是开区间）；</li>
+<li>所有关键字都在叶子结点出现；</li>
+</ol>
+<p>一般在数据库系统或文件系统中使用的B+Tree结构都在经典B+Tree的基础上进行了优化，增加了顺序访问指针，如下图：</p>
+<pre><code>在B+Tree的每个叶子节点增加一个指向相邻叶子节点的指针(链指针)，就形成了带有顺序访问指针的B+Tree。做这个优化的目的是为了提高区间访问的性能，例如图4中如果要查询key为从18到49的所有数据记录，当找到18后，只需顺着节点和指针顺序遍历就可以一次性访问到所有数据节点，极大提到了区间查询效率。
+</code></pre><ul>
+<li>使用</li>
+</ul>
+<p>B+树的基本操作：<br><strong>查找操作</strong><br>对B+树可以进行两种查找运算：<br>　　a.从最小关键字起顺序查找；<br>　　b.从根结点开始，进行随机查找。<br>　　在查找时，若非终端结点上的剧组机等于给定值，并不终止，而是继续向下直到叶子结点。因此，在B+树中，不管查找成功与否，每次查找都是走了一条从根到叶子结点的路径。其余同B-树的查找类似。<br><strong>插入操作</strong><br>    B+树的插入与B树的插入过程类似。不同的是B+树在叶结点上进行，如果叶结点中的关键码个数超过m，就必须分裂成关键码数目大致相同的两个结点，并保证上层结点中有这两个结点的最大关键码。(算法见百度百科)<br><strong>删除操作</strong><br>    B+树的删除也仅在叶子结点进行，当叶子结点中的最大关键字被删除时，其在非终端结点中的值可以作为一个“分界关键字”存在。若因删除而使结点中关键字的个数少于m/2 （m/2结果取上界，如5/2结果为3）时，其和兄弟结点的合并过程亦和B-树类似。</p>
+<p>如M=3:</p>
+<center><br><img src="http://img.blog.csdn.net/20160805192039968" alt="M=3"><br></center><br>1. 所有关键字都出现在叶子结点的链表中（稠密索引），且链表中的关键字恰好是有序的；<br>2. 非叶子结点相当于是叶子结点的索引（稀疏索引），叶子结点相当于是存储（关键字）数据的数据层；<br>3. 更适合文件索引系统（见FAQ）；<br><br>## B<em>-树<br><br>B</em>-树是B+树的变体，在B+树的非根和非叶子结点再增加指向兄弟的指针：<br>M=3:<br><center><br><img src="http://img.blog.csdn.net/20160805192156312" alt="M=3"><br></center>
+
+<p>与B+-树区别：</p>
+<ul>
+<li>B+树的分裂：当一个结点满时，分配一个新的结点，并将原结点中1/2的数据<br>复制到新结点，最后在父结点中增加新结点的指针；B+树的分裂只影响原结点和父结点，而不会影响兄弟结点，所以它不需要指向兄弟的指针；</li>
+<li>B*树的分裂：当一个结点满时，如果它的下一个兄弟结点未满，那么将一部分<br>数据移到兄弟结点中，再在原结点插入关键字，最后修改父结点中兄弟结点的关键字（因为兄弟结点的关键字范围改变了）；如果兄弟也满了，则在原结点与兄弟结点之间增加新结点，并各复制1/3的数据到新结点，最后在父结点增加新结点的指针；</li>
+</ul>
+<p><strong>所以，B*树分配新结点的概率比B+树要低，空间使用率更高；在B+树基础上，为非叶子结点也增加链表指针，将结点的最低利用率从1/2提高到2/3；</strong></p>
+<h2 id="红黑树（不追求“完全平衡”）"><a href="#红黑树（不追求“完全平衡”）" class="headerlink" title="红黑树（不追求“完全平衡”）"></a>红黑树（不追求“完全平衡”）</h2><p><img src="http://hi.csdn.net/attachment/201012/29/8394323_1293613306CGzE.jpg" alt="红黑树"><br>1）每个结点要么是红的，要么是黑的。<br>2）根结点是黑的。<br>3）每个叶结点，即空结点（NIL）是黑的。<br>4）如果一个结点是红的，那么它的<strong>俩个</strong>儿子都是黑的。<br>5）对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。</p>
+<p><strong>这些约束的好处是</strong>：保持了树的相对平衡，同时又比AVL的插入删除操作的复杂性要低许多。</p>
+<ul>
+<li>由于它的设计，任何不平衡都会在三次旋转之内解决,AVL树有最多O(logN)次旋转。</li>
+<li>如果插入一个node引起了树的不平衡，AVL和RB-Tree都是最多只需要2次旋转操作，即两者都是O(1)；但是在删除node引起树的不平衡时，最坏情况下，AVL需要维护从被删node到root这条路径上所有node的平衡性，因此需要旋转的量级O(logN)，而RB-Tree最多只需3次旋转，只需要O(1)的复杂度。</li>
+<li>其次，AVL的结构相较RB-Tree来说更为平衡，在插入和删除node更容易引起Tree的unbalance，因此在大量数据需要插入或者删除时，AVL需要rebalance的频率会更高。因此，RB-Tree在需要大量插入和删除node的场景下，效率更高。自然，由于AVL高度平衡，因此AVL的search效率更高。</li>
+<li>map的实现只是折衷了两者在search、insert以及delete下的效率。总体来说，RB-tree的统计性能是高于AVL的。</li>
+</ul>
+<p><a href="http://www.importnew.com/21818.html" target="_blank" rel="external">http://www.importnew.com/21818.html</a><br><img src="http://images2015.cnblogs.com/blog/939998/201605/939998-20160517211944357-1810109113.png" alt="get"></p>
+<h3 id="为什么需要红黑树？"><a href="#为什么需要红黑树？" class="headerlink" title="为什么需要红黑树？"></a>为什么需要红黑树？</h3><p>map,set底层都提供了排序功能，且查找速度快。红黑树实际上是AVL的一种变形，但是其比AVL(平衡二叉搜索树)具有更高的插入效率，当然查找效率会平衡二叉树稍微低一点点，毕竟平衡二叉树太完美了。但是这种查找效率的损失是非常值得的。它的操作有着良好的最坏情况运行时间，并且在实践中是高效的: 它可以在O(logn)时间内做查找，插入和删除，这里的n是树中元素的数目。</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><p>输入无序序列 { 1, 3, 4, 5, 2, 6, 9, 7, 8, 0 } ，如下所示，先建最大堆，建立最大堆的过程是先将原序列按照完全二叉树的顺序进行排列，然后从N/2个节点（向下取整）开始进行交换。<br>建完堆之后，再利用堆调整过程不断取堆顶，最终获得排序后结果。<br><img src="http://images2015.cnblogs.com/blog/318837/201604/318837-20160422104522991-406805984.png" alt="此处输入图片的描述"><br><img src="http://images2015.cnblogs.com/blog/318837/201604/318837-20160422104524038-1723180638.png" alt="此处输入图片的描述"></p>
+<h2 id="几种常见的数据结构的操作性能对比"><a href="#几种常见的数据结构的操作性能对比" class="headerlink" title="几种常见的数据结构的操作性能对比"></a>几种常见的数据结构的操作性能对比</h2><p><img src="http://uploadfiles.nowcoder.com/files/20140920/105_1411202746369_3.png" alt="此处输入图片的描述"></p>
+<h2 id="关于树的FAQ"><a href="#关于树的FAQ" class="headerlink" title="关于树的FAQ"></a>关于树的FAQ</h2><ul>
+<li>红黑树用于内存搜索，磁盘搜索用的多是多路树？<br>因为磁盘读取效率是很慢的，读取次数是基于树高度，所以像数据库中的B/B+索引都是多路树，每一个block中存放多个子节点信息，减少磁盘读取次数。</li>
+<li>为什么说B+-tree比B树更适合实际应用中操作系统的文件索引和数据库索引？</li>
+</ul>
+<ol>
+<li>B+-tree的磁盘读写代价更低<br>B+-tree的内部结点并没有指向关键字具体信息的指针。因此其内部结点相对B 树更小。如果把所有同一内部结点的关键字存放在同一盘块中，那么盘块所能容纳的关键字数量也越多。一次性读入内存中的需要查找的关键字也就越多。相对来说IO读写次数也就降低了。<br> <strong>举个例子</strong>，假设磁盘中的一个盘块容纳16bytes，而一个关键字2bytes，一个关键字具体信息指针2bytes。一棵9阶B-tree(一个结点最多8个关键字)的内部结点需要2个盘快（2<em>8+2</em>8）。而B+树内部结点只需要1个盘快。当需要把内部结点读入内存中的时候（查找是基于节点信息），B 树就比B+ 树多一次盘块查找时间(在磁盘中就是盘片旋转的时间)。</li>
+<li>B+-tree的查询效率更加稳定（查询时间的均衡）<br>由于非终结点并不是最终指向文件内容的结点，而只是叶子结点中关键字的索引。所以任何关键字的查找必须走一条从根结点到叶子结点的路。所有关键字查询的路径长度相同，导致每一个数据的查询效率相当。</li>
+</ol>
+<p>读者点评：</p>
+<blockquote>
+<p>本文评论下第149楼，fanyy1991针对上文所说的两点，道：个人觉得这两个原因都不是主要原因。数据库索引采用B+树的主要原因是（上述从检索的角度，这里从遍历的角度）：<br>B-树在提高了磁盘IO性能的同时并没有解决元素遍历的效率低下的问题。正是为了解决这个问题，B+树应运而生。B+树只要遍历叶子节点就可以实现整棵树的遍历。而且在数据库中基于范围的查询是非常频繁的，而B树不支持这样的操作（或者说效率太低）。</p>
+</blockquote>
+<ul>
+<li>不同的引擎对于索引有不同的支持：Innodb和MyISAM默认的索引是Btree索引（之后版本B+树）；而Memory默认的索引是Hash索引（哈希值可能重复，所以检索效率未必就高）。</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://enjoyhot.github.io/2017/04/29/数据结构基础/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://enjoyhot.github.io/2017/04/29/数据结构基础/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/04/29/linux-management-command/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Linux 系统管理常用命令（不定时更新）
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/04/29/MySQL/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">MySQL</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2017/04/29/数据结构基础/" data-title="数据结构基础" data-url="http://enjoyhot.github.io/2017/04/29/数据结构基础/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/30/Apache大数据组件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://www.processon.com/chart_image/535371590cf2bb589c5e2391.png)" alt="Apache大数据组件" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/分布式/">分布式</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Apache大数据组件/" class="title">Apache大数据组件</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:24:08.000Z" itemprop="datePublished">2017-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/30/Spark计算平台/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://spark.apache.org/docs/latest/img/cluster-overview.png)" alt="Spark计算平台" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Spark/">Spark</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Spark计算平台/" class="title">Spark计算平台</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:23:09.000Z" itemprop="datePublished">2017-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/30/Java高级篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center)" alt="Java高级篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Java高级篇/" class="title">Java高级篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:21:09.000Z" itemprop="datePublished">2017-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/30/Java基础篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:20:09.000Z" itemprop="datePublished">2017-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/29/linux-management-command/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="Linux 系统管理常用命令（不定时更新）" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2017/04/29/linux-management-command/" class="title">Linux 系统管理常用命令（不定时更新）</a></p>
+                            <p class="item-date"><time datetime="2017-04-29T09:23:09.000Z" itemprop="datePublished">2017-04-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis/">Basis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basis/">Basis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/Basis/" style="font-size: 12px;">Basis</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 10px;">benchmark</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/gugugujiawei">enjoyhot&#39;s CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 enjoyhot<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'enjoyhot'};
+    (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>linux系统管理常用命令（不定时更新） | ENJOYHOT</title>
+    <title>Linux 系统管理常用命令（不定时更新） | ENJOYHOT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux系统管理常用命令（不定时更新）">
-<meta property="og:url" content="http://enjoyhot.github.io/2016/02/09/linux-management-command/index.html">
+<meta property="og:title" content="Linux 系统管理常用命令（不定时更新）">
+<meta property="og:url" content="http://enjoyhot.github.io/2017/04/29/linux-management-command/index.html">
 <meta property="og:site_name" content="ENJOYHOT">
 <meta property="og:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta property="og:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
-<meta property="og:updated_time" content="2017-04-16T14:17:19.803Z">
+<meta property="og:updated_time" content="2017-04-30T09:29:40.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux系统管理常用命令（不定时更新）">
+<meta name="twitter:title" content="Linux 系统管理常用命令（不定时更新）">
 <meta name="twitter:description" content="运行脚本的方法常用运行方法:123456$ bash a.sh$ chmod +x a.sh$ ./a.sh$ source a.sh">
 <meta name="twitter:image" content="http://enjoyhot.github.io/img/article_pic/201608/080101.jpg">
 <link rel="publisher" href="111736291216286617217">
@@ -173,11 +173,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                39
+                42
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                32
+                35
                 <span>tags</span>
             </div>
         </div>
@@ -233,7 +233,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-            linux系统管理常用命令（不定时更新）
+            Linux 系统管理常用命令（不定时更新）
         </h1>
     
 
@@ -242,8 +242,8 @@ var _hmt = _hmt || [];
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/02/09/linux-management-command/">
-            <time datetime="2016-02-09T13:51:00.000Z" itemprop="datePublished">2016-02-09</time>
+        <a href="/2017/04/29/linux-management-command/">
+            <time datetime="2017-04-29T09:23:09.000Z" itemprop="datePublished">2017-04-29</time>
         </a>
     </div>
 
@@ -268,6 +268,11 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
         
             
+                <div id="toc" class="toc-article">
+                <strong class="toc-title">Catalogue</strong>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#运行脚本的方法"><span class="toc-number">1.</span> <span class="toc-text">运行脚本的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用运行方法"><span class="toc-number">1.1.</span> <span class="toc-text">常用运行方法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shell-script的追踪与Debug"><span class="toc-number">1.2.</span> <span class="toc-text">shell script的追踪与Debug</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#脚本输入输出例子"><span class="toc-number">2.</span> <span class="toc-text">脚本输入输出例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#test命令"><span class="toc-number">3.</span> <span class="toc-text">test命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关闭apache"><span class="toc-number">4.</span> <span class="toc-text">关闭apache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#版本一"><span class="toc-number">4.1.</span> <span class="toc-text">版本一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#版本二"><span class="toc-number">4.2.</span> <span class="toc-text">版本二</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看端口"><span class="toc-number">5.</span> <span class="toc-text">查看端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程相关"><span class="toc-number">6.</span> <span class="toc-text">进程相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#top"><span class="toc-number">6.1.</span> <span class="toc-text">top</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-number">6.2.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看运行进程的绝对路径"><span class="toc-number">6.3.</span> <span class="toc-text">查看运行进程的绝对路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件编码"><span class="toc-number">7.</span> <span class="toc-text">文件编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件统计"><span class="toc-number">8.</span> <span class="toc-text">文件统计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户操作"><span class="toc-number">9.</span> <span class="toc-text">用户操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#增加用户"><span class="toc-number">9.1.</span> <span class="toc-text">增加用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#添加组"><span class="toc-number">9.2.</span> <span class="toc-text">添加组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#移除组"><span class="toc-number">9.3.</span> <span class="toc-text">移除组</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#无密码ssh"><span class="toc-number">10.</span> <span class="toc-text">无密码ssh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tmux工具"><span class="toc-number">11.</span> <span class="toc-text">tmux工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机自启动"><span class="toc-number">12.</span> <span class="toc-text">开机自启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number">12.1.</span> <span class="toc-text">Example:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#端口映射"><span class="toc-number">13.</span> <span class="toc-text">端口映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改文件权限"><span class="toc-number">14.</span> <span class="toc-text">更改文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-number">15.</span> <span class="toc-text">git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化远程仓库"><span class="toc-number">15.1.</span> <span class="toc-text">初始化远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化本地仓库"><span class="toc-number">15.2.</span> <span class="toc-text">初始化本地仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看、添加、修改远程仓库"><span class="toc-number">15.3.</span> <span class="toc-text">查看、添加、修改远程仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改github仓库"><span class="toc-number">15.4.</span> <span class="toc-text">修改github仓库</span></a></li></ol></li></ol>
+                </div>
+            
             <h2 id="运行脚本的方法"><a href="#运行脚本的方法" class="headerlink" title="运行脚本的方法"></a>运行脚本的方法</h2><h3 id="常用运行方法"><a href="#常用运行方法" class="headerlink" title="常用运行方法:"></a>常用运行方法:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ bash a.sh</div><div class="line"></div><div class="line">$ chmod +x a.sh</div><div class="line">$ ./a.sh</div><div class="line"></div><div class="line">$ source a.sh</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>用bash和用source的不同在于：</p>
@@ -285,7 +290,7 @@ var _hmt = _hmt || [];
 <h3 id="版本二"><a href="#版本二" class="headerlink" title="版本二"></a>版本二</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/apache2 stop</div></pre></td></tr></table></figure>
 <h2 id="查看端口"><a href="#查看端口" class="headerlink" title="查看端口"></a>查看端口</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">netstat -anp | grep <span class="number">9200</span></div><div class="line">(Not all processes could be identified, non-owned process info</div><div class="line"> will <span class="keyword">not</span> be shown, you would have to be root to see it all.)</div><div class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">53570</span>       <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        ESTABLISHED -</div><div class="line">tcp6       <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        :::*                    LISTEN      -</div><div class="line">tcp6       <span class="number">0</span>      <span class="number">0</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">9200</span>        <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">53570</span>       ESTABLISHED -</div><div class="line">unix  <span class="number">3</span>      [ ]         STREAM     CONNECTED     <span class="number">105509200</span> -</div></pre></td></tr></table></figure>
 <p>参数说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-p  process</div><div class="line">-a  all,显示所有连接和监听端口。</div><div class="line">-n  以数字显示地址和端口（否则忽略虚拟机动态ip，127.0.0.1会以localhost显示）</div></pre></td></tr></table></figure></p>
-<h2 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h2><h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>相关命令：c,m,u等</p>
+<h2 id="进程相关"><a href="#进程相关" class="headerlink" title="进程相关"></a>进程相关</h2><h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><p>相关命令：c,m,u等<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 实时查看某个进程创建的线程情况</div><div class="line">$ top -H -p &lt;pid&gt;</div><div class="line">// 类似有，但还是top信息更多</div><div class="line">$ ps -T -p &lt;pid&gt;</div></pre></td></tr></table></figure></p>
 <h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>显示瞬间行程(process)的动态</p>
 <p><strong>使用权限：</strong>所有使用者<br><strong>使用方式：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps [options] [--help]</div></pre></td></tr></table></figure></p>
 <p><strong>参数：</strong><br>ps的参数非常多,在此仅列出几个常用的参数并大略介绍含义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-A  列出所有的进程</div><div class="line">-w  显示加宽可以显示较多的资讯</div><div class="line">-au 显示较详细的资讯</div><div class="line">-aux 显示所有包含其他使用者的行程</div></pre></td></tr></table></figure></p>
@@ -314,6 +319,30 @@ var _hmt = _hmt || [];
 </ul>
 <h3 id="添加组"><a href="#添加组" class="headerlink" title="添加组"></a>添加组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># add to hadoop groups</div><div class="line">sudo usermod -a -G hadoop user1</div></pre></td></tr></table></figure>
 <h3 id="移除组"><a href="#移除组" class="headerlink" title="移除组"></a>移除组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gpasswd -d 用户名 组名</div></pre></td></tr></table></figure>
+<h2 id="无密码ssh"><a href="#无密码ssh" class="headerlink" title="无密码ssh"></a>无密码ssh</h2><ul>
+<li>一般做法</li>
+</ul>
+<ol>
+<li>生成两个重要文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>id-rsa     #私钥<br>id-rsa.pub   #公钥</p>
+<ol>
+<li>将公钥中的内容追加到另一台机器文件中<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">~/.ssh/authorized_keys</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样另一台机器就可以无密码ssh到生成公钥对应的机器。同理，其它机器也要这样做，那么假如有n台机器，每台机器authorized_keys文件需要n-1行，代表其它n-1台机器的公钥。优点麻烦，用第二种方法。</p>
+<ul>
+<li>共用公私钥</li>
+</ul>
+<ol>
+<li>生成两个重要文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>id-rsa     #私钥<br>id-rsa.pub   #公钥</p>
+<ol>
+<li>复制和分发<br>新建一个authorized_keys文件，内容为id-rsa.pub中的一行，然后将这<strong>三个文件</strong>共享到其它节点的~/.ssh目录下，切记，3个文件都要拷贝。</li>
+</ol>
 <h2 id="tmux工具"><a href="#tmux工具" class="headerlink" title="tmux工具"></a>tmux工具</h2><ul>
 <li>删除panel:<br>  C-x + x</li>
 <li>迅速切换排版（水平或垂直）:<br>  C-x + 空格</li>
@@ -415,7 +444,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://enjoyhot.github.io/2016/02/09/linux-management-command/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://enjoyhot.github.io/2016/02/09/linux-management-command/">Comments</a>
+        <a href="http://enjoyhot.github.io/2017/04/29/linux-management-command/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://enjoyhot.github.io/2017/04/29/linux-management-command/">Comments</a>
     
 
         </footer>
@@ -424,19 +453,19 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2016/03/12/MS-document-online-preview/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2017/04/30/Java基础篇/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    MS-document-online-preview
+                    Java基础篇
                 
             </div>
         </a>
     
     
-        <a href="/2015/12/12/git-notes/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/04/29/数据结构基础/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Git 协作纪要</div>
+            <div class="article-nav-title">数据结构基础</div>
         </a>
     
 </nav>
@@ -450,7 +479,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/02/09/linux-management-command/" data-title="linux系统管理常用命令（不定时更新）" data-url="http://enjoyhot.github.io/2016/02/09/linux-management-command/"></div>
+    <div class="ds-thread" data-thread-key="2017/04/29/linux-management-command/" data-title="Linux 系统管理常用命令（不定时更新）" data-url="http://enjoyhot.github.io/2017/04/29/linux-management-command/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
@@ -505,7 +534,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/04/16/Spark计算平台/" class="thumbnail">
+                            <a href="/2017/04/30/Apache大数据组件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://www.processon.com/chart_image/535371590cf2bb589c5e2391.png)" alt="Apache大数据组件" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/分布式/">分布式</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Apache大数据组件/" class="title">Apache大数据组件</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:24:08.000Z" itemprop="datePublished">2017-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/04/30/Spark计算平台/" class="thumbnail">
     
     
         <span style="background-image:url(http://spark.apache.org/docs/latest/img/cluster-overview.png)" alt="Spark计算平台" class="thumbnail-image"></span>
@@ -516,34 +564,15 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Spark/">Spark</a></p>
-                            <p class="item-title"><a href="/2017/04/16/Spark计算平台/" class="title">Spark计算平台</a></p>
-                            <p class="item-date"><time datetime="2017-04-16T14:34:08.000Z" itemprop="datePublished">2017-04-16</time></p>
+                            <p class="item-title"><a href="/2017/04/30/Spark计算平台/" class="title">Spark计算平台</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:23:09.000Z" itemprop="datePublished">2017-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2017/04/16/Java基础篇/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2017/04/16/Java基础篇/" class="title">Java基础篇</a></p>
-                            <p class="item-date"><time datetime="2017-04-16T14:31:26.000Z" itemprop="datePublished">2017-04-16</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/16/Java高级篇/" class="thumbnail">
+                            <a href="/2017/04/30/Java高级篇/" class="thumbnail">
     
     
         <span style="background-image:url(http://img.blog.csdn.net/20150720152805765?%20%20watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/grav%20%20ity/Center)" alt="Java高级篇" class="thumbnail-image"></span>
@@ -554,46 +583,46 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
-                            <p class="item-title"><a href="/2017/04/16/Java高级篇/" class="title">Java高级篇</a></p>
-                            <p class="item-date"><time datetime="2017-04-16T14:31:26.000Z" itemprop="datePublished">2017-04-16</time></p>
+                            <p class="item-title"><a href="/2017/04/30/Java高级篇/" class="title">Java高级篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:21:09.000Z" itemprop="datePublished">2017-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2016/08/01/or-know/" class="thumbnail">
+                            <a href="/2017/04/30/Java基础篇/" class="thumbnail">
     
     
-        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.png)" alt="或明" class="thumbnail-image"></span>
+        <span style="background-image:url(http://hi.csdn.net/attachment/201103/15/0_1300176759Dsv5.gif)" alt="Java基础篇" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Life/">Life</a></p>
-                            <p class="item-title"><a href="/2016/08/01/or-know/" class="title">或明</a></p>
-                            <p class="item-date"><time datetime="2016-08-01T13:23:50.000Z" itemprop="datePublished">2016-08-01</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java/">Java</a></p>
+                            <p class="item-title"><a href="/2017/04/30/Java基础篇/" class="title">Java基础篇</a></p>
+                            <p class="item-date"><time datetime="2017-04-30T09:20:09.000Z" itemprop="datePublished">2017-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2016/05/08/ensemble-stacking/" class="thumbnail">
+                            <a href="/2017/04/29/linux-management-command/" class="thumbnail">
     
     
-        <span style="background-image:url(http://img.blog.csdn.net/20160708170152466)" alt="ensemble-stacking" class="thumbnail-image"></span>
+        <span style="background-image:url(http://enjoyhot.github.io/img/article_pic/201608/080101.jpg)" alt="Linux 系统管理常用命令（不定时更新）" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Machine-Learning/">Machine Learning</a></p>
-                            <p class="item-title"><a href="/2016/05/08/ensemble-stacking/" class="title">ensemble-stacking</a></p>
-                            <p class="item-date"><time datetime="2016-05-08T09:04:30.000Z" itemprop="datePublished">2016-05-08</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Linux/">Linux</a></p>
+                            <p class="item-title"><a href="/2017/04/29/linux-management-command/" class="title">Linux 系统管理常用命令（不定时更新）</a></p>
+                            <p class="item-date"><time datetime="2017-04-29T09:23:09.000Z" itemprop="datePublished">2017-04-29</time></p>
                         </div>
                     </li>
                 
@@ -606,7 +635,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Basis/">Basis</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Django/">Django</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HPC/">HPC</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Machine-Learning/">Machine Learning</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Photo/">Photo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Search-Engine/">Search Engine</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spark/">Spark</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tea/">tea</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/分布式/">分布式</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -615,7 +644,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -624,7 +653,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apache/">Apache</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Basis/">Basis</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSDN/">CSDN</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Classifier/">Classifier</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Django/">Django</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HPC/">HPC</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Life/">Life</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Listview/">Listview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mongoengine/">Mongoengine</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NDK/">NDK</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PageRank/">PageRank</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Photo/">Photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pymongo/">Pymongo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-web/">Python web</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Reflect/">Reflect</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scrapy/">Scrapy</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Search-Engine/">Search Engine</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spark/">Spark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spider/">Spider</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/benchmark/">benchmark</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/servlet/">servlet</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tea/">tea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat/">tomcat</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-box/">virtual box</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分布式/">分布式</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -633,7 +662,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 10px;">benchmark</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a>
+            <a href="/tags/Android/" style="font-size: 20px;">Android</a> <a href="/tags/Apache/" style="font-size: 10px;">Apache</a> <a href="/tags/Basis/" style="font-size: 12px;">Basis</a> <a href="/tags/CSDN/" style="font-size: 12px;">CSDN</a> <a href="/tags/Classifier/" style="font-size: 10px;">Classifier</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/HPC/" style="font-size: 12px;">HPC</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/Life/" style="font-size: 18px;">Life</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Listview/" style="font-size: 10px;">Listview</a> <a href="/tags/Machine-Learning/" style="font-size: 16px;">Machine Learning</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Mongoengine/" style="font-size: 10px;">Mongoengine</a> <a href="/tags/NDK/" style="font-size: 12px;">NDK</a> <a href="/tags/PageRank/" style="font-size: 12px;">PageRank</a> <a href="/tags/Photo/" style="font-size: 10px;">Photo</a> <a href="/tags/Pymongo/" style="font-size: 10px;">Pymongo</a> <a href="/tags/Python/" style="font-size: 18px;">Python</a> <a href="/tags/Python-web/" style="font-size: 10px;">Python web</a> <a href="/tags/Reflect/" style="font-size: 10px;">Reflect</a> <a href="/tags/Scrapy/" style="font-size: 10px;">Scrapy</a> <a href="/tags/Search-Engine/" style="font-size: 12px;">Search Engine</a> <a href="/tags/Spark/" style="font-size: 10px;">Spark</a> <a href="/tags/Spider/" style="font-size: 16px;">Spider</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/benchmark/" style="font-size: 10px;">benchmark</a> <a href="/tags/servlet/" style="font-size: 12px;">servlet</a> <a href="/tags/tea/" style="font-size: 10px;">tea</a> <a href="/tags/tomcat/" style="font-size: 12px;">tomcat</a> <a href="/tags/virtual-box/" style="font-size: 10px;">virtual box</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a>
         </div>
     </div>
 
